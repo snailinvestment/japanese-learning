@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日语零基础学习工具 - 免费在线学习 | Japanese Learning</title>
+<meta name="description" content="免费日语零基础学习工具 - 提供日语五十音、声调、发音、词汇、对话、旅游用语等完整学习内容。支持点击发音，适合初学者快速入门。">
+<meta name="keywords" content="日语学习,日语入门,日语发音,日语五十音,日语词汇,日语对话,零基础日语,日语教程,学习日语,日本语">
+<meta name="author" content="Japanese Learning Tool">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://snailinvestment.github.io/japanese-learning/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="日语零基础学习工具 - 免费在线学习">
+<meta property="og:description" content="免费日语零基础学习工具 - 提供日语五十音、声调、发音、词汇、对话、旅游用语等完整学习内容。支持点击发音，适合初学者快速入门。">
+<meta property="og:image" content="https://snailinvestment.github.io/japanese-learning/og-image.png">
+<meta property="og:url" content="https://snailinvestment.github.io/japanese-learning/">
+<meta property="og:site_name" content="日语零基础学习工具">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="日语零基础学习工具 - 免费在线学习">
+<meta name="twitter:description" content="免费日语零基础学习工具 - 提供日语五十音、声调、发音、词汇、对话、旅游用语等完整学习内容。">
+<meta name="twitter:image" content="https://snailinvestment.github.io/japanese-learning/og-image.png">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XQS4GVPXD2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XQS4GVPXD2');
+</script>
+
+<!-- Structured Data / Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "日语零基础学习工具",
+  "description": "免费日语零基础学习工具 - 提供日语五十音、声调、发音、词汇、对话、旅游用语等完整学习内容",
+  "url": "https://snailinvestment.github.io/japanese-learning/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "inLanguage": ["ja", "zh-CN"],
+  "author": {
+    "@type": "Person",
+    "name": "Japanese Learning Tool"
+  }
+}
+</script>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'Microsoft YaHei', 'Meiryo', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 10px; }
+  .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+  .header { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 20px; text-align: center; }
+  .header h1 { font-size: 1.5em; margin-bottom: 5px; }
+  .header p { font-size: 0.9em; opacity: 0.9; }
+  .tabs { display: flex; flex-wrap: wrap; background: #f8f9fa; border-bottom: 2px solid #dee2e6; overflow-x: auto; }
+  .tab-btn { padding: 10px 14px; border: none; background: none; cursor: pointer; font-size: 0.85em; white-space: nowrap; color: #666; border-bottom: 3px solid transparent; transition: all 0.3s; }
+  .tab-btn:hover { background: #e9ecef; color: #333; }
+  .tab-btn.active { color: #e74c3c; border-bottom-color: #e74c3c; font-weight: bold; background: white; }
+  .content { padding: 20px; max-height: 75vh; overflow-y: auto; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .section-title { font-size: 1.3em; color: #e74c3c; margin: 20px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+  .section-title:first-child { margin-top: 0; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 12px 0; }
+  .card { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: #e74c3c; }
+  .card:active { transform: scale(0.98); }
+  .card .jp { font-size: 1.4em; font-weight: bold; color: #e74c3c; }
+  .card .pron { font-size: 0.85em; color: #666; margin: 4px 0; }
+  .card .cn { font-size: 0.9em; color: #333; }
+  .info-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 8px; margin: 12px 0; font-size: 0.9em; line-height: 1.6; }
+  .tip-box { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 12px 16px; border-radius: 8px; margin: 12px 0; font-size: 0.9em; line-height: 1.6; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+  th { background: #e74c3c; color: white; padding: 8px 10px; text-align: left; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f8f9fa; cursor: pointer; }
+  tr:active { background: #fff3cd; }
+  .dialogue-box { background: #f0f4ff; border-radius: 10px; padding: 16px; margin: 12px 0; }
+  .dialogue-line { margin: 8px 0; padding: 8px 12px; border-radius: 8px; }
+  .dialogue-a { background: #e3f2fd; }
+  .dialogue-b { background: #fce4ec; margin-left: 30px; }
+  .speaker { font-weight: bold; color: #1976d2; }
+  .speaker.b { color: #c2185b; }
+  .jp-text { color: #e74c3c; font-weight: bold; }
+  .cn-text { color: #333; }
+  .pron-text { color: #666; font-size: 0.85em; }
+  .status-bar { text-align: center; color: #888; font-size: 0.85em; margin: 10px 0; min-height: 24px; }
+  .voice-select-row { max-width: 600px; margin: 6px auto; text-align: center; font-size: 0.85em; color: #666; }
+  .voice-select-row select { padding: 4px 8px; border-radius: 6px; border: 1px solid #ccc; max-width: 280px; }
+  .reload-btn { padding: 4px 12px; background: #f39c12; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85em; margin-left: 8px; }
+  .reload-btn:hover { background: #e67e22; }
+  .speak-btn { display: inline-block; padding: 4px 10px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.8em; margin-left: 6px; vertical-align: middle; }
+  .speak-btn:hover { background: #219a52; }
+  .sub-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .sub-tab { padding: 6px 14px; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; font-size: 0.85em; background: white; }
+  .sub-tab.active { background: #e74c3c; color: white; border-color: #e74c3c; }
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .tab-btn { padding: 8px 10px; font-size: 0.8em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>🇯🇵 日语零基础学习工具</h1>
+    <p>完整版 — 平仮名 · 片仮名 · 问候 · 数字 · 词汇 · 语法 · 对话 · 常用 · 旅游 · 商务 · 情感 · 造句 · 测验 · 朗读</p>
+  </div>
+  <div style="background:#f8f9fa;padding:10px 20px;border-bottom:1px solid #dee2e6;text-align:center">
+    <div class="status-bar" id="status-bar" style="margin:0">正在初始化语音引擎...</div>
+    <div id="voice-warning" style="display:none;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:10px;max-width:600px;margin:6px auto;font-size:0.85em;color:#856404;text-align:left">
+      ⚠️ <b>未检测到日语语音包</b><br>
+      当前浏览器将使用默认语音朗读，发音可能不准确。<br>
+      <b>解决方法：</b>在 Windows 设置 → 时间和语言 → 语言 → 添加"日语"语言包，然后重启浏览器。<br>
+      或在 <b>Chrome / Edge</b> 中打开此页面，并安装日语语音包。
+    </div>
+    <div class="voice-select-row" style="margin:4px auto">
+      <label>选择语音：</label>
+      <select id="voice-select"></select>
+      <button class="reload-btn" onclick="reloadVoices()">🔄 重新加载</button>
+    </div>
+  </div>
+  <div class="tabs" id="main-tabs">
+    <button class="tab-btn active" onclick="switchTab('hiragana', this)">平仮名</button>
+    <button class="tab-btn" onclick="switchTab('katakana', this)">片仮名</button>
+    <button class="tab-btn" onclick="switchTab('greetings', this)">👋 问候</button>
+    <button class="tab-btn" onclick="switchTab('numbers', this)">🔢 数字</button>
+    <button class="tab-btn" onclick="switchTab('vocabulary', this)">📦 词汇</button>
+    <button class="tab-btn" onclick="switchTab('grammar', this)">📖 语法</button>
+    <button class="tab-btn" onclick="switchTab('dialogues', this)">💬 对话</button>
+    <button class="tab-btn" onclick="switchTab('daily', this)">📋 常用</button>
+    <button class="tab-btn" onclick="switchTab('travel', this)">✈️ 旅游</button>
+    <button class="tab-btn" onclick="switchTab('business', this)">💼 商务</button>
+    <button class="tab-btn" onclick="switchTab('romance', this)">💕 情感</button>
+    <button class="tab-btn" onclick="switchTab('sentences', this)">✏️ 造句</button>
+    <button class="tab-btn" onclick="switchTab('quiz', this)">📝 测验</button>
+    <button class="tab-btn" onclick="switchTab('freestyle', this)">🎤 朗读</button>
+  </div>
+  <div class="content" id="main-content">
+    
+<div id="tab-hiragana" class="tab-content">
+  <div class="section-title">平仮名（ひらがな）五十音图</div>
+  <div class="info-box">
+    💡 平仮名是日语最基础的字母，共46个。点击卡片可听到发音。
+  </div>
+  <div class="section-title" style="font-size:1.1em">あ行（a行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('あ')"><div class="jp">あ</div><div class="pron">a 啊</div><div class="cn">安</div></div>
+    <div class="card" onclick="speakText('い')"><div class="jp">い</div><div class="pron">i 一</div><div class="cn">以</div></div>
+    <div class="card" onclick="speakText('う')"><div class="jp">う</div><div class="pron">u 乌</div><div class="cn">宇</div></div>
+    <div class="card" onclick="speakText('え')"><div class="jp">え</div><div class="pron">e 诶</div><div class="cn">衣</div></div>
+    <div class="card" onclick="speakText('お')"><div class="jp">お</div><div class="pron">o 哦</div><div class="cn">于</div></div>
+  </div>
+  <div class="section-title" style="font-size:1.1em">か行（k行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('か')"><div class="jp">か</div><div class="pron">ka 卡</div><div class="cn">加</div></div>
+    <div class="card" onclick="speakText('き')"><div class="jp">き</div><div class="pron">ki 奇</div><div class="cn">几</div></div>
+    <div class="card" onclick="speakText('く')"><div class="jp">く</div><div class="pron">ku 库</div><div class="cn">久</div></div>
+    <div class="card" onclick="speakText('け')"><div class="jp">け</div><div class="pron">ke 凯</div><div class="cn">计</div></div>
+    <div class="card" onclick="speakText('こ')"><div class="jp">こ</div><div class="pron">ko 口</div><div class="cn">己</div></div>
+  </div>
+</div>
+
+<div id="tab-katakana" class="tab-content">
+  <div class="section-title">片仮名（カタカナ）五十音図</div>
+  <div class="info-box">
+    💡 片仮名主要用于外来语、人名、地名。发音与平仮名相同。
+  </div>
+  <div class="section-title" style="font-size:1.1em">ア行（a行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ア')"><div class="jp">ア</div><div class="pron">a 啊</div><div class="cn">阿</div></div>
+    <div class="card" onclick="speakText('イ')"><div class="jp">イ</div><div class="pron">i 一</div><div class="cn">伊</div></div>
+    <div class="card" onclick="speakText('ウ')"><div class="jp">ウ</div><div class="pron">u 乌</div><div class="cn">宇</div></div>
+    <div class="card" onclick="speakText('エ')"><div class="jp">エ</div><div class="pron">e 诶</div><div class="cn">江</div></div>
+    <div class="card" onclick="speakText('オ')"><div class="jp">オ</div><div class="pron">o 哦</div><div class="cn">於</div></div>
+  </div>
+</div>
+
+<div id="tab-greetings" class="tab-content">
+  <div class="section-title">👋 基础问候</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('こんにちは')"><div class="jp">こんにちは</div><div class="pron">konnichiwa</div><div class="cn">你好</div></div>
+    <div class="card" onclick="speakText('おはようございます')"><div class="jp">おはようございます</div><div class="pron">ohayou gozaimasu</div><div class="cn">早上好</div></div>
+    <div class="card" onclick="speakText('こんばんは')"><div class="jp">こんばんは</div><div class="pron">konbanwa</div><div class="cn">晚上好</div></div>
+    <div class="card" onclick="speakText('さようなら')"><div class="jp">さようなら</div><div class="pron">sayounara</div><div class="cn">再见</div></div>
+    <div class="card" onclick="speakText('ありがとうございます')"><div class="jp">ありがとうございます</div><div class="pron">arigatou gozaimasu</div><div class="cn">谢谢</div></div>
+    <div class="card" onclick="speakText('すみません')"><div class="jp">すみません</div><div class="pron">sumimasen</div><div class="cn">不好意思/对不起</div></div>
+  </div>
+</div>
+
+<div id="tab-numbers" class="tab-content">
+  <div class="section-title">🔢 数字（0-10）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ゼロ')"><div class="jp">ゼロ</div><div class="pron">zero</div><div class="cn">0</div></div>
+    <div class="card" onclick="speakText('いち')"><div class="jp">いち</div><div class="pron">ichi</div><div class="cn">1</div></div>
+    <div class="card" onclick="speakText('に')"><div class="jp">に</div><div class="pron">ni</div><div class="cn">2</div></div>
+    <div class="card" onclick="speakText('さん')"><div class="jp">さん</div><div class="pron">san</div><div class="cn">3</div></div>
+    <div class="card" onclick="speakText('よん')"><div class="jp">よん</div><div class="pron">yon</div><div class="cn">4</div></div>
+    <div class="card" onclick="speakText('ご')"><div class="jp">ご</div><div class="pron">go</div><div class="cn">5</div></div>
+    <div class="card" onclick="speakText('ろく')"><div class="jp">ろく</div><div class="pron">roku</div><div class="cn">6</div></div>
+    <div class="card" onclick="speakText('なな')"><div class="jp">なな</div><div class="pron">nana</div><div class="cn">7</div></div>
+    <div class="card" onclick="speakText('はち')"><div class="jp">はち</div><div class="pron">hachi</div><div class="cn">8</div></div>
+    <div class="card" onclick="speakText('きゅう')"><div class="jp">きゅう</div><div class="pron">kyuu</div><div class="cn">9</div></div>
+    <div class="card" onclick="speakText('じゅう')"><div class="jp">じゅう</div><div class="pron">juu</div><div class="cn">10</div></div>
+  </div>
+</div>
+
+<div id="tab-vocabulary" class="tab-content">
+  <div class="section-title">📦 基础词汇</div>
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="switchSubTab('vocab1', this)">人称</button>
+    <button class="sub-tab" onclick="switchSubTab('vocab2', this)">食物</button>
+    <button class="sub-tab" onclick="switchSubTab('vocab3', this)">交通</button>
+  </div>
+  <div id="subtab-vocab1" class="sub-tab-content">
+    <div class="card-grid">
+      <div class="card" onclick="speakText('わたし')"><div class="jp">わたし</div><div class="pron">watashi</div><div class="cn">我</div></div>
+      <div class="card" onclick="speakText('あなた')"><div class="jp">あなた</div><div class="pron">anata</div><div class="cn">你</div></div>
+      <div class="card" onclick="speakText('かれ')"><div class="jp">かれ</div><div class="pron">kare</div><div class="cn">他</div></div>
+      <div class="card" onclick="speakText('かのじょ')"><div class="jp">かのじょ</div><div class="pron">kanojo</div><div class="cn">她</div></div>
+    </div>
+  </div>
+  <div id="subtab-vocab2" class="sub-tab-content" style="display:none">
+    <div class="card-grid">
+      <div class="card" onclick="speakText('ごはん')"><div class="jp">ごはん</div><div class="pron">gohan</div><div class="cn">米饭</div></div>
+      <div class="card" onclick="speakText('さかな')"><div class="jp">さかな</div><div class="pron">sakana</div><div class="cn">鱼</div></div>
+      <div class="card" onclick="speakText('やさい')"><div class="jp">やさい</div><div class="pron">yasai</div><div class="cn">蔬菜</div></div>
+    </div>
+  </div>
+  <div id="subtab-vocab3" class="sub-tab-content" style="display:none">
+    <div class="card-grid">
+      <div class="card" onclick="speakText('でんしゃ')"><div class="jp">でんしゃ</div><div class="pron">densha</div><div class="cn">电车</div></div>
+      <div class="card" onclick="speakText('ばす')"><div class="jp">ばす</div><div class="pron">basu</div><div class="cn">公交车</div></div>
+      <div class="card" onclick="speakText('くるま')"><div class="jp">くるま</div><div class="pron">kuruma</div><div class="cn">车</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-grammar" class="tab-content">
+  <div class="section-title">📖 基础语法</div>
+  <div class="info-box">
+    💡 日语的基本句型是：主语 + 对象 + 动词
+  </div>
+  <table>
+    <tr>
+      <th>句型</th>
+      <th>日语</th>
+      <th>发音</th>
+      <th>中文</th>
+    </tr>
+    <tr onclick="speakText('わたしは学生です')">
+      <td>判断句（是）</td>
+      <td class="jp-text">わたしは学生です</td>
+      <td class="pron-text">watashi wa gakusei desu</td>
+      <td class="cn-text">我是学生</td>
+    </tr>
+    <tr onclick="speakText('これは本です')">
+      <td>存在句（这是）</td>
+      <td class="jp-text">これは本です</td>
+      <td class="pron-text">kore wa hon desu</td>
+      <td class="cn-text">这是书</td>
+    </tr>
+  </table>
+</div>
+
+<div id="tab-dialogues" class="tab-content">
+  <div class="section-title">💬 日常对话</div>
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="switchSubTab('dialogue1', this)">初次见面</button>
+    <button class="sub-tab" onclick="switchSubTab('dialogue2', this)">餐厅</button>
+  </div>
+  <div id="subtab-dialogue1" class="sub-tab-content">
+    <div class="dialogue-box">
+      <div class="dialogue-line dialogue-a">
+        <span class="speaker">A：</span>
+        <span class="jp-text" onclick="speakText('はじめまして')">はじめまして</span>
+        <span class="pron-text">（hajimemashite）</span>
+        <span class="cn-text">初次见面</span>
+      </div>
+      <div class="dialogue-line dialogue-b">
+        <span class="speaker b">B：</span>
+        <span class="jp-text" onclick="speakText('こちらこそ')">こちらこそ</span>
+        <span class="pron-text">（kochirakoso）</span>
+        <span class="cn-text">彼此彼此</span>
+      </div>
+    </div>
+  </div>
+  <div id="subtab-dialogue2" class="sub-tab-content" style="display:none">
+    <div class="dialogue-box">
+      <div class="dialogue-line dialogue-a">
+        <span class="speaker">A：</span>
+        <span class="jp-text" onclick="speakText('メニューをください')">メニューをください</span>
+        <span class="pron-text">（menyuu o kudasai）</span>
+        <span class="cn-text">请给我菜单</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-daily" class="tab-content">
+  <div class="section-title">📋 常用表达</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('いただきます')"><div class="jp">いただきます</div><div class="pron">itadakimasu</div><div class="cn">我开动了</div></div>
+    <div class="card" onclick="speakText('ごちそうさまでした')"><div class="jp">ごちそうさまでした</div><div class="pron">gochisousama deshita</div><div class="cn">多谢款待</div></div>
+    <div class="card" onclick="speakText('おやすみなさい')"><div class="jp">おやすみなさい</div><div class="pron">oyasuminasai</div><div class="cn">晚安</div></div>
+  </div>
+</div>
+
+<div id="tab-travel" class="tab-content">
+  <div class="section-title">✈️ 旅游用语</div>
+  <div class="info-box">
+    💡 去日本旅游时常用的句子。
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('トイレはどこですか')"><div class="jp">トイレはどこですか</div><div class="pron">toire wa doko desu ka</div><div class="cn">厕所在哪里？</div></div>
+    <div class="card" onclick="speakText('いくらですか')"><div class="jp">いくらですか</div><div class="pron">ikura desu ka</div><div class="cn">多少钱？</div></div>
+  </div>
+</div>
+
+<div id="tab-business" class="tab-content">
+  <div class="section-title">💼 商务日语</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('おはようございます')"><div class="jp">おはようございます</div><div class="pron">ohayou gozaimasu</div><div class="cn">早上好（敬语）</div></div>
+    <div class="card" onclick="speakText('おつかれさまでした')"><div class="jp">おつかれさまでした</div><div class="pron">otsukaresama deshita</div><div class="cn">辛苦了</div></div>
+  </div>
+</div>
+
+<div id="tab-romance" class="tab-content">
+  <div class="section-title">💕 情感表达</div>
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="switchSubTab('romance1', this)">表白</button>
+    <button class="sub-tab" onclick="switchSubTab('romance2', this)">约会</button>
+  </div>
+  <div id="subtab-romance1" class="sub-tab-content">
+    <div class="card-grid">
+      <div class="card" onclick="speakText('あいしてる')"><div class="jp">あいしてる</div><div class="pron">aishiteru</div><div class="cn">我爱你</div></div>
+      <div class="card" onclick="speakText('すきです')"><div class="jp">すきです</div><div class="pron">suki desu</div><div class="cn">我喜欢你</div></div>
+    </div>
+  </div>
+  <div id="subtab-romance2" class="sub-tab-content" style="display:none">
+    <div class="card-grid">
+      <div class="card" onclick="speakText('デートしよう')"><div class="jp">デートしよう</div><div class="pron">deeto shiyou</div><div class="cn">约会吧</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-sentences" class="tab-content">
+  <div class="section-title">✏️ 造句练习</div>
+  <div class="info-box">
+    💡 日语基本句型：主语 + は + 对象 + を + 动词
+  </div>
+  <table>
+    <tr>
+      <th>句型</th>
+      <th>日语</th>
+      <th>发音</th>
+      <th>中文</th>
+    </tr>
+    <tr onclick="speakText('わたしはりんごをたべます')">
+      <td>主谓宾句</td>
+      <td class="jp-text">わたしはりんごをたべます</td>
+      <td class="pron-text">watashi wa ringo o tabemasu</td>
+      <td class="cn-text">我吃苹果</td>
+    </tr>
+  </table>
+</div>
+
+<div id="tab-quiz" class="tab-content">
+  <div class="section-title">📝 小测验</div>
+  <div class="quiz-question">
+    <p><b>问题 1：</b>"こんにちは" 是什么意思？</p>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkAnswer(this, false)">再见</div>
+      <div class="quiz-opt" onclick="checkAnswer(this, true)">你好</div>
+      <div class="quiz-opt" onclick="checkAnswer(this, false)">谢谢</div>
+      <div class="quiz-opt" onclick="checkAnswer(this, false)">早上好</div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-freestyle" class="tab-content">
+  <div class="section-title">🎤 自由朗读</div>
+  <div class="info-box">
+    💡 在下方输入框中输入任何日语句子，点击"朗读"按钮即可听到发音。
+  </div>
+  <div style="text-align:center; margin:20px 0">
+    <input type="text" id="freestyle-input" style="width:80%; padding:10px; font-size:1.1em; border:2px solid #e74c3c; border-radius:8px" placeholder="输入日语句子...">
+    <br><br>
+    <button class="reload-btn" style="font-size:1.1em; padding:10px 30px" onclick="speakText(document.getElementById('freestyle-input').value)">🔊 朗读</button>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<script>
+let voices = [];
+let currentVoice = null;
+
+function loadVoices() {
+  voices = speechSynthesis.getVoices();
+  const voiceSelect = document.getElementById('voice-select');
+  voiceSelect.innerHTML = '';
+  const jpVoices = voices.filter(v => v.lang.startsWith('ja'));
+  if (jpVoices.length > 0) {
+    jpVoices.forEach((voice, idx) => {
+      const opt = document.createElement('option');
+      opt.value = voices.indexOf(voice);
+      opt.textContent = voice.name + ' (' + voice.lang + ')';
+      voiceSelect.appendChild(opt);
+    });
+    document.getElementById('status-bar').textContent = '✅ 已加载 ' + jpVoices.length + ' 个日语语音包';
+    document.getElementById('voice-warning').style.display = 'none';
+  } else {
+    document.getElementById('status-bar').textContent = '⚠️ 未检测到日语语音包，将使用默认语音';
+    document.getElementById('voice-warning').style.display = 'block';
+  }
+}
+
+function reloadVoices() {
+  document.getElementById('status-bar').textContent = '正在重新加载语音引擎...';
+  speechSynthesis.cancel();
+  setTimeout(loadVoices, 500);
+}
+
+function getSelectedVoice() {
+  const sel = document.getElementById('voice-select');
+  if (sel.value === '') return null;
+  return voices[parseInt(sel.value)];
+}
+
+function speakText(text) {
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'ja-JP';
+  const rate = 0.8;
+  utter.rate = rate;
+  const selectedVoice = getSelectedVoice();
+  if (selectedVoice) utter.voice = selectedVoice;
+  speechSynthesis.speak(utter);
+}
+
+speechSynthesis.onvoiceschanged = loadVoices;
+setTimeout(loadVoices, 1000);
+
+function switchTab(tabName, btn) {
+  const allTabs = document.querySelectorAll('.tab-content');
+  allTabs.forEach(t => t.classList.remove('active'));
+  const allBtns = document.querySelectorAll('.tab-btn');
+  allBtns.forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabName).classList.add('active');
+  btn.classList.add('active');
+}
+
+function switchSubTab(subTabName, btn) {
+  const allSubTabs = document.querySelectorAll('.sub-tab-content');
+  allSubTabs.forEach(t => t.style.display = 'none');
+  const allSubBtns = document.querySelectorAll('.sub-tab');
+  allSubBtns.forEach(b => b.classList.remove('active'));
+  document.getElementById('subtab-' + subTabName).style.display = 'block';
+  btn.classList.add('active');
+}
+</script>
+</body></html>
