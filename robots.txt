@@ -1,0 +1,6 @@
+# robots.txt for Japanese Learning Tool
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://snailinvestment.github.io/japanese-learning/sitemap.xml
