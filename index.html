@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -43,55 +44,57 @@
   
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #f5f6fa; color: #222; }
+    body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #f0f4f8; color: #222; }
     .container { max-width: 960px; margin: 0 auto; background: #fff; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
-    .header { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: #fff; padding: 18px 20px; text-align: center; }
+    .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 20px; text-align: center; }
     .header h1 { font-size: 1.5em; margin-bottom: 6px; }
     .header p { font-size: 0.85em; opacity: 0.9; }
     .tabs { display: flex; flex-wrap: wrap; background: #f8f9fa; border-bottom: 2px solid #dee2e6; padding: 0 10px; }
     .tab-btn { padding: 10px 14px; cursor: pointer; background: none; border: none; font-size: 0.9em; color: #555; transition: 0.2s; border-bottom: 3px solid transparent; }
-    .tab-btn:hover { color: #c0392b; background: #fff; }
-    .tab-btn.active { color: #c0392b; font-weight: bold; border-bottom-color: #c0392b; background: #fff; }
+    .tab-btn:hover { color: #1e3a8a; background: #fff; }
+    .tab-btn.active { color: #1e3a8a; font-weight: bold; border-bottom-color: #1e3a8a; background: #fff; }
     .content { padding: 20px; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-    .section-title { font-size: 1.2em; font-weight: bold; color: #c0392b; margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #f0f0f0; }
+    .section-title { font-size: 1.2em; font-weight: bold; color: #1e3a8a; margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 12px 0; }
     .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; text-align: center; cursor: pointer; transition: 0.2s; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); border-color: #c0392b; }
-    .card .jp { font-size: 1.6em; font-weight: bold; color: #c0392b; margin-bottom: 4px; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); border-color: #1e3a8a; }
+    .card .jp { font-size: 1.6em; font-weight: bold; color: #1e3a8a; margin-bottom: 4px; }
     .card .pron { font-size: 0.85em; color: #666; margin-bottom: 2px; }
     .card .cn { font-size: 0.85em; color: #333; }
     table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
-    th { background: #c0392b; color: #fff; padding: 8px; text-align: left; }
+    th { background: #1e3a8a; color: #fff; padding: 8px; text-align: left; }
     td { padding: 8px; border-bottom: 1px solid #eee; }
     tr:hover { background: #f8f9fa; cursor: pointer; }
-    .jp-text { font-size: 1.1em; color: #c0392b; font-weight: 500; }
+    .jp-text { font-size: 1.1em; color: #1e3a8a; font-weight: 500; }
     .pron-text { color: #666; font-size: 0.9em; }
     .cn-text { color: #333; }
-    .info-box { background: #fff5f5; border-left: 4px solid #c0392b; padding: 10px 14px; margin: 10px 0; font-size: 0.9em; border-radius: 0 8px 8px 0; }
+    .info-box { background: #eff6ff; border-left: 4px solid #1e3a8a; padding: 10px 14px; margin: 10px 0; font-size: 0.9em; border-radius: 0 8px 8px 0; }
     .dialogue-box { background: #f8f9fa; border-radius: 10px; padding: 16px; margin: 12px 0; }
     .dialogue-line { margin: 8px 0; padding: 8px 12px; border-radius: 8px; }
-    .dialogue-a { background: #fff5f5; }
-    .dialogue-b { background: #f0f8ff; }
-    .speaker { font-weight: bold; color: #c0392b; }
-    .speaker.b { color: #2980b9; }
+    .dialogue-a { background: #eff6ff; }
+    .dialogue-b { background: #f0fdf4; }
+    .speaker { font-weight: bold; color: #1e3a8a; }
+    .speaker.b { color: #059669; }
     .sub-tabs { display: flex; gap: 6px; margin: 10px 0; flex-wrap: wrap; }
     .sub-tab { padding: 6px 14px; cursor: pointer; background: #f0f0f0; border: none; border-radius: 20px; font-size: 0.85em; transition: 0.2s; }
-    .sub-tab.active { background: #c0392b; color: #fff; }
+    .sub-tab.active { background: #1e3a8a; color: #fff; }
     .sub-tab-content { display: none; }
     .sub-tab-content.active { display: block; }
     .quiz-question { background: #f8f9fa; padding: 16px; border-radius: 10px; margin: 12px 0; }
     .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
     .quiz-opt { padding: 10px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; text-align: center; transition: 0.2s; }
-    .quiz-opt:hover { border-color: #c0392b; background: #fff5f5; }
-    .quiz-opt.correct { border-color: #27ae60; background: #eafaf1; }
-    .quiz-opt.wrong { border-color: #e74c3c; background: #fdedec; }
+    .quiz-opt:hover { border-color: #1e3a8a; background: #eff6ff; }
+    .quiz-opt.correct { border-color: #059669; background: #d1fae5; }
+    .quiz-opt.wrong { border-color: #dc2626; background: #fee2e2; }
     .voice-select-row { display: flex; align-items: center; gap: 10px; justify-content: center; font-size: 0.85em; flex-wrap: wrap; }
     .voice-select-row select { padding: 4px 8px; border-radius: 6px; border: 1px solid #ccc; }
-    .reload-btn { padding: 4px 12px; background: #c0392b; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
-    .reload-btn:hover { background: #a93226; }
+    .reload-btn { padding: 4px 12px; background: #1e3a8a; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+    .reload-btn:hover { background: #1e40af; }
     .status-bar { font-size: 0.85em; color: #666; text-align: center; padding: 4px; }
+    .mouth-shape { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 6px; padding: 8px; margin: 6px 0; font-size: 0.85em; }
+    .mouth-shape strong { color: #d97706; }
     @media (max-width: 600px) {
       .card-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
       .tab-btn { padding: 8px 10px; font-size: 0.8em; }
@@ -102,8 +105,8 @@
 
 <div class="container">
   <div class="header">
-    <h1>🇯🇵 日语零基础学习工具</h1>
-    <p>完整版 — 平仮名 · 片仮名 · 问候 · 数字 · 词汇 · 语法 · 对话 · 常用 · 旅游 · 商务 · 情感 · 造句 · 测验 · 朗读</p>
+    <h1>🇯🇵 日语零基础学习工具（升级版）</h1>
+    <p>平仮名 · 片仮名 · 问候 · 数字 · 词汇 · 语法 · 对话 · 常用 · 旅游 · 商务 · 情感 · 造句 · 测验 · 朗读</p>
   </div>
   <div style="background:#f8f9fa;padding:10px 20px;border-bottom:1px solid #dee2e6;text-align:center">
     <div class="status-bar" id="status-bar" style="margin:0">正在初始化语音引擎...</div>
@@ -138,14 +141,62 @@
   <div class="content" id="main-content">
 
 <div id="tab-hiragana" class="tab-content active">
-  <div class="section-title">平仮名（ひらがな）五十音図</div>
-  <div class="info-box">
-    💡 平仮名是日语最基础的字母，共46个。来源于汉字的草书。<br>
-    <b>用途：</b>日语的语法词（助词、助动词）、本土词汇、动词形容词词尾等。<br>
-    👉 点击卡片可听到发音。
+  <div class="section-title">📚 平仮名（ひらがな）学习指南</div>
+  
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <h3 style="color:#1e3a8a; margin-bottom:8px">🤔 什么是平仮名？</h3>
+    <b>平仮名（ひらがな）</b>是日语两种字母系统之一，起源于汉字的草书（简化写法）。<br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">🎯 为什么要学平仮名？</h3>
+    ✅ 平仮名是日语的<b>基础中的基础</b>，就像英语的 ABC<br>
+    ✅ 所有日语学习者都必须先掌握平仮名<br>
+    ✅ 日语的<b>语法词</b>（助词、助动词）都用平仮名：は・を・に・で・て<br>
+    ✅ <b>本土词汇</b>（和语）：たべる（食べる）・のむ（飲む）<br>
+    ✅ <b>动词形容词词尾</b>：たべ<b>ます</b>・おいし<b>い</b><br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">📝 学习方法</h3>
+    1️⃣ <b>先看嘴型说明</b>：了解每个发音的口型<br>
+    2️⃣ <b>点击卡片听发音</b>：模仿正确的发音<br>
+    3️⃣ <b>反复练习</b>：每天练习 20-30 分钟<br>
+    4️⃣ <b>结合片仮名</b>：两种字母一起学效果更好<br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">💡 记忆技巧</h3>
+    🔹 每个平仮名都来源于一个汉字（如：あ → 安）<br>
+    🔹 记住汉字来源，更容易记住形状<br>
+    🔹 结合发音（罗马音）一起记忆<br>
+    🔹 使用<b>联想记忆法</b>：あ（安）→ 啊（平安）
   </div>
   
-  <div class="section-title" style="font-size:1.1em">あ行（ア行）</div>
+  <div class="section-title" style="font-size:1.1em; color:#059669">👄 发音嘴型说明（重要！）</div>
+  <div class="info-box" style="background:#fef3c7; border-color:#d97706">
+    <b>🇯🇵 日语发音的特点：</b><br>
+    ✅ 日语是<b>音节语言</b>，每个音节时长相等<br>
+    ✅ 发音相对<b>简单清晰</b>，没有声调（不像中文）<br>
+    ✅ 嘴型变化<b>比中文小</b>，不要夸张<br><br>
+    
+    <b>📝 嘴型要领：</b><br>
+    🔸 <b>张大嘴</b>：あ（a）→ 嘴张大，像说"啊"<br>
+    🔸 <b>微笑嘴</b>：い（i）→ 嘴角向后，像说"一"<br>
+    🔸 <b>圆嘴</b>：う（u）→ 嘴唇圆起，像说"乌"（但嘴型更小）<br>
+    🔸 <b>半开嘴</b>：え（e）→ 嘴半开，像说"诶"<br>
+    🔸 <b>圆大嘴</b>：お（o）→ 嘴圆起，像说"哦"<br><br>
+    
+    <b>⚠️ 特别注意：</b><br>
+    🔺 う（u）的嘴型比中文"乌"小很多，几乎不圆唇<br>
+    🔺 つ（tsu）的发音像中文"次"，但更短促<br>
+    🔺 ふ（fu）的发音像"夫"，但嘴唇不要圆起（轻轻摩擦上牙和下唇）<br>
+    🔺 ら行（ra/ri/ru/re/ro）的发音像"拉/里/路/累/罗"，但舌头要弹一下
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">あ行（ア行）—— 最基础的5个元音</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • あ（a）：嘴张大，舌头放低，像说"啊"<br>
+    • い（i）：嘴角向后，舌头抬高，像说"一"<br>
+    • う（u）：嘴唇轻轻圆起（不要像中文"乌"那么圆），舌头后部抬高<br>
+    • え（e）：嘴半开，舌头中部抬高，像说"诶"<br>
+    • お（o）：嘴唇圆起，舌头后部抬高，像说"哦"
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('あ')"><div class="jp">あ</div><div class="pron">a</div><div class="cn">安 → 啊</div></div>
     <div class="card" onclick="speakText('い')"><div class="jp">い</div><div class="pron">i</div><div class="cn">以 → 一</div></div>
@@ -155,6 +206,14 @@
   </div>
   
   <div class="section-title" style="font-size:1.1em">か行（カ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • か（ka）：先发 k 音（喉咙后部），然后张嘴发 a<br>
+    • き（ki）：先发 k 音，然后嘴角向后发 i<br>
+    • く（ku）：先发 k 音，然后嘴唇轻轻圆起发 u<br>
+    • け（ke）：先发 k 音，然后嘴半开发 e<br>
+    • こ（ko）：先发 k 音，然后嘴唇圆起发 o
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('か')"><div class="jp">か</div><div class="pron">ka</div><div class="cn">加 → 卡</div></div>
     <div class="card" onclick="speakText('き')"><div class="jp">き</div><div class="pron">ki</div><div class="cn">几 → 奇</div></div>
@@ -164,24 +223,48 @@
   </div>
   
   <div class="section-title" style="font-size:1.1em">さ行（サ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • さ（sa）：先发 s 音（舌尖靠近上牙），然后张嘴发 a<br>
+    • し（shi）：⚠️ 不是"西"！舌头不要卷起，轻轻摩擦上牙膛<br>
+    • す（su）：⚠️ 不是"苏"！u 的音很轻，几乎像"斯"<br>
+    • せ（se）：先发 s 音，然后嘴半开发 e<br>
+    • そ（so）：先发 s 音，然后嘴唇圆起发 o
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('さ')"><div class="jp">さ</div><div class="pron">sa</div><div class="cn">左 → 萨</div></div>
-    <div class="card" onclick="speakText('し')"><div class="jp">し</div><div class="pron">shi</div><div class="cn">之 → 西</div></div>
-    <div class="card" onclick="speakText('す')"><div class="jp">す</div><div class="pron">su</div><div class="cn">寸 → 苏</div></div>
+    <div class="card" onclick="speakText('し')"><div class="jp">し</div><div class="pron">shi</div><div class="cn">之 → 西（轻）</div></div>
+    <div class="card" onclick="speakText('す')"><div class="jp">す</div><div class="pron">su</div><div class="cn">寸 → 斯（轻）</div></div>
     <div class="card" onclick="speakText('せ')"><div class="jp">せ</div><div class="pron">se</div><div class="cn">世 → 塞</div></div>
     <div class="card" onclick="speakText('そ')"><div class="jp">そ</div><div class="pron">so</div><div class="cn">曾 → 索</div></div>
   </div>
   
   <div class="section-title" style="font-size:1.1em">た行（タ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • た（ta）：先发 t 音（舌尖弹上牙），然后张嘴发 a<br>
+    • ち（chi）：⚠️ 不是"七"！像"千"但更轻，舌头不要卷<br>
+    • つ（tsu）：⚠️ 像"次"但更短促，舌头弹一下<br>
+    • て（te）：先发 t 音，然后嘴半开发 e<br>
+    • と（to）：先发 t 音，然后嘴唇圆起发 o
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('た')"><div class="jp">た</div><div class="pron">ta</div><div class="cn">太 → 他</div></div>
-    <div class="card" onclick="speakText('ち')"><div class="jp">ち</div><div class="pron">chi</div><div class="cn">知 → 七</div></div>
-    <div class="card" onclick="speakText('つ')"><div class="jp">つ</div><div class="pron">tsu</div><div class="cn">津 → 次</div></div>
+    <div class="card" onclick="speakText('ち')"><div class="jp">ち</div><div class="pron">chi</div><div class="cn">知 → 千（轻）</div></div>
+    <div class="card" onclick="speakText('つ')"><div class="jp">つ</div><div class="pron">tsu</div><div class="cn">津 → 次（短）</div></div>
     <div class="card" onclick="speakText('て')"><div class="jp">て</div><div class="pron">te</div><div class="cn">天 → 特</div></div>
     <div class="card" onclick="speakText('と')"><div class="jp">と</div><div class="pron">to</div><div class="cn">止 → 托</div></div>
   </div>
   
   <div class="section-title" style="font-size:1.1em">な行（ナ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • な（na）：先发 n 音（舌尖弹上牙），然后张嘴发 a<br>
+    • に（ni）：先发 n 音，然后嘴角向后发 i<br>
+    • ぬ（nu）：先发 n 音，然后嘴唇轻轻圆起发 u<br>
+    • ね（ne）：先发 n 音，然后嘴半开发 e<br>
+    • の（no）：先发 n 音，然后嘴唇圆起发 o
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('な')"><div class="jp">な</div><div class="pron">na</div><div class="cn">奈 → 那</div></div>
     <div class="card" onclick="speakText('に')"><div class="jp">に</div><div class="pron">ni</div><div class="cn">仁 → 尼</div></div>
@@ -191,10 +274,18 @@
   </div>
   
   <div class="section-title" style="font-size:1.1em">は行（ハ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • は（ha）：先发 h 音（轻轻呼气），然后张嘴发 a<br>
+    • ひ（hi）：⚠️ 不是"嘿"！像"希"但更轻，不要卷舌<br>
+    • ふ（fu）：⚠️ 特殊发音！上牙轻轻碰下唇，呼气摩擦<br>
+    • へ（he）：先发 h 音，然后嘴半开发 e<br>
+    • ほ（ho）：先发 h 音，然后嘴唇圆起发 o
+  </div>
   <div class="card-grid">
     <div class="card" onclick="speakText('は')"><div class="jp">は</div><div class="pron">ha</div><div class="cn">波 → 哈</div></div>
-    <div class="card" onclick="speakText('ひ')"><div class="jp">ひ</div><div class="pron">hi</div><div class="cn">比 → 嘿</div></div>
-    <div class="card" onclick="speakText('ふ')"><div class="jp">ふ</div><div class="pron">fu</div><div class="cn">不 → 夫</div></div>
+    <div class="card" onclick="speakText('ひ')"><div class="jp">ひ</div><div class="pron">hi</div><div class="cn">比 → 希（轻）</div></div>
+    <div class="card" onclick="speakText('ふ')"><div class="jp">ふ</div><div class="pron">fu</div><div class="cn">不 → 夫（特殊）</div></div>
     <div class="card" onclick="speakText('へ')"><div class="jp">へ</div><div class="pron">he</div><div class="cn">部 → 黑</div></div>
     <div class="card" onclick="speakText('ほ')"><div class="jp">ほ</div><div class="pron">ho</div><div class="cn">保 → 吼</div></div>
   </div>
@@ -211,1068 +302,1582 @@
   <div class="section-title" style="font-size:1.1em">や行（ヤ行）</div>
   <div class="card-grid">
     <div class="card" onclick="speakText('や')"><div class="jp">や</div><div class="pron">ya</div><div class="cn">也 → 呀</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ゆ')"><div class="jp">ゆ</div><div class="pron">yu</div><div class="cn">由 → 尤</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
+    <div class="card" style="visibility:hidden"><div class="jp">い</div><div class="pron">i</div><div class="cn">（重复）</div></div>
+    <div class="card" onclick="speakText('ゆ')"><div class="jp">ゆ</div><div class="pron">yu</div><div class="cn">由 → 优</div></div>
+    <div class="card" style="visibility:hidden"><div class="jp">え</div><div class="pron">e</div><div class="cn">（重复）</div></div>
     <div class="card" onclick="speakText('よ')"><div class="jp">よ</div><div class="pron">yo</div><div class="cn">与 → 哟</div></div>
   </div>
   
   <div class="section-title" style="font-size:1.1em">ら行（ラ行）</div>
+  <div class="mouth-shape">
+    <strong>嘴型说明：</strong><br>
+    • ら（ra）：⚠️ 不是"拉"！舌头要<b>弹一下</b>（像西班牙语 rr）<br>
+    • り（ri）：舌头弹一下，然后嘴角向后<br>
+    • る（ru）：舌头弹一下，然后嘴唇轻轻圆起<br>
+    • れ（re）：舌头弹一下，然后嘴半开<br>
+    • ろ（ro）：舌头弹一下，然后嘴唇圆起
+  </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('ら')"><div class="jp">ら</div><div class="pron">ra</div><div class="cn">良 → 拉</div></div>
-    <div class="card" onclick="speakText('り')"><div class="jp">り</div><div class="pron">ri</div><div class="cn">利 → 里</div></div>
-    <div class="card" onclick="speakText('る')"><div class="jp">る</div><div class="pron">ru</div><div class="cn">留 → 鲁</div></div>
-    <div class="card" onclick="speakText('れ')"><div class="jp">れ</div><div class="pron">re</div><div class="cn">礼 → 来</div></div>
-    <div class="card" onclick="speakText('ろ')"><div class="jp">ろ</div><div class="pron">ro</div><div class="cn">吕 → 罗</div></div>
+    <div class="card" onclick="speakText('ら')"><div class="jp">ら</div><div class="pron">ra</div><div class="cn">良 → 拉（弹舌）</div></div>
+    <div class="card" onclick="speakText('り')"><div class="jp">り</div><div class="pron">ri</div><div class="cn">利 → 里（弹舌）</div></div>
+    <div class="card" onclick="speakText('る')"><div class="jp">る</div><div class="pron">ru</div><div class="cn">留 → 路（弹舌）</div></div>
+    <div class="card" onclick="speakText('れ')"><div class="jp">れ</div><div class="pron">re</div><div class="cn">礼 → 累（弹舌）</div></div>
+    <div class="card" onclick="speakText('ろ')"><div class="jp">ろ</div><div class="pron">ro</div><div class="cn">吕 → 罗（弹舌）</div></div>
   </div>
   
   <div class="section-title" style="font-size:1.1em">わ行（ワ行）・を・ん</div>
   <div class="card-grid">
     <div class="card" onclick="speakText('わ')"><div class="jp">わ</div><div class="pron">wa</div><div class="cn">和 → 哇</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
     <div class="card" onclick="speakText('を')"><div class="jp">を</div><div class="pron">wo/o</div><div class="cn">远 → 哦（助词）</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ん')"><div class="jp">ん</div><div class="pron">n</div><div class="cn">无 → 嗯</div></div>
+    <div class="card" onclick="speakText('ん')"><div class="jp">ん</div><div class="pron">n</div><div class="cn">无 → 嗯（拨音）</div></div>
   </div>
   
-  <div class="section-title" style="font-size:1.1em">浊音（浊点 ゛）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('が')"><div class="jp">が</div><div class="pron">ga</div><div class="cn">我</div></div>
-    <div class="card" onclick="speakText('ぎ')"><div class="jp">ぎ</div><div class="pron">gi</div><div class="cn">疑</div></div>
-    <div class="card" onclick="speakText('ぐ')"><div class="jp">ぐ</div><div class="pron">gu</div><div class="cn">具</div></div>
-    <div class="card" onclick="speakText('げ')"><div class="jp">げ</div><div class="pron">ge</div><div class="cn">艺</div></div>
-    <div class="card" onclick="speakText('ご')"><div class="jp">ご</div><div class="pron">go</div><div class="cn">语</div></div>
+  <div class="section-title" style="font-size:1.1em; color:#7c3aed">濁音（だくおん）— 加两点，声音变"浊"</div>
+  <div class="info-box" style="background:#f3e8ff; border-color:#7c3aed">
+    <b>💡 什么是浊音？</b><br>
+    在清音（か、さ、た、は行）的右上角加两点（゛），声音变"浊"，就像英语的 k → g、s → z。<br><br>
+    
+    <b>📝 变化规则：</b><br>
+    • か行 → が行：k → g（如：か ka → が ga）<br>
+    • さ行 → ざ行：s → z（如：さ sa → ざ za）<br>
+    • た行 → だ行：t → d（如：た ta → だ da）<br>
+    • は行 → ば行：h → b（如：は ha → ば ba）
   </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('ざ')"><div class="jp">ざ</div><div class="pron">za</div><div class="cn">座</div></div>
-    <div class="card" onclick="speakText('じ')"><div class="jp">じ</div><div class="pron">ji</div><div class="cn">路</div></div>
-    <div class="card" onclick="speakText('ず')"><div class="jp">ず</div><div class="pron">zu</div><div class="cn">图</div></div>
-    <div class="card" onclick="speakText('ぜ')"><div class="jp">ぜ</div><div class="pron">ze</div><div class="cn">是</div></div>
-    <div class="card" onclick="speakText('ぞ')"><div class="jp">ぞ</div><div class="pron">zo</div><div class="cn">象</div></div>
+    <div class="card" onclick="speakText('が')"><div class="jp">が</div><div class="pron">ga</div><div class="cn">가</div></div>
+    <div class="card" onclick="speakText('ぎ')"><div class="jp">ぎ</div><div class="pron">gi</div><div class="cn">기</div></div>
+    <div class="card" onclick="speakText('ぐ')"><div class="jp">ぐ</div><div class="pron">gu</div><div class="cn">구</div></div>
+    <div class="card" onclick="speakText('げ')"><div class="jp">げ</div><div class="pron">ge</div><div class="cn">게</div></div>
+    <div class="card" onclick="speakText('ご')"><div class="jp">ご</div><div class="pron">go</div><div class="cn">고</div></div>
   </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('だ')"><div class="jp">だ</div><div class="pron">da</div><div class="cn">太</div></div>
-    <div class="card" onclick="speakText('ぢ')"><div class="jp">ぢ</div><div class="pron">ji</div><div class="cn">迟（少用）</div></div>
-    <div class="card" onclick="speakText('づ')"><div class="jp">づ</div><div class="pron">zu</div><div class="cn">通（少用）</div></div>
-    <div class="card" onclick="speakText('で')"><div class="jp">で</div><div class="pron">de</div><div class="cn">出</div></div>
-    <div class="card" onclick="speakText('ど')"><div class="jp">ど</div><div class="pron">do</div><div class="cn">度</div></div>
+    <div class="card" onclick="speakText('ざ')"><div class="jp">ざ</div><div class="pron">za</div><div class="cn">자</div></div>
+    <div class="card" onclick="speakText('じ')"><div class="jp">じ</div><div class="pron">ji/zi</div><div class="cn">지</div></div>
+    <div class="card" onclick="speakText('ず')"><div class="jp">ず</div><div class="pron">zu</div><div class="cn">즈</div></div>
+    <div class="card" onclick="speakText('ぜ')"><div class="jp">ぜ</div><div class="pron">ze</div><div class="cn">제</div></div>
+    <div class="card" onclick="speakText('ぞ')"><div class="jp">ぞ</div><div class="pron">zo</div><div class="cn">조</div></div>
   </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('ば')"><div class="jp">ば</div><div class="pron">ba</div><div class="cn">场</div></div>
-    <div class="card" onclick="speakText('び')"><div class="jp">び</div><div class="pron">bi</div><div class="cn">美</div></div>
-    <div class="card" onclick="speakText('ぶ')"><div class="jp">ぶ</div><div class="pron">bu</div><div class="cn">分</div></div>
-    <div class="card" onclick="speakText('べ')"><div class="jp">べ</div><div class="pron">be</div><div class="cn">边</div></div>
-    <div class="card" onclick="speakText('ぼ')"><div class="jp">ぼ</div><div class="pron">bo</div><div class="cn">暮</div></div>
+    <div class="card" onclick="speakText('だ')"><div class="jp">だ</div><div class="pron">da</div><div class="cn">다</div></div>
+    <div class="card" onclick="speakText('ぢ')"><div class="jp">ぢ</div><div class="pron">ji/di</div><div class="cn">（少用）</div></div>
+    <div class="card" onclick="speakText('づ')"><div class="jp">づ</div><div class="pron">zu/du</div><div class="cn">（少用）</div></div>
+    <div class="card" onclick="speakText('で')"><div class="jp">で</div><div class="pron">de</div><div class="cn">데</div></div>
+    <div class="card" onclick="speakText('ど')"><div class="jp">ど</div><div class="pron">do</div><div class="cn">도</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ば')"><div class="jp">ば</div><div class="pron">ba</div><div class="cn">바</div></div>
+    <div class="card" onclick="speakText('び')"><div class="jp">び</div><div class="pron">bi</div><div class="cn">비</div></div>
+    <div class="card" onclick="speakText('ぶ')"><div class="jp">ぶ</div><div class="pron">bu</div><div class="cn">부</div></div>
+    <div class="card" onclick="speakText('べ')"><div class="jp">べ</div><div class="pron">be</div><div class="cn">베</div></div>
+    <div class="card" onclick="speakText('ぼ')"><div class="jp">ぼ</div><div class="pron">bo</div><div class="cn">보</div></div>
   </div>
   
-  <div class="section-title" style="font-size:1.1em">半浊音（半浊点 ゜）</div>
+  <div class="section-title" style="font-size:1.1em; color:#059669">半濁音（はんだくおん）— 加小圈，声音变"p"</div>
+  <div class="info-box" style="background:#d1fae5; border-color:#059669">
+    <b>💡 什么是半浊音？</b><br>
+    在は行的右上角加小圈（゜），声音变成 p（普通话没有 p 音，像"趴"的声母）。<br><br>
+    
+    <b>📝 变化规则：</b><br>
+    • は行 → ぱ行：h → p（如：は ha → ぱ pa）
+  </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('ぱ')"><div class="jp">ぱ</div><div class="pron">pa</div><div class="cn">帕</div></div>
-    <div class="card" onclick="speakText('ぴ')"><div class="jp">ぴ</div><div class="pron">pi</div><div class="cn">匹</div></div>
-    <div class="card" onclick="speakText('ぷ')"><div class="jp">ぷ</div><div class="pron">pu</div><div class="cn">普</div></div>
-    <div class="card" onclick="speakText('ぺ')"><div class="jp">ぺ</div><div class="pron">pe</div><div class="cn">佩</div></div>
-    <div class="card" onclick="speakText('ぽ')"><div class="jp">ぽ</div><div class="pron">po</div><div class="cn">破</div></div>
+    <div class="card" onclick="speakText('ぱ')"><div class="jp">ぱ</div><div class="pron">pa</div><div class="cn">파</div></div>
+    <div class="card" onclick="speakText('ぴ')"><div class="jp">ぴ</div><div class="pron">pi</div><div class="cn">피</div></div>
+    <div class="card" onclick="speakText('ぷ')"><div class="jp">ぷ</div><div class="pron">pu</div><div class="cn">푸</div></div>
+    <div class="card" onclick="speakText('ぺ')"><div class="jp">ぺ</div><div class="pron">pe</div><div class="cn">페</div></div>
+    <div class="card" onclick="speakText('ぽ')"><div class="jp">ぽ</div><div class="pron">po</div><div class="cn">포</div></div>
   </div>
   
-  <div class="section-title" style="font-size:1.1em">拗音（ようおん）</div>
-  <div class="info-box">
-    💡 拗音是由い段假名 + 小写的ゃゅょ构成的。发音时两个假名拼为一个音节。
+  <div class="section-title" style="font-size:1.1em; color:#d97706">拗音（ようおん）— 小写的ゃゅょ</div>
+  <div class="info-box" style="background:#fef3c7; border-color:#d97706">
+    <b>💡 什么是拗音？</b><br>
+    い段字母（き、し、ち、に、ひ、み、り、ぎ、じ、び、ぴ）+ 小写的ゃゅょ，合成一个音节。<br><br>
+    
+    <b>📝 发音要领：</b><br>
+    • 小写的ゃゅょ<b>不单独发音</b>，而是和前面的字母合成一个音节<br>
+    • 发音要<b>快速连贯</b>，像一个音节<br>
+    • 如：きゃ（kya）→ 像"恰"但更轻
   </div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('きゃ')"><div class="jp">きゃ</div><div class="pron">kya</div><div class="cn">克呀</div></div>
-    <div class="card" onclick="speakText('きゅ')"><div class="jp">きゅ</div><div class="pron">kyu</div><div class="cn">克尤</div></div>
-    <div class="card" onclick="speakText('きょ')"><div class="jp">きょ</div><div class="pron">kyo</div><div class="cn">克哟</div></div>
-    <div class="card" onclick="speakText('しゃ')"><div class="jp">しゃ</div><div class="pron">sha</div><div class="cn">夏</div></div>
-    <div class="card" onclick="speakText('しゅ')"><div class="jp">しゅ</div><div class="pron">shu</div><div class="cn">休</div></div>
+    <div class="card" onclick="speakText('きゃ')"><div class="jp">きゃ</div><div class="pron">kya</div><div class="cn">恰（轻）</div></div>
+    <div class="card" onclick="speakText('きゅ')"><div class="jp">きゅ</div><div class="pron">kyu</div><div class="cn">丘</div></div>
+    <div class="card" onclick="speakText('きょ')"><div class="jp">きょ</div><div class="pron">kyo</div><div class="cn">桥</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('しゃ')"><div class="jp">しゃ</div><div class="pron">sha</div><div class="cn">虾</div></div>
+    <div class="card" onclick="speakText('しゅ')"><div class="jp">しゅ</div><div class="pron">shu</div><div class="cn">修</div></div>
     <div class="card" onclick="speakText('しょ')"><div class="jp">しょ</div><div class="pron">sho</div><div class="cn">肖</div></div>
-    <div class="card" onclick="speakText('にゃ')"><div class="jp">にゃ</div><div class="pron">nya</div><div class="cn">尼呀</div></div>
-    <div class="card" onclick="speakText('にゅ')"><div class="jp">にゅ</div><div class="pron">nyu</div><div class="cn">尼尤</div></div>
-    <div class="card" onclick="speakText('にょ')"><div class="jp">にょ</div><div class="pron">nyo</div><div class="cn">尼哟</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ちゃ')"><div class="jp">ちゃ</div><div class="pron">cha</div><div class="cn">恰</div></div>
+    <div class="card" onclick="speakText('ちゅ')"><div class="jp">ちゅ</div><div class="pron">chu</div><div class="cn">丑</div></div>
+    <div class="card" onclick="speakText('ちょ')"><div class="jp">ちょ</div><div class="pron">cho</div><div class="cn">翘</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('にゃ')"><div class="jp">にゃ</div><div class="pron">nya</div><div class="cn">nia</div></div>
+    <div class="card" onclick="speakText('にゅ')"><div class="jp">にゅ</div><div class="pron">nyu</div><div class="cn">niu</div></div>
+    <div class="card" onclick="speakText('にょ')"><div class="jp">にょ</div><div class="pron">nyo</div><div class="cn">niao</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ひゃ')"><div class="jp">ひゃ</div><div class="pron">hya</div><div class="cn">hia</div></div>
+    <div class="card" onclick="speakText('ひゅ')"><div class="jp">ひゅ</div><div class="pron">hyu</div><div class="cn">hiu</div></div>
+    <div class="card" onclick="speakText('ひょ')"><div class="jp">ひょ</div><div class="pron">hyo</div><div class="cn">hiao</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('みゃ')"><div class="jp">みゃ</div><div class="pron">mya</div><div class="cn">mia</div></div>
+    <div class="card" onclick="speakText('みゅ')"><div class="jp">みゅ</div><div class="pron">myu</div><div class="cn">miu</div></div>
+    <div class="card" onclick="speakText('みょ')"><div class="jp">みょ</div><div class="pron">myo</div><div class="cn">miao</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('りゃ')"><div class="jp">りゃ</div><div class="pron">rya</div><div class="cn">ria</div></div>
+    <div class="card" onclick="speakText('りゅ')"><div class="jp">りゅ</div><div class="pron">ryu</div><div class="cn">riu</div></div>
+    <div class="card" onclick="speakText('りょ')"><div class="jp">りょ</div><div class="pron">ryo</div><div class="cn">riao</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#059669">💡 学习小贴士</div>
+  <div class="info-box" style="background:#d1fae5; border-color:#059669">
+    <b>✅ 学习顺序建议：</b><br>
+    1️⃣ 先学<b>あ行</b>（5个元音）—— 最基础<br>
+    2️⃣ 再学<b>か、さ、た、な、は行</b>—— 常用清音<br>
+    3️⃣ 然后学<b>ま、や、ら、わ行</b>—— 剩余清音<br>
+    4️⃣ 最后学<b>浊音、半浊音、拗音</b>—— 进阶内容<br><br>
+    
+    <b>✅ 练习方法：</b><br>
+    • <b>每天20-30分钟</b>，坚持1-2周就能掌握所有平仮名<br>
+    • <b>边听边读</b>：点击卡片听发音，然后跟读<br>
+    • <b>写练习</b>：在纸上反复写，记住形状<br>
+    • <b>使用App辅助</b>：如"五十音图"App<br><br>
+    
+    <b>✅ 常见错误：</b><br>
+    • ❌ し（shi）读成"西"→ ✅ 应该像"希"但更轻<br>
+    • ❌ す（su）读成"苏"→ ✅ 应该像"斯"但更轻<br>
+    • ❌ つ（tsu）读成"粗"→ ✅ 应该像"次"但更短促<br>
+    • ❌ ふ（fu）读成"夫"→ ✅ 上牙轻碰下唇，呼气摩擦
   </div>
 </div>
 
 <div id="tab-katakana" class="tab-content">
-  <div class="section-title">片仮名（カタカナ）五十音図</div>
-  <div class="info-box">
-    💡 片仮名主要用于<b>外来语、人名、地名、拟声词</b>。<br>
-    发音与平仮名相同，但用途不同。<br>
-    👉 <b>重点：片仮名和平仮名的混用规则</b>（见下方说明）
+  <div class="section-title">📚 片仮名（カタカナ）学习指南</div>
+  
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <h3 style="color:#1e3a8a; margin-bottom:8px">🤔 什么是片仮名？</h3>
+    <b>片仮名（カタカナ）</b>是日语两种字母系统之二，起源于汉字的<b>偏旁部首</b>（取汉字的一部分）。<br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">🎯 为什么要学片仮名？</h3>
+    ✅ 片仮名主要用于<b>外来语</b>（汉语、英语等）：コーヒー（咖啡）・テレビ（电视）<br>
+    ✅ <b>拟声词、拟态词</b>：ワンワン（汪汪）・ニコニコ（笑嘻嘻）<br>
+    ✅ <b>强调</b>（相当于中文的<b>粗体</b>）：<b>大きい</b>（大）→ 大きい（强调"大"）<br>
+    ✅ <b>植物、动物名称</b>：サクラ（樱花）・イヌ（狗）<br>
+    ✅ <b>外来人名、地名</b>：アメリカ（美国）・マリア（玛丽亚）<br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">📝 平仮名和片仮名的关系</h3>
+    🔹 <b>发音完全相同</b>：あ（平仮名）= ア（片仮名），都读"a"<br>
+    🔹 <b>用途不同</b>：平仮名用于语法词和本土词汇，片仮名用于外来语<br>
+    🔹 <b>必须一起学</b>：日语中两种字母<b>混用</b>，不能只学一种<br><br>
+    
+    <h3 style="color:#1e3a8a; margin-bottom:8px">💡 记忆技巧</h3>
+    🔹 片仮名来源于<b>汉字的偏旁部首</b>（如：ア → 阿的左侧）<br>
+    🔹 片仮名<b>笔画直硬</b>，像"片段"；平仮名<b>笔画圆润</b>，像"平顺"<br>
+    🔹 <b>对比记忆</b>：あ（安）→ ア（阿的左侧）
   </div>
   
-  <div class="section-title" style="font-size:1.1em">ア行（ア行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ア')"><div class="jp">ア</div><div class="pron">a</div><div class="cn">阿</div></div>
-    <div class="card" onclick="speakText('イ')"><div class="jp">イ</div><div class="pron">i</div><div class="cn">伊</div></div>
-    <div class="card" onclick="speakText('ウ')"><div class="jp">ウ</div><div class="pron">u</div><div class="cn">宇</div></div>
-    <div class="card" onclick="speakText('エ')"><div class="jp">エ</div><div class="pron">e</div><div class="cn">江</div></div>
-    <div class="card" onclick="speakText('オ')"><div class="jp">オ</div><div class="pron">o</div><div class="cn">于</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">カ行（カ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('カ')"><div class="jp">カ</div><div class="pron">ka</div><div class="cn">加</div></div>
-    <div class="card" onclick="speakText('キ')"><div class="jp">キ</div><div class="pron">ki</div><div class="cn">几</div></div>
-    <div class="card" onclick="speakText('ク')"><div class="jp">ク</div><div class="pron">ku</div><div class="cn">久</div></div>
-    <div class="card" onclick="speakText('ケ')"><div class="jp">ケ</div><div class="pron">ke</div><div class="cn">计</div></div>
-    <div class="card" onclick="speakText('コ')"><div class="jp">コ</div><div class="pron">ko</div><div class="cn">己</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">サ行（サ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('サ')"><div class="jp">サ</div><div class="pron">sa</div><div class="cn">左</div></div>
-    <div class="card" onclick="speakText('シ')"><div class="jp">シ</div><div class="pron">shi</div><div class="cn">之</div></div>
-    <div class="card" onclick="speakText('ス')"><div class="jp">ス</div><div class="pron">su</div><div class="cn">寸</div></div>
-    <div class="card" onclick="speakText('セ')"><div class="jp">セ</div><div class="pron">se</div><div class="cn">世</div></div>
-    <div class="card" onclick="speakText('ソ')"><div class="jp">ソ</div><div class="pron">so</div><div class="cn">曾</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">タ行（タ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('タ')"><div class="jp">タ</div><div class="pron">ta</div><div class="cn">太</div></div>
-    <div class="card" onclick="speakText('チ')"><div class="jp">チ</div><div class="pron">chi</div><div class="cn">千</div></div>
-    <div class="card" onclick="speakText('ツ')"><div class="jp">ツ</div><div class="pron">tsu</div><div class="cn">州</div></div>
-    <div class="card" onclick="speakText('テ')"><div class="jp">テ</div><div class="pron">te</div><div class="cn">天</div></div>
-    <div class="card" onclick="speakText('ト')"><div class="jp">ト</div><div class="pron">to</div><div class="cn">止</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">ナ行（ナ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ナ')"><div class="jp">ナ</div><div class="pron">na</div><div class="cn">奈</div></div>
-    <div class="card" onclick="speakText('ニ')"><div class="jp">ニ</div><div class="pron">ni</div><div class="cn">仁</div></div>
-    <div class="card" onclick="speakText('ヌ')"><div class="jp">ヌ</div><div class="pron">nu</div><div class="cn">奴</div></div>
-    <div class="card" onclick="speakText('ネ')"><div class="jp">ネ</div><div class="pron">ne</div><div class="cn">祢</div></div>
-    <div class="card" onclick="speakText('ノ')"><div class="jp">ノ</div><div class="pron">no</div><div class="cn">乃</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">ハ行（ハ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ハ')"><div class="jp">ハ</div><div class="pron">ha</div><div class="cn">八</div></div>
-    <div class="card" onclick="speakText('ヒ')"><div class="jp">ヒ</div><div class="pron">hi</div><div class="cn">比</div></div>
-    <div class="card" onclick="speakText('フ')"><div class="jp">フ</div><div class="pron">fu</div><div class="cn">不</div></div>
-    <div class="card" onclick="speakText('ヘ')"><div class="jp">ヘ</div><div class="pron">he</div><div class="cn">部</div></div>
-    <div class="card" onclick="speakText('ホ')"><div class="jp">ホ</div><div class="pron">ho</div><div class="cn">保</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">マ行（マ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('マ')"><div class="jp">マ</div><div class="pron">ma</div><div class="cn">末</div></div>
-    <div class="card" onclick="speakText('ミ')"><div class="jp">ミ</div><div class="pron">mi</div><div class="cn">美</div></div>
-    <div class="card" onclick="speakText('ム')"><div class="jp">ム</div><div class="pron">mu</div><div class="cn">武</div></div>
-    <div class="card" onclick="speakText('メ')"><div class="jp">メ</div><div class="pron">me</div><div class="cn">女</div></div>
-    <div class="card" onclick="speakText('モ')"><div class="jp">モ</div><div class="pron">mo</div><div class="cn">毛</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">ヤ行（ヤ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ヤ')"><div class="jp">ヤ</div><div class="pron">ya</div><div class="cn">也</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ユ')"><div class="jp">ユ</div><div class="pron">yu</div><div class="cn">由</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ヨ')"><div class="jp">ヨ</div><div class="pron">yo</div><div class="cn">与</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">ラ行（ラ行）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ラ')"><div class="jp">ラ</div><div class="pron">ra</div><div class="cn">良</div></div>
-    <div class="card" onclick="speakText('リ')"><div class="jp">リ</div><div class="pron">ri</div><div class="cn">利</div></div>
-    <div class="card" onclick="speakText('ル')"><div class="jp">ル</div><div class="pron">ru</div><div class="cn">留</div></div>
-    <div class="card" onclick="speakText('レ')"><div class="jp">レ</div><div class="pron">re</div><div class="cn">礼</div></div>
-    <div class="card" onclick="speakText('ロ')"><div class="jp">ロ</div><div class="pron">ro</div><div class="cn">吕</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">ワ行（ワ行）・ヲ・ン</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ワ')"><div class="jp">ワ</div><div class="pron">wa</div><div class="cn">和</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ヲ')"><div class="jp">ヲ</div><div class="pron">wo/o</div><div class="cn">乎（助词，现代少用）</div></div>
-    <div class="card" style="visibility:hidden"><div class="jp">-</div></div>
-    <div class="card" onclick="speakText('ン')"><div class="jp">ン</div><div class="pron">n</div><div class="cn">无</div></div>
-  </div>
-  
-  <div class="section-title" style="font-size:1.1em">浊音・半浊音（片仮名）</div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ガ')"><div class="jp">ガ</div><div class="pron">ga</div></div>
-    <div class="card" onclick="speakText('ギ')"><div class="jp">ギ</div><div class="pron">gi</div></div>
-    <div class="card" onclick="speakText('グ')"><div class="jp">グ</div><div class="pron">gu</div></div>
-    <div class="card" onclick="speakText('ゲ')"><div class="jp">ゲ</div><div class="pron">ge</div></div>
-    <div class="card" onclick="speakText('ゴ')"><div class="jp">ゴ</div><div class="pron">go</div></div>
-  </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ザ')"><div class="jp">ザ</div><div class="pron">za</div></div>
-    <div class="card" onclick="speakText('ジ')"><div class="jp">ジ</div><div class="pron">ji</div></div>
-    <div class="card" onclick="speakText('ズ')"><div class="jp">ズ</div><div class="pron">zu</div></div>
-    <div class="card" onclick="speakText('ゼ')"><div class="jp">ゼ</div><div class="pron">ze</div></div>
-    <div class="card" onclick="speakText('ゾ')"><div class="jp">ゾ</div><div class="pron">zo</div></div>
-  </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('ダ')"><div class="jp">ダ</div><div class="pron">da</div></div>
-    <div class="card" onclick="speakText('ヂ')"><div class="jp">ヂ</div><div class="pron">ji</div></div>
-    <div class="card" onclick="speakText('ヅ')"><div class="jp">ヅ</div><div class="pron">zu</div></div>
-    <div class="card" onclick="speakText('デ')"><div class="jp">デ</div><div class="pron">de</div></div>
-    <div class="card" onclick="speakText('ド')"><div class="jp">ド</div><div class="pron">do</div></div>
-  </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('バ')"><div class="jp">バ</div><div class="pron">ba</div></div>
-    <div class="card" onclick="speakText('ビ')"><div class="jp">ビ</div><div class="pron">bi</div></div>
-    <div class="card" onclick="speakText('ブ')"><div class="jp">ブ</div><div class="pron">bu</div></div>
-    <div class="card" onclick="speakText('ベ')"><div class="jp">ベ</div><div class="pron">be</div></div>
-    <div class="card" onclick="speakText('ボ')"><div class="jp">ボ</div><div class="pron">bo</div></div>
-  </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('パ')"><div class="jp">パ</div><div class="pron">pa</div></div>
-    <div class="card" onclick="speakText('ピ')"><div class="jp">ピ</div><div class="pron">pi</div></div>
-    <div class="card" onclick="speakText('プ')"><div class="jp">プ</div><div class="pron">pu</div></div>
-    <div class="card" onclick="speakText('ペ')"><div class="jp">ペ</div><div class="pron">pe</div></div>
-    <div class="card" onclick="speakText('ポ')"><div class="jp">ポ</div><div class="pron">po</div></div>
-  </div>
-  
-  <!-- 重点：平假名和片假名混用规则 -->
-  <div class="section-title" style="font-size:1.2em; color:#c0392b; margin-top:24px">⚡ 平仮名和片仮名的使用规则（重要！）</div>
-  <div class="info-box" style="background:#fff5f5; border-color:#c0392b">
+  <div class="section-title" style="font-size:1.1em; color:#dc2626">⚡ 平仮名和片仮名混用规则（日语的独特之处！）</div>
+  <div class="info-box" style="background:#fee2e2; border-color:#dc2626">
     <b>🇯🇵 日语的独特之处：两种字母混用</b><br><br>
     
     <b>1️⃣ 平仮名（ひらがな）的用途：</b><br>
     ✅ 日语的<b>语法词</b>（助词、助动词）：は・を・に・で・て・た・ない<br>
     ✅ <b>本土词汇</b>（和语）：たべる（食べる）・のむ（飲む）・みる（見る）<br>
-    ✅ <b>动词、形容词的词尾</b>：たべ<b>ます</b>・おい<b>しい</b><br>
-    ✅ <b>副词、连词</b>：とても・そして・しかし<br><br>
+    ✅ <b>动词形容词词尾</b>：たべ<b>ます</b>・おいし<b>い</b>・あたらし<b>い</b><br>
+    ✅ <b>语气词</b>：ね・よ・か・わ<br><br>
     
     <b>2️⃣ 片仮名（カタカナ）的用途：</b><br>
-    ✅ <b>外来语</b>（汉语、英语等）：コーヒー（咖啡）・テレビ（电视）・パソコン（电脑）<br>
-    ✅ <b>人名、地名</b>（非日语）：アメリカ（美国）・ロンドン（伦敦）・ジョン（John）<br>
-    ✅ <b>拟声词、拟态词</b>：ワンワン（汪汪）・ニコニコ（笑嘻嘻）<br>
-    ✅ <b>强调</b>（类似中文加粗）：<b>すごい</b> → <b>スゴイ</b><br><br>
+    ✅ <b>外来语</b>（汉语、英语等）：コーヒー（咖啡）・テレビ（电视）・パン（面包）<br>
+    ✅ <b>拟声词、拟态词</b>：ワンワン（汪汪）・ニコニコ（笑嘻嘻）・ドキドキ（心跳）<br>
+    ✅ <b>强调</b>（相当于粗体）：大きい（大）→ <b>大きい</b>（强调"非常大"）<br>
+    ✅ <b>植物、动物名称</b>：サクラ（樱花）・イヌ（狗）・ネコ（猫）<br>
+    ✅ <b>外来人名、地名</b>：アメリカ（美国）・マリア（玛丽亚）・タナカ（田中）<br><br>
     
     <b>3️⃣ 混用示例：</b><br>
     📝 <b>わたしはコーヒーをのみます。</b><br>
     &nbsp;&nbsp;&nbsp;&nbsp;平仮名：わたしは&nbsp;&nbsp;を&nbsp;&nbsp;のみます<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;片仮名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;コーヒー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;片仮名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;コーヒー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;<b>中文：我喝咖啡。</b><br><br>
     
-    📝 <b>これはパソコンです。</b><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;平仮名：これは&nbsp;&nbsp;です<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;片仮名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;パソコン&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<b>中文：这是电脑。</b><br><br>
+    📝 <b>きょうはテレビをみました。</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;平仮名：きょうは&nbsp;&nbsp;を&nbsp;&nbsp;みました<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;片仮名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;テレビ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>中文：今天看了电视。</b><br><br>
     
     <b>4️⃣ 记忆口诀：</b><br>
-    💡 <b>"语法用词平仮名，外来词汇片仮名"</b><br>
-    💡 <b>"本土动词平仮名，人名地名片仮名"</b><br>
+    🔹 <b>平仮名 = 日语的"骨架"</b>（语法词、本土词汇）<br>
+    🔹 <b>片仮名 = 日语的"装饰"</b>（外来语、强调）<br>
+    🔹 <b>一起用 = 完整的日语</b>
   </div>
   
-  <div class="section-title" style="font-size:1.1em">常见片仮名外来语</div>
+  <div class="section-title" style="font-size:1.1em">ア行（ア行）</div>
   <div class="card-grid">
-    <div class="card" onclick="speakText('コーヒー')"><div class="jp">コーヒー</div><div class="pron">koohii</div><div class="cn">咖啡（coffee）</div></div>
-    <div class="card" onclick="speakText('テレビ')"><div class="jp">テレビ</div><div class="pron">terebi</div><div class="cn">电视（TV）</div></div>
-    <div class="card" onclick="speakText('パソコン')"><div class="jp">パソコン</div><div class="pron">pasokon</div><div class="cn">电脑（personal computer）</div></div>
-    <div class="card" onclick="speakText('アメリカ')"><div class="jp">アメリカ</div><div class="pron">amerika</div><div class="cn">美国</div></div>
-    <div class="card" onclick="speakText('スーパー')"><div class="jp">スーパー</div><div class="pron">suupaa</div><div class="cn">超市（supermarket）</div></div>
-    <div class="card" onclick="speakText('ホテル')"><div class="jp">ホテル</div><div class="pron">hoteru</div><div class="cn">酒店（hotel）</div></div>
+    <div class="card" onclick="speakText('ア')"><div class="jp">ア</div><div class="pron">a</div><div class="cn">阿（左）→ 啊</div></div>
+    <div class="card" onclick="speakText('イ')"><div class="jp">イ</div><div class="pron">i</div><div class="cn">伊（左）→ 一</div></div>
+    <div class="card" onclick="speakText('ウ')"><div class="jp">ウ</div><div class="pron">u</div><div class="cn">宇（上）→ 乌</div></div>
+    <div class="card" onclick="speakText('エ')"><div class="jp">エ</div><div class="pron">e</div><div class="cn">江（右）→ 诶</div></div>
+    <div class="card" onclick="speakText('オ')"><div class="jp">オ</div><div class="pron">o</div><div class="cn">于（上）→ 哦</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">カ行（カ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('カ')"><div class="jp">カ</div><div class="pron">ka</div><div class="cn">加（左）→ 卡</div></div>
+    <div class="card" onclick="speakText('キ')"><div class="jp">キ</div><div class="pron">ki</div><div class="cn">几（上）→ 奇</div></div>
+    <div class="card" onclick="speakText('ク')"><div class="jp">ク</div><div class="pron">ku</div><div class="cn">久（右）→ 库</div></div>
+    <div class="card" onclick="speakText('ケ')"><div class="jp">ケ</div><div class="pron">ke</div><div class="cn">介（右）→ 凯</div></div>
+    <div class="card" onclick="speakText('コ')"><div class="jp">コ</div><div class="pron">ko</div><div class="cn">己（上）→ 口</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">サ行（サ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('サ')"><div class="jp">サ</div><div class="pron">sa</div><div class="cn">散（左）→ 萨</div></div>
+    <div class="card" onclick="speakText('シ')"><div class="jp">シ</div><div class="pron">shi</div><div class="cn">之（全）→ 西</div></div>
+    <div class="card" onclick="speakText('ス')"><div class="jp">ス</div><div class="pron">su</div><div class="cn">须（右）→ 苏</div></div>
+    <div class="card" onclick="speakText('セ')"><div class="jp">セ</div><div class="pron">se</div><div class="cn">世（全）→ 塞</div></div>
+    <div class="card" onclick="speakText('ソ')"><div class="jp">ソ</div><div class="pron">so</div><div class="cn">曾（上）→ 索</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">タ行（タ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('タ')"><div class="jp">タ</div><div class="pron">ta</div><div class="cn">多（上）→ 他</div></div>
+    <div class="card" onclick="speakText('チ')"><div class="jp">チ</div><div class="pron">chi</div><div class="cn">千（上）→ 七</div></div>
+    <div class="card" onclick="speakText('ツ')"><div class="jp">ツ</div><div class="pron">tsu</div><div class="cn">州（右）→ 次</div></div>
+    <div class="card" onclick="speakText('テ')"><div class="jp">テ</div><div class="pron">te</div><div class="cn">天（下）→ 特</div></div>
+    <div class="card" onclick="speakText('ト')"><div class="jp">ト</div><div class="pron">to</div><div class="cn">止（上）→ 托</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">ナ行（ナ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ナ')"><div class="jp">ナ</div><div class="pron">na</div><div class="cn">奈（左）→ 那</div></div>
+    <div class="card" onclick="speakText('ニ')"><div class="jp">ニ</div><div class="pron">ni</div><div class="cn">二（全）→ 尼</div></div>
+    <div class="card" onclick="speakText('ヌ')"><div class="jp">ヌ</div><div class="pron">nu</div><div class="cn">奴（右）→ 努</div></div>
+    <div class="card" onclick="speakText('ネ')"><div class="jp">ネ</div><div class="pron">ne</div><div class="cn">祢（左）→ 内</div></div>
+    <div class="card" onclick="speakText('ノ')"><div class="jp">ノ</div><div class="pron">no</div><div class="cn">乃（全）→ 诺</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">ハ行（ハ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ハ')"><div class="jp">ハ</div><div class="pron">ha</div><div class="cn">八（上）→ 哈</div></div>
+    <div class="card" onclick="speakText('ヒ')"><div class="jp">ヒ</div><div class="pron">hi</div><div class="cn">比（上）→ 嘿</div></div>
+    <div class="card" onclick="speakText('フ')"><div class="jp">フ</div><div class="pron">fu</div><div class="cn">不（左）→ 夫</div></div>
+    <div class="card" onclick="speakText('ヘ')"><div class="jp">ヘ</div><div class="pron">he</div><div class="cn">部（右）→ 黑</div></div>
+    <div class="card" onclick="speakText('ホ')"><div class="jp">ホ</div><div class="pron">ho</div><div class="cn">保（下）→ 吼</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">マ行（マ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('マ')"><div class="jp">マ</div><div class="pron">ma</div><div class="cn">末（上）→ 马</div></div>
+    <div class="card" onclick="speakText('ミ')"><div class="jp">ミ</div><div class="pron">mi</div><div class="cn">三（全）→ 米</div></div>
+    <div class="card" onclick="speakText('ム')"><div class="jp">ム</div><div class="pron">mu</div><div class="cn">牟（上）→ 姆</div></div>
+    <div class="card" onclick="speakText('メ')"><div class="jp">メ</div><div class="pron">me</div><div class="cn">女（全）→ 梅</div></div>
+    <div class="card" onclick="speakText('モ')"><div class="jp">モ</div><div class="pron">mo</div><div class="cn">毛（全）→ 莫</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">ヤ行（ヤ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ヤ')"><div class="jp">ヤ</div><div class="pron">ya</div><div class="cn">也（全）→ 呀</div></div>
+    <div class="card" style="visibility:hidden"><div class="jp">イ</div><div class="pron">i</div><div class="cn">（重复）</div></div>
+    <div class="card" onclick="speakText('ユ')"><div class="jp">ユ</div><div class="pron">yu</div><div class="cn">由（全）→ 优</div></div>
+    <div class="card" style="visibility:hidden"><div class="jp">エ</div><div class="pron">e</div><div class="cn">（重复）</div></div>
+    <div class="card" onclick="speakText('ヨ')"><div class="jp">ヨ</div><div class="pron">yo</div><div class="cn">与（全）→ 哟</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">ラ行（ラ行）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ラ')"><div class="jp">ラ</div><div class="pron">ra</div><div class="cn">良（上）→ 拉</div></div>
+    <div class="card" onclick="speakText('リ')"><div class="jp">リ</div><div class="pron">ri</div><div class="cn">利（左）→ 里</div></div>
+    <div class="card" onclick="speakText('ル')"><div class="jp">ル</div><div class="pron">ru</div><div class="cn">流（右）→ 路</div></div>
+    <div class="card" onclick="speakText('レ')"><div class="jp">レ</div><div class="pron">re</div><div class="cn">礼（右）→ 累</div></div>
+    <div class="card" onclick="speakText('ロ')"><div class="jp">ロ</div><div class="pron">ro</div><div class="cn">吕（下）→ 罗</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">ワ行（ワ行）・ヲ・ン</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ワ')"><div class="jp">ワ</div><div class="pron">wa</div><div class="cn">和（右）→ 哇</div></div>
+    <div class="card" onclick="speakText('ヲ')"><div class="jp">ヲ</div><div class="pron">wo/o</div><div class="cn">乎（全）→ 哦</div></div>
+    <div class="card" onclick="speakText('ン')"><div class="jp">ン</div><div class="pron">n</div><div class="cn">无（下）→ 嗯</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#7c3aed">浊音（カタカナ版）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ガ')"><div class="jp">ガ</div><div class="pron">ga</div><div class="cn">가</div></div>
+    <div class="card" onclick="speakText('ギ')"><div class="jp">ギ</div><div class="pron">gi</div><div class="cn">기</div></div>
+    <div class="card" onclick="speakText('グ')"><div class="jp">グ</div><div class="pron">gu</div><div class="cn">구</div></div>
+    <div class="card" onclick="speakText('ゲ')"><div class="jp">ゲ</div><div class="pron">ge</div><div class="cn">게</div></div>
+    <div class="card" onclick="speakText('ゴ')"><div class="jp">ゴ</div><div class="pron">go</div><div class="cn">고</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ザ')"><div class="jp">ザ</div><div class="pron">za</div><div class="cn">자</div></div>
+    <div class="card" onclick="speakText('ジ')"><div class="jp">ジ</div><div class="pron">ji</div><div class="cn">지</div></div>
+    <div class="card" onclick="speakText('ズ')"><div class="jp">ズ</div><div class="pron">zu</div><div class="cn">즈</div></div>
+    <div class="card" onclick="speakText('ゼ')"><div class="jp">ゼ</div><div class="pron">ze</div><div class="cn">제</div></div>
+    <div class="card" onclick="speakText('ゾ')"><div class="jp">ゾ</div><div class="pron">zo</div><div class="cn">조</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ダ')"><div class="jp">ダ</div><div class="pron">da</div><div class="cn">다</div></div>
+    <div class="card" onclick="speakText('デ')"><div class="jp">デ</div><div class="pron">de</div><div class="cn">데</div></div>
+    <div class="card" onclick="speakText('ド')"><div class="jp">ド</div><div class="pron">do</div><div class="cn">도</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('バ')"><div class="jp">バ</div><div class="pron">ba</div><div class="cn">바</div></div>
+    <div class="card" onclick="speakText('ビ')"><div class="jp">ビ</div><div class="pron">bi</div><div class="cn">비</div></div>
+    <div class="card" onclick="speakText('ブ')"><div class="jp">ブ</div><div class="pron">bu</div><div class="cn">부</div></div>
+    <div class="card" onclick="speakText('ベ')"><div class="jp">ベ</div><div class="pron">be</div><div class="cn">베</div></div>
+    <div class="card" onclick="speakText('ボ')"><div class="jp">ボ</div><div class="pron">bo</div><div class="cn">보</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#059669">半浊音（カタカナ版）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('パ')"><div class="jp">パ</div><div class="pron">pa</div><div class="cn">파</div></div>
+    <div class="card" onclick="speakText('ピ')"><div class="jp">ピ</div><div class="pron">pi</div><div class="cn">피</div></div>
+    <div class="card" onclick="speakText('プ')"><div class="jp">プ</div><div class="pron">pu</div><div class="cn">푸</div></div>
+    <div class="card" onclick="speakText('ペ')"><div class="jp">ペ</div><div class="pron">pe</div><div class="cn">페</div></div>
+    <div class="card" onclick="speakText('ポ')"><div class="jp">ポ</div><div class="pron">po</div><div class="cn">포</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#d97706">拗音（カタカナ版）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('キャ')"><div class="jp">キャ</div><div class="pron">kya</div><div class="cn">恰（轻）</div></div>
+    <div class="card" onclick="speakText('キュ')"><div class="jp">キュ</div><div class="pron">kyu</div><div class="cn">丘</div></div>
+    <div class="card" onclick="speakText('キョ')"><div class="jp">キョ</div><div class="pron">kyo</div><div class="cn">桥</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('シャ')"><div class="jp">シャ</div><div class="pron">sha</div><div class="cn">虾</div></div>
+    <div class="card" onclick="speakText('シュ')"><div class="jp">シュ</div><div class="pron">shu</div><div class="cn">修</div></div>
+    <div class="card" onclick="speakText('ショ')"><div class="jp">ショ</div><div class="pron">sho</div><div class="cn">肖</div></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('チャ')"><div class="jp">チャ</div><div class="pron">cha</div><div class="cn">恰</div></div>
+    <div class="card" onclick="speakText('チュ')"><div class="jp">チュ</div><div class="pron">chu</div><div class="cn">丑</div></div>
+    <div class="card" onclick="speakText('チョ')"><div class="jp">チョ</div><div class="pron">cho</div><div class="cn">翘</div></div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#059669">💡 片仮名学习小贴士</div>
+  <div class="info-box" style="background:#d1fae5; border-color:#059669">
+    <b>✅ 学习顺序建议：</b><br>
+    1️⃣ 学完<b>平仮名</b>后，再学片仮名（因为发音完全相同）<br>
+    2️⃣ 重点记忆<b>汉字来源</b>：片仮名来源于汉字的偏旁部首<br>
+    3️⃣ <b>对比记忆</b>：あ（安）→ ア（阿的左侧），か（加）→ カ（加的左侧）<br><br>
+    
+    <b>✅ 练习方法：</b><br>
+    • <b>每天15-20分钟</b>，坚持1周就能掌握所有片仮名<br>
+    • <b>边听边读</b>：点击卡片听发音，然后跟读<br>
+    • <b>写练习</b>：在纸上反复写，记住笔画<br>
+    • <b>阅读练习</b>：找一些片仮名较多的文章（如外来语列表）<br><br>
+    
+    <b>✅ 常见外来语词汇：</b><br>
+    • コーヒー（咖啡）• テレビ（电视）• パン（面包）• ビール（啤酒）<br>
+    • コンビニ（便利店）• スーパー（超市）• ホテル（酒店）• タクシー（出租车）
   </div>
 </div>
 
 <div id="tab-greetings" class="tab-content">
-  <div class="section-title">👋 基础问候</div>
-  <div class="info-box">
-    💡 日语的问候语分<b>丁宁形</b>（礼貌）和<b>普通形</b>（随意）。初学者建议先学丁宁形。
+  <div class="section-title">👋 日常问候语（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 使用场景：</b><br>
+    ✅ 见面问候、道别、感谢、道歉等日常交流<br>
+    ✅ 注意日语有<b>敬语</b>（礼貌语）和<b>常体</b>（随意语）之分<br>
+    ✅ 对陌生人、长辈、上司要用<b>敬语</b>（です/ます形）<br>
+    ✅ 对朋友、家人可以用<b>常体</b>（更随意）
   </div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('greet1', this)">日常问候</button>
-    <button class="sub-tab" onclick="switchSubTab('greet2', this)">道别</button>
-    <button class="sub-tab" onclick="switchSubTab('greet3', this)">感谢道歉</button>
-  </div>
-  <div id="subtab-greet1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('こんにちは')"><div class="jp">こんにちは</div><div class="pron">konnichiwa</div><div class="cn">你好（白天）</div></div>
-      <div class="card" onclick="speakText('おはようございます')"><div class="jp">おはようございます</div><div class="pron">ohayou gozaimasu</div><div class="cn">早上好（丁宁）</div></div>
-      <div class="card" onclick="speakText('おはよう')"><div class="jp">おはよう</div><div class="pron">ohayou</div><div class="cn">早上好（随意）</div></div>
-      <div class="card" onclick="speakText('こんばんは')"><div class="jp">こんばんは</div><div class="pron">konbanwa</div><div class="cn">晚上好</div></div>
-      <div class="card" onclick="speakText('はじめまして')"><div class="jp">はじめまして</div><div class="pron">hajimemashite</div><div class="cn">初次见面</div></div>
-      <div class="card" onclick="speakText('よろしくおねがいします')"><div class="jp">よろしくおねがいします</div><div class="pron">yoroshiku onegaishimasu</div><div class="cn">请多关照</div></div>
-      <div class="card" onclick="speakText('おげんきですか')"><div class="jp">おげんきですか</div><div class="pron">ogenki desu ka</div><div class="cn">你好吗？</div></div>
-      <div class="card" onclick="speakText('げんきです')"><div class="jp">げんきです</div><div class="pron">genki desu</div><div class="cn">我很好</div></div>
-    </div>
-  </div>
-  <div id="subtab-greet2" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('さようなら')"><div class="jp">さようなら</div><div class="pron">sayounara</div><div class="cn">再见（长期分别）</div></div>
-      <div class="card" onclick="speakText('じゃあね')"><div class="jp">じゃあね</div><div class="pron">jaa ne</div><div class="cn">再见（朋友间）</div></div>
-      <div class="card" onclick="speakText('またあした')"><div class="jp">またあした</div><div class="pron">mata ashita</div><div class="cn">明天见</div></div>
-      <div class="card" onclick="speakText('おやすみなさい')"><div class="jp">おやすみなさい</div><div class="pron">oyasuminasai</div><div class="cn">晚安（丁宁）</div></div>
-      <div class="card" onclick="speakText('おやすみ')"><div class="jp">おやすみ</div><div class="pron">oyasumi</div><div class="cn">晚安（随意）</div></div>
-      <div class="card" onclick="speakText('いってきます')"><div class="jp">いってきます</div><div class="pron">itte kimasu</div><div class="cn">我出门了</div></div>
-      <div class="card" onclick="speakText('いってらっしゃい')"><div class="jp">いってらっしゃい</div><div class="pron">itterasshai</div><div class="cn">路上小心</div></div>
-      <div class="card" onclick="speakText('ただいま')"><div class="jp">ただいま</div><div class="pron">tadaima</div><div class="cn">我回来了</div></div>
-      <div class="card" onclick="speakText('おかえりなさい')"><div class="jp">おかえりなさい</div><div class="pron">okaerinasai</div><div class="cn">欢迎回来</div></div>
-    </div>
-  </div>
-  <div id="subtab-greet3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ありがとうございます')"><div class="jp">ありがとうございます</div><div class="pron">arigatou gozaimasu</div><div class="cn">谢谢（丁宁）</div></div>
-      <div class="card" onclick="speakText('ありがとう')"><div class="jp">ありがとう</div><div class="pron">arigatou</div><div class="cn">谢谢（随意）</div></div>
-      <div class="card" onclick="speakText('どういたしまして')"><div class="jp">どういたしまして</div><div class="pron">dou itashimashite</div><div class="cn">不客气</div></div>
-      <div class="card" onclick="speakText('すみません')"><div class="jp">すみません</div><div class="pron">sumimasen</div><div class="cn">不好意思/对不起</div></div>
-      <div class="card" onclick="speakText('ごめんなさい')"><div class="jp">ごめんなさい</div><div class="pron">gomen nasai</div><div class="cn">对不起（正式道歉）</div></div>
-      <div class="card" onclick="speakText('ごめん')"><div class="jp">ごめん</div><div class="pron">gomen</div><div class="cn">对不起（朋友间）</div></div>
-    </div>
-  </div>
+  
+  <div class="section-title" style="font-size:1.1em">🌅 见面问候</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th><th>说明</th></tr>
+    <tr onclick="speakText('おはようございます')"><td class="jp-text">おはようございます</td><td class="pron-text">ohayou gozaimasu</td><td class="cn-text">早上好（敬语）</td><td>正式场合、对长辈/上司</td></tr>
+    <tr onclick="speakText('おはよう')"><td class="jp-text">おはよう</td><td class="pron-text">ohayou</td><td class="cn-text">早上好（常体）</td><td>对朋友、家人</td></tr>
+    <tr onclick="speakText('こんにちは')"><td class="jp-text">こんにちは</td><td class="pron-text">konnichiwa</td><td class="cn-text">你好</td><td>白天见面时使用</td></tr>
+    <tr onclick="speakText('こんばんは')"><td class="jp-text">こんばんは</td><td class="pron-text">konbanwa</td><td class="cn-text">晚上好</td><td>傍晚见面时使用</td></tr>
+    <tr onclick="speakText('はじめまして')"><td class="jp-text">はじめまして</td><td class="pron-text">hajimemashite</td><td class="cn-text">初次见面</td><td>第一次见面时使用</td></tr>
+    <tr onclick="speakText('どうぞよろしく')"><td class="jp-text">どうぞよろしく</td><td class="pron-text">douzo yoroshiku</td><td class="cn-text">请多关照</td><td>初次见面结束语</td></tr>
+    <tr onclick="speakText('はじめまして、よろしくおねがいします')"><td class="jp-text">はじめまして、よろしくおねがいします</td><td class="pron-text">hajimemashite, yoroshiku onegaishimasu</td><td class="cn-text">初次见面，请多关照</td><td>完整的初次见面语</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">👋 道别</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th><th>说明</th></tr>
+    <tr onclick="speakText('さようなら')"><td class="jp-text">さようなら</td><td class="pron-text">sayounara</td><td class="cn-text">再见</td><td>较长时间分别</td></tr>
+    <tr onclick="speakText('じゃあね')"><td class="jp-text">じゃあね</td><td class="pron-text">jaa ne</td><td class="cn-text">拜拜</td><td>朋友之间（随意）</td></tr>
+    <tr onclick="speakText('またね')"><td class="jp-text">またね</td><td class="pron-text">mata ne</td><td class="cn-text">再见</td><td>朋友之间（随意）</td></tr>
+    <tr onclick="speakText('おやすみなさい')"><td class="jp-text">おやすみなさい</td><td class="pron-text">oyasumi nasai</td><td class="cn-text">晚安（敬语）</td><td>正式场合</td></tr>
+    <tr onclick="speakText('おやすみ')"><td class="jp-text">おやすみ</td><td class="pron-text">oyasumi</td><td class="cn-text">晚安（常体）</td><td>对朋友、家人</td></tr>
+    <tr onclick="speakText('いってきます')"><td class="jp-text">いってきます</td><td class="pron-text">itte kimasu</td><td class="cn-text">我出门了</td><td>离开家时说</td></tr>
+    <tr onclick="speakText('いってらっしゃい')"><td class="jp-text">いってらっしゃい</td><td class="pron-text">itte rashai</td><td class="cn-text">路上小心</td><td>送别时说</td></tr>
+    <tr onclick="speakText('ただいま')"><td class="jp-text">ただいま</td><td class="pron-text">tadaima</td><td class="cn-text">我回来了</td><td>回家时说</td></tr>
+    <tr onclick="speakText('おかえりなさい')"><td class="jp-text">おかえりなさい</td><td class="pron-text">okaerinasai</td><td class="cn-text">欢迎回来（敬语）</td><td>正式场合</td></tr>
+    <tr onclick="speakText('おかえり')"><td class="jp-text">おかえり</td><td class="pron-text">okaeri</td><td class="cn-text">欢迎回来（常体）</td><td>对朋友、家人</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🙏 感谢与道歉</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th><th>说明</th></tr>
+    <tr onclick="speakText('ありがとうございます')"><td class="jp-text">ありがとうございます</td><td class="pron-text">arigatou gozaimasu</td><td class="cn-text">谢谢（敬语）</td><td>正式场合、对长辈/上司</td></tr>
+    <tr onclick="speakText('ありがとう')"><td class="jp-text">ありがとう</td><td class="pron-text">arigatou</td><td class="cn-text">谢谢（常体）</td><td>对朋友、家人</td></tr>
+    <tr onclick="speakText('どういたしまして')"><td class="jp-text">どういたしまして</td><td class="pron-text">dou itashimashite</td><td class="cn-text">不客气</td><td>回应感谢</td></tr>
+    <tr onclick="speakText('すみません')"><td class="jp-text">すみません</td><td class="pron-text">sumimasen</td><td class="cn-text">对不起 / 不好意思</td><td>轻道歉、打扰别人</td></tr>
+    <tr onclick="speakText('ごめんなさい')"><td class="jp-text">ごめんなさい</td><td class="pron-text">gomen nasai</td><td class="cn-text">对不起（敬语）</td><td>正式道歉</td></tr>
+    <tr onclick="speakText('ごめん')"><td class="jp-text">ごめん</td><td class="pron-text">gomen</td><td class="cn-text">对不起（常体）</td><td>对朋友、家人</td></tr>
+    <tr onclick="speakText('申し訳ありません')"><td class="jp-text">申し訳ありません</td><td class="pron-text">moushiwake arimasen</td><td class="cn-text">非常抱歉（郑重）</td><td>商务场合、严重错误</td></tr>
+    <tr onclick="speakText('失礼しました')"><td class="jp-text">失礼しました</td><td class="pron-text">shitsurei shimashita</td><td class="cn-text">失礼了</td><td>打扰、离开时</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🎉 祝贺与祝福</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th><th>说明</th></tr>
+    <tr onclick="speakText('おめでとうございます')"><td class="jp-text">おめでとうございます</td><td class="pron-text">omedetou gozaimasu</td><td class="cn-text">恭喜（敬语）</td><td>正式祝贺</td></tr>
+    <tr onclick="speakText('おめでとう')"><td class="jp-text">おめでとう</td><td class="pron-text">omedetou</td><td class="cn-text">恭喜（常体）</td><td>对朋友、家人</td></tr>
+    <tr onclick="speakText('あけましておめでとうございます')"><td class="jp-text">あけましておめでとうございます</td><td class="pron-text">akemashite omedetou gozaimasu</td><td class="cn-text">新年快乐（敬语）</td><td>新年问候</td></tr>
+    <tr onclick="speakText('メリークリスマス')"><td class="jp-text">メリークリスマス</td><td class="pron-text">merii kurisumasu</td><td class="cn-text">圣诞快乐</td><td>圣诞节</td></tr>
+    <tr onclick="speakText('お誕生日おめでとう')"><td class="jp-text">お誕生日おめでとう</td><td class="pron-text">otanjoubi omedetou</td><td class="cn-text">生日快乐</td><td>生日祝贺</td></tr>
+    <tr onclick="speakText('がんばって')"><td class="jp-text">がんばって</td><td class="pron-text">ganbatte</td><td class="cn-text">加油</td><td>鼓励别人</td></tr>
+    <tr onclick="speakText('がんばります')"><td class="jp-text">がんばります</td><td class="pron-text">ganbarimasu</td><td class="cn-text">我会加油的</td><td>表达决心</td></tr>
+  </table>
 </div>
 
 <div id="tab-numbers" class="tab-content">
-  <div class="section-title">🔢 数字</div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('num1', this)">0-10</button>
-    <button class="sub-tab" onclick="switchSubTab('num2', this)">11-99</button>
-    <button class="sub-tab" onclick="switchSubTab('num3', this)">大数字</button>
-    <button class="sub-tab" onclick="switchSubTab('num4', this)">时间日期</button>
+  <div class="section-title">🔢 数字学习（完整版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 日语数字的特点：</b><br>
+    ✅ 日语数字有<b>两种读法</b>：和语（本土）和汉语（音读）<br>
+    ✅ <b>和语</b>：ひとつ（1个）、ふたつ（2个）—— 用于计数<br>
+    ✅ <b>汉语</b>：いち（1）、に（2）—— 用于电话、价格等<br>
+    ✅ <b>年龄</b>：用汉语读法（如：20岁 = はたち）<br>
+    ✅ <b>时间</b>：用汉语读法（如：3点 = さんじ）
   </div>
-  <div id="subtab-num1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ゼロ')"><div class="jp">ゼロ</div><div class="pron">zero</div><div class="cn">0</div></div>
-      <div class="card" onclick="speakText('いち')"><div class="jp">いち</div><div class="pron">ichi</div><div class="cn">1</div></div>
-      <div class="card" onclick="speakText('に')"><div class="jp">に</div><div class="pron">ni</div><div class="cn">2</div></div>
-      <div class="card" onclick="speakText('さん')"><div class="jp">さん</div><div class="pron">san</div><div class="cn">3</div></div>
-      <div class="card" onclick="speakText('よん')"><div class="jp">よん</div><div class="pron">yon</div><div class="cn">4</div></div>
-      <div class="card" onclick="speakText('ご')"><div class="jp">ご</div><div class="pron">go</div><div class="cn">5</div></div>
-      <div class="card" onclick="speakText('ろく')"><div class="jp">ろく</div><div class="pron">roku</div><div class="cn">6</div></div>
-      <div class="card" onclick="speakText('なな')"><div class="jp">なな</div><div class="pron">nana</div><div class="cn">7</div></div>
-      <div class="card" onclick="speakText('はち')"><div class="jp">はち</div><div class="pron">hachi</div><div class="cn">8</div></div>
-      <div class="card" onclick="speakText('きゅう')"><div class="jp">きゅう</div><div class="pron">kyuu</div><div class="cn">9</div></div>
-      <div class="card" onclick="speakText('じゅう')"><div class="jp">じゅう</div><div class="pron">juu</div><div class="cn">10</div></div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">1-10（和语 — 计数用）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('ひとつ')"><div class="jp">ひとつ</div><div class="pron">hitotsu</div><div class="cn">1个</div></div>
+    <div class="card" onclick="speakText('ふたつ')"><div class="jp">ふたつ</div><div class="pron">futatsu</div><div class="cn">2个</div></div>
+    <div class="card" onclick="speakText('みっつ')"><div class="jp">みっつ</div><div class="pron">mittsu</div><div class="cn">3个</div></div>
+    <div class="card" onclick="speakText('よっつ')"><div class="jp">よっつ</div><div class="pron">yottsu</div><div class="cn">4个</div></div>
+    <div class="card" onclick="speakText('いつつ')"><div class="jp">いつつ</div><div class="pron">itsutsu</div><div class="cn">5个</div></div>
+    <div class="card" onclick="speakText('むっつ')"><div class="jp">むっつ</div><div class="pron">muttsu</div><div class="cn">6个</div></div>
+    <div class="card" onclick="speakText('ななつ')"><div class="jp">ななつ</div><div class="pron">nanatsu</div><div class="cn">7个</div></div>
+    <div class="card" onclick="speakText('やっつ')"><div class="jp">やっつ</div><div class="pron">yattsu</div><div class="cn">8个</div></div>
+    <div class="card" onclick="speakText('ここのつ')"><div class="jp">ここのつ</div><div class="pron">kokonotsu</div><div class="cn">9个</div></div>
+    <div class="card" onclick="speakText('とお')"><div class="jp">とお</div><div class="pron">too</div><div class="cn">10个</div></div>
   </div>
-  <div id="subtab-num2" class="sub-tab-content">
-    <div class="info-box">
-      💡 日语数字11-99：十位 + 个位。注意4、7、9的读音有多种。
-    </div>
-    <div class="card-grid">
-      <div class="card" onclick="speakText('じゅういち')"><div class="jp">じゅういち</div><div class="pron">juuichi</div><div class="cn">11</div></div>
-      <div class="card" onclick="speakText('じゅうに')"><div class="jp">じゅうに</div><div class="pron">juuni</div><div class="cn">12</div></div>
-      <div class="card" onclick="speakText('にじゅう')"><div class="jp">にじゅう</div><div class="pron">nijuu</div><div class="cn">20</div></div>
-      <div class="card" onclick="speakText('にじゅうさん')"><div class="jp">にじゅうさん</div><div class="pron">nijuu san</div><div class="cn">23</div></div>
-      <div class="card" onclick="speakText('さんじゅう')"><div class="jp">さんじゅう</div><div class="pron">sanjuu</div><div class="cn">30</div></div>
-      <div class="card" onclick="speakText('ひゃく')"><div class="jp">ひゃく</div><div class="pron">hyaku</div><div class="cn">100</div></div>
-      <div class="card" onclick="speakText('せん')"><div class="jp">せん</div><div class="pron">sen</div><div class="cn">1000</div></div>
-      <div class="card" onclick="speakText('まん')"><div class="jp">まん</div><div class="pron">man</div><div class="cn">10000</div></div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">1-10（汉语 — 电话、价格等）</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('いち')"><div class="jp">いち</div><div class="pron">ichi</div><div class="cn">1</div></div>
+    <div class="card" onclick="speakText('に')"><div class="jp">に</div><div class="pron">ni</div><div class="cn">2</div></div>
+    <div class="card" onclick="speakText('さん')"><div class="jp">さん</div><div class="pron">san</div><div class="cn">3</div></div>
+    <div class="card" onclick="speakText('よん')"><div class="jp">よん</div><div class="pron">yon</div><div class="cn">4</div></div>
+    <div class="card" onclick="speakText('ご')"><div class="jp">ご</div><div class="pron">go</div><div class="cn">5</div></div>
+    <div class="card" onclick="speakText('ろく')"><div class="jp">ろく</div><div class="pron">roku</div><div class="cn">6</div></div>
+    <div class="card" onclick="speakText('なな')"><div class="jp">なな</div><div class="pron">nana</div><div class="cn">7</div></div>
+    <div class="card" onclick="speakText('はち')"><div class="jp">はち</div><div class="pron">hachi</div><div class="cn">8</div></div>
+    <div class="card" onclick="speakText('きゅう')"><div class="jp">きゅう</div><div class="pron">kyuu</div><div class="cn">9</div></div>
+    <div class="card" onclick="speakText('じゅう')"><div class="jp">じゅう</div><div class="pron">juu</div><div class="cn">10</div></div>
   </div>
-  <div id="subtab-num3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ひゃく')"><div class="jp">ひゃく</div><div class="pron">hyaku</div><div class="cn">100</div></div>
-      <div class="card" onclick="speakText('にひゃく')"><div class="jp">にひゃく</div><div class="pron">nihyaku</div><div class="cn">200</div></div>
-      <div class="card" onclick="speakText('せん')"><div class="jp">せん</div><div class="pron">sen</div><div class="cn">1000</div></div>
-      <div class="card" onclick="speakText('にせん')"><div class="jp">にせん</div><div class="pron">nisen</div><div class="cn">2000</div></div>
-      <div class="card" onclick="speakText('まん')"><div class="jp">まん</div><div class="pron">man</div><div class="cn">10000</div></div>
-      <div class="card" onclick="speakText('じゅうまん')"><div class="jp">じゅうまん</div><div class="pron">juuman</div><div class="cn">10万</div></div>
-      <div class="card" onclick="speakText('ひゃくまん')"><div class="jp">ひゃくまん</div><div class="pron">hyakuman</div><div class="cn">100万</div></div>
-      <div class="card" onclick="speakText('おく')"><div class="jp">おく</div><div class="pron">oku</div><div class="cn">1亿</div></div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">11-20</div>
+  <div class="card-grid">
+    <div class="card" onclick="speakText('じゅういち')"><div class="jp">じゅういち</div><div class="pron">juuichi</div><div class="cn">11</div></div>
+    <div class="card" onclick="speakText('じゅうに')"><div class="jp">じゅうに</div><div class="pron">juuni</div><div class="cn">12</div></div>
+    <div class="card" onclick="speakText('じゅうさん')"><div class="jp">じゅうさん</div><div class="pron">juusan</div><div class="cn">13</div></div>
+    <div class="card" onclick="speakText('じゅうよん')"><div class="jp">じゅうよん</div><div class="pron">juuyon</div><div class="cn">14</div></div>
+    <div class="card" onclick="speakText('じゅうご')"><div class="jp">じゅうご</div><div class="pron">juugo</div><div class="cn">15</div></div>
+    <div class="card" onclick="speakText('じゅうろく')"><div class="jp">じゅうろく</div><div class="pron">juuroku</div><div class="cn">16</div></div>
+    <div class="card" onclick="speakText('じゅうなな')"><div class="jp">じゅうなな</div><div class="pron">juunana</div><div class="cn">17</div></div>
+    <div class="card" onclick="speakText('じゅうはち')"><div class="jp">じゅうはち</div><div class="pron">juuhachi</div><div class="cn">18</div></div>
+    <div class="card" onclick="speakText('じゅうきゅう')"><div class="jp">じゅうきゅう</div><div class="pron">juukyuu</div><div class="cn">19</div></div>
+    <div class="card" onclick="speakText('にじゅう')"><div class="jp">にじゅう</div><div class="pron">nijuu</div><div class="cn">20</div></div>
   </div>
-  <div id="subtab-num4" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('なんじ')"><div class="jp">なんじ</div><div class="pron">nanji</div><div class="cn">几点？</div></div>
-      <div class="card" onclick="speakText('ごぜん')"><div class="jp">ごぜん</div><div class="pron">gozen</div><div class="cn">上午</div></div>
-      <div class="card" onclick="speakText('ごご')"><div class="jp">ごご</div><div class="pron">gogo</div><div class="cn">下午</div></div>
-      <div class="card" onclick="speakText('まいにち')"><div class="jp">まいにち</div><div class="pron">mainichi</div><div class="cn">每天</div></div>
-      <div class="card" onclick="speakText('あした')"><div class="jp">あした</div><div class="pron">ashita</div><div class="cn">明天</div></div>
-      <div class="card" onclick="speakText('きのう')"><div class="jp">きのう</div><div class="pron">kinoou</div><div class="cn">昨天</div></div>
-    </div>
-  </div>
+  
+  <div class="section-title" style="font-size:1.1em">大数字</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('ひゃく')"><td class="jp-text">ひゃく</td><td class="pron-text">hyaku</td><td class="cn-text">100</td></tr>
+    <tr onclick="speakText('にひゃく')"><td class="jp-text">にひゃく</td><td class="pron-text">nihyaku</td><td class="cn-text">200</td></tr>
+    <tr onclick="speakText('さんびゃく')"><td class="jp-text">さんびゃく</td><td class="pron-text">sanbyaku</td><td class="cn-text">300</td></tr>
+    <tr onclick="speakText('せん')"><td class="jp-text">せん</td><td class="pron-text">sen</td><td class="cn-text">1000</td></tr>
+    <tr onclick="speakText('にせん')"><td class="jp-text">にせん</td><td class="pron-text">nisen</td><td class="cn-text">2000</td></tr>
+    <tr onclick="speakText('まん')"><td class="jp-text">まん</td><td class="pron-text">man</td><td class="cn-text">10,000</td></tr>
+    <tr onclick="speakText('じゅうまん')"><td class="jp-text">じゅうまん</td><td class="pron-text">juuman</td><td class="cn-text">100,000</td></tr>
+    <tr onclick="speakText('ひゃくまん')"><td class="jp-text">ひゃくまん</td><td class="pron-text">hyakuman</td><td class="cn-text">1,000,000</td></tr>
+    <tr onclick="speakText('せんまん')"><td class="jp-text">せんまん</td><td class="pron-text">senman</td><td class="cn-text">10,000,000</td></tr>
+    <tr onclick="speakText('おく')"><td class="jp-text">おく</td><td class="pron-text">oku</td><td class="cn-text">100,000,000</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">时间表达</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('なんじ')"><td class="jp-text">なんじ</td><td class="pron-text">nanji</td><td class="cn-text">几点？</td></tr>
+    <tr onclick="speakText('いちじ')"><td class="jp-text">いちじ</td><td class="pron-text">ichiji</td><td class="cn-text">1点</td></tr>
+    <tr onclick="speakText('にじ')"><td class="jp-text">にじ</td><td class="pron-text">niji</td><td class="cn-text">2点</td></tr>
+    <tr onclick="speakText('さんじ')"><td class="jp-text">さんじ</td><td class="pron-text">sanji</td><td class="cn-text">3点</td></tr>
+    <tr onclick="speakText('よじ')"><td class="jp-text">よじ</td><td class="pron-text">yoji</td><td class="cn-text">4点</td></tr>
+    <tr onclick="speakText('ごじ')"><td class="jp-text">ごじ</td><td class="pron-text">goji</td><td class="cn-text">5点</td></tr>
+    <tr onclick="speakText('はん')"><td class="jp-text">〜はん</td><td class="pron-text">~han</td><td class="cn-text">〜点半</td></tr>
+    <tr onclick="speakText('ふん')"><td class="jp-text">〜ふん</td><td class="pron-text">~fun</td><td class="cn-text">〜分</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">日期表达</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('なんようび')"><td class="jp-text">なんようび</td><td class="pron-text">nanyoubi</td><td class="cn-text">星期几？</td></tr>
+    <tr onclick="speakText('げつようび')"><td class="jp-text">げつようび</td><td class="pron-text">getsuyoubi</td><td class="cn-text">星期一</td></tr>
+    <tr onclick="speakText('かようび')"><td class="jp-text">かようび</td><td class="pron-text">kayoubi</td><td class="cn-text">星期二</td></tr>
+    <tr onclick="speakText('すいようび')"><td class="jp-text">すいようび</td><td class="pron-text">suiyoubi</td><td class="cn-text">星期三</td></tr>
+    <tr onclick="speakText('もくようび')"><td class="jp-text">もくようび</td><td class="pron-text">mokuyoubi</td><td class="cn-text">星期四</td></tr>
+    <tr onclick="speakText('きんようび')"><td class="jp-text">きんようび</td><td class="pron-text">kinyoubi</td><td class="cn-text">星期五</td></tr>
+    <tr onclick="speakText('どようび')"><td class="jp-text">どようび</td><td class="pron-text">doyoubi</td><td class="cn-text">星期六</td></tr>
+    <tr onclick="speakText('にちようび')"><td class="jp-text">にちようび</td><td class="pron-text">nichiyoubi</td><td class="cn-text">星期日</td></tr>
+  </table>
 </div>
 
 <div id="tab-vocabulary" class="tab-content">
-  <div class="section-title">📦 基础词汇</div>
+  <div class="section-title">📦 词汇大全（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 使用方法：</b><br>
+    ✅ 点击词汇可听到发音<br>
+    ✅ 建议<b>分类记忆</b>：每天学一个分类<br>
+    ✅ 结合<b>例句</b>一起记忆，效果更好
+  </div>
+  
   <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('vocab1', this)">人称</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab2', this)">食物</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab3', this)">交通</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab4', this)">购物</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab5', this)">身体</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab6', this)">颜色</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab7', this)">天气</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab8', this)">动物</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab9', this)">职业</button>
-    <button class="sub-tab" onclick="switchSubTab('vocab10', this)">家庭</button>
+    <button class="sub-tab active" onclick="switchSubTab('voc-person', this)">👤 人称</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-food', this)">🍜 食物</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-transport', this)">🚗 交通</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-shopping', this)">🛒 购物</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-body', this)">💪 身体</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-color', this)">🎨 颜色</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-weather', this)">🌤️ 天气</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-animal', this)">🐶 动物</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-job', this)">💼 职业</button>
+    <button class="sub-tab" onclick="switchSubTab('voc-family', this)">👨👩👧👦 家庭</button>
   </div>
-  <div id="subtab-vocab1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('わたし')"><div class="jp">わたし</div><div class="pron">watashi</div><div class="cn">我</div></div>
-      <div class="card" onclick="speakText('あなた')"><div class="jp">あなた</div><div class="pron">anata</div><div class="cn">你</div></div>
-      <div class="card" onclick="speakText('かれ')"><div class="jp">かれ</div><div class="pron">kare</div><div class="cn">他</div></div>
-      <div class="card" onclick="speakText('かのじょ')"><div class="jp">かのじょ</div><div class="pron">kanojo</div><div class="cn">她</div></div>
-      <div class="card" onclick="speakText('ともだち')"><div class="jp">ともだち</div><div class="pron">tomodachi</div><div class="cn">朋友</div></div>
-      <div class="card" onclick="speakText('せんせい')"><div class="jp">せんせい</div><div class="pron">sensei</div><div class="cn">老师</div></div>
-      <div class="card" onclick="speakText('がくせい')"><div class="jp">がくせい</div><div class="pron">gakusei</div><div class="cn">学生</div></div>
-      <div class="card" onclick="speakText('かぞく')"><div class="jp">かぞく</div><div class="pron">kazoku</div><div class="cn">家人</div></div>
-    </div>
+  
+  <div id="voc-person" class="sub-tab-content active">
+    <div class="section-title" style="font-size:1.1em">👤 人称代词（注意敬语和常体的区别！）</div>
+    <table>
+      <tr><th>日语</th><th>发音</th><th>中文</th><th>说明</th></tr>
+      <tr onclick="speakText('わたし')"><td class="jp-text">わたし</td><td class="pron-text">watashi</td><td class="cn-text">我（敬语）</td><td>正式场合、对陌生人</td></tr>
+      <tr onclick="speakText('わたし')"><td class="jp-text">わたし</td><td class="pron-text">watashi</td><td class="cn-text">我（常体）</td><td>对朋友、家人（女性常用）</td></tr>
+      <tr onclick="speakText('ぼく')"><td class="jp-text">ぼく</td><td class="pron-text">boku</td><td class="cn-text">我（常体）</td><td>对朋友、家人（男性常用）</td></tr>
+      <tr onclick="speakText('おれ')"><td class="jp-text">おれ</td><td class="pron-text">ore</td><td class="cn-text">我（很随意）</td><td>对很熟的朋友（男性）</td></tr>
+      <tr onclick="speakText('あなた')"><td class="jp-text">あなた</td><td class="pron-text">anata</td><td class="cn-text">你（敬语）</td><td>正式场合、对陌生人</td></tr>
+      <tr onclick="speakText('きみ')"><td class="jp-text">きみ</td><td class="pron-text">kimi</td><td class="cn-text">你（常体）</td><td>对朋友、晚辈</td></tr>
+      <tr onclick="speakText('かれ')"><td class="jp-text">かれ</td><td class="pron-text">kare</td><td class="cn-text">他 / 男朋友</td><td></td></tr>
+      <tr onclick="speakText('かのじょ')"><td class="jp-text">かのじょ</td><td class="pron-text">kanojo</td><td class="cn-text">她 / 女朋友</td><td></td></tr>
+      <tr onclick="speakText('みなさん')"><td class="jp-text">みなさん</td><td class="pron-text">minasan</td><td class="cn-text">大家、各位</td><td>敬语</td></tr>
+    </table>
   </div>
-  <div id="subtab-vocab2" class="sub-tab-content">
+  
+  <div id="voc-food" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🍜 食物（扩大版）</div>
     <div class="card-grid">
-      <div class="card" onclick="speakText('ごはん')"><div class="jp">ごはん</div><div class="pron">gohan</div><div class="cn">米饭</div></div>
-      <div class="card" onclick="speakText('さかな')"><div class="jp">さかな</div><div class="pron">sakana</div><div class="cn">鱼</div></div>
-      <div class="card" onclick="speakText('にく')"><div class="jp">にく</div><div class="pron">niku</div><div class="cn">肉</div></div>
-      <div class="card" onclick="speakText('やさい')"><div class="jp">やさい</div><div class="pron">yasai</div><div class="cn">蔬菜</div></div>
-      <div class="card" onclick="speakText('みず')"><div class="jp">みず</div><div class="pron">mizu</div><div class="cn">水</div></div>
+      <div class="card" onclick="speakText('ごはん')"><div class="jp">ごはん</div><div class="pron">gohan</div><div class="cn">米饭 / 餐</div></div>
       <div class="card" onclick="speakText('パン')"><div class="jp">パン</div><div class="pron">pan</div><div class="cn">面包</div></div>
+      <div class="card" onclick="speakText('ラーメン')"><div class="jp">ラーメン</div><div class="pron">raamen</div><div class="cn">拉面</div></div>
+      <div class="card" onclick="speakText('すし')"><div class="jp">すし</div><div class="pron">sushi</div><div class="cn">寿司</div></div>
+      <div class="card" onclick="speakText('てんぷら')"><div class="jp">てんぷら</div><div class="pron">tenpura</div><div class="cn">天妇罗</div></div>
+      <div class="card" onclick="speakText('やきとり')"><div class="jp">やきとり</div><div class="pron">yakitori</div><div class="cn">烤鸡肉串</div></div>
+      <div class="card" onclick="speakText('おにぎり')"><div class="jp">おにぎり</div><div class="pron">onigiri</div><div class="cn">饭团</div></div>
+      <div class="card" onclick="speakText('うどん')"><div class="jp">うどん</div><div class="pron">udon</div><div class="cn">乌冬面</div></div>
+      <div class="card" onclick="speakText('そば')"><div class="jp">そば</div><div class="pron">soba</div><div class="cn">荞麦面</div></div>
+      <div class="card" onclick="speakText('カレー')"><div class="jp">カレー</div><div class="pron">karee</div><div class="cn">咖喱</div></div>
+      <div class="card" onclick="speakText('コーヒー')"><div class="jp">コーヒー</div><div class="pron">koohii</div><div class="cn">咖啡</div></div>
+      <div class="card" onclick="speakText('おちゃ')"><div class="jp">おちゃ</div><div class="pron">ocha</div><div class="cn">茶</div></div>
+      <div class="card" onclick="speakText('みず')"><div class="jp">みず</div><div class="pron">mizu</div><div class="cn">水</div></div>
+      <div class="card" onclick="speakText('ビール')"><div class="jp">ビール</div><div class="pron">biiru</div><div class="cn">啤酒</div></div>
+      <div class="card" onclick="speakText('さけ')"><div class="jp">さけ</div><div class="pron">sake</div><div class="cn">酒 / 日本酒</div></div>
       <div class="card" onclick="speakText('くだもの')"><div class="jp">くだもの</div><div class="pron">kudamono</div><div class="cn">水果</div></div>
-      <div class="card" onclick="speakText('りんご')"><div class="jp">りんご</div><div class="pron">ringo</div><div class="cn">苹果</div></div>
-      <div class="card" onclick="speakText('バナナ')"><div class="jp">バナナ</div><div class="pron">banana</div><div class="cn">香蕉</div></div>
-      <div class="card" onclick="speakText('みそしる')"><div class="jp">みそしる</div><div class="pron">misoshiru</div><div class="cn">味噌汤</div></div>
+      <div class="card" onclick="speakText('やさい')"><div class="jp">やさい</div><div class="pron">yasai</div><div class="cn">蔬菜</div></div>
+      <div class="card" onclick="speakText('にく')"><div class="jp">にく</div><div class="pron">niku</div><div class="cn">肉</div></div>
+      <div class="card" onclick="speakText('さかな')"><div class="jp">さかな</div><div class="pron">sakana</div><div class="cn">鱼</div></div>
+      <div class="card" onclick="speakText('たまご')"><div class="jp">たまご</div><div class="pron">tamago</div><div class="cn">鸡蛋</div></div>
     </div>
   </div>
-  <div id="subtab-vocab3" class="sub-tab-content">
+  
+  <div id="voc-transport" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🚗 交通工具</div>
     <div class="card-grid">
       <div class="card" onclick="speakText('でんしゃ')"><div class="jp">でんしゃ</div><div class="pron">densha</div><div class="cn">电车</div></div>
-      <div class="card" onclick="speakText('ばす')"><div class="jp">ばす</div><div class="pron">basu</div><div class="cn">公交车</div></div>
-      <div class="card" onclick="speakText('くるま')"><div class="jp">くるま</div><div class="pron">kuruma</div><div class="cn">车</div></div>
+      <div class="card" onclick="speakText('ちかてつ')"><div class="jp">ちかてつ</div><div class="pron">chikatetsu</div><div class="cn">地铁</div></div>
+      <div class="card" onclick="speakText('バス')"><div class="jp">バス</div><div class="pron">basu</div><div class="cn">公交车</div></div>
+      <div class="card" onclick="speakText('タクシー')"><div class="jp">タクシー</div><div class="pron">takushii</div><div class="cn">出租车</div></div>
       <div class="card" onclick="speakText('ひこうき')"><div class="jp">ひこうき</div><div class="pron">hikouki</div><div class="cn">飞机</div></div>
-      <div class="card" onclick="speakText('えき')"><div class="jp">えき</div><div class="pron">eki</div><div class="cn">车站</div></div>
-      <div class="card" onclick="speakText('ちけん')"><div class="jp">きっぷ</div><div class="pron">kippu</div><div class="cn">票</div></div>
+      <div class="card" onclick="speakText('ふね')"><div class="jp">ふね</div><div class="pron">fune</div><div class="cn">船</div></div>
+      <div class="card" onclick="speakText('じてんしゃ')"><div class="jp">じてんしゃ</div><div class="pron">jitensha</div><div class="cn">自行车</div></div>
+      <div class="card" onclick="speakText('くるま')"><div class="jp">くるま</div><div class="pron">kuruma</div><div class="cn">汽车</div></div>
     </div>
   </div>
-  <div id="subtab-vocab4" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('みせ')"><div class="jp">みせ</div><div class="pron">mise</div><div class="cn">店</div></div>
-      <div class="card" onclick="speakText('スーパー')"><div class="jp">スーパー</div><div class="pron">suupaa</div><div class="cn">超市</div></div>
-      <div class="card" onclick="speakText('デパート')"><div class="jp">デパート</div><div class="pron">depaato</div><div class="cn">百货店</div></div>
-      <div class="card" onclick="speakText('かいもの')"><div class="jp">かいもの</div><div class="pron">kaimono</div><div class="cn">购物</div></div>
-      <div class="card" onclick="speakText('おかね')"><div class="jp">おかね</div><div class="pron">okane</div><div class="cn">钱</div></div>
-      <div class="card" onclick="speakText('クレジットカード')"><div class="jp">クレジットカード</div><div class="pron">kurejitto kaado</div><div class="cn">信用卡</div></div>
-    </div>
+  
+  <div id="voc-shopping" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🛒 购物用语</div>
+    <table>
+      <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+      <tr onclick="speakText('いくらですか')"><td class="jp-text">いくらですか</td><td class="pron-text">ikura desu ka</td><td class="cn-text">多少钱？</td></tr>
+      <tr onclick="speakText('たかい')"><td class="jp-text">たかい</td><td class="pron-text">takai</td><td class="cn-text">贵</td></tr>
+      <tr onclick="speakText('やすい')"><td class="jp-text">やすい</td><td class="pron-text">yasui</td><td class="cn-text">便宜</td></tr>
+      <tr onclick="speakText('かってもいいですか')"><td class="jp-text">かってもいいですか</td><td class="pron-text">katte mo ii desu ka</td><td class="cn-text">可以买吗？</td></tr>
+      <tr onclick="speakText('クレジットカード')"><td class="jp-text">クレジットカード</td><td class="pron-text">kurejitto kaado</td><td class="cn-text">信用卡</td></tr>
+      <tr onclick="speakText('げんきん')"><td class="jp-text">げんきん</td><td class="pron-text">genkin</td><td class="cn-text">现金</td></tr>
+    </table>
   </div>
-  <div id="subtab-vocab5" class="sub-tab-content">
+  
+  <div id="voc-body" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">💪 身体部位</div>
     <div class="card-grid">
       <div class="card" onclick="speakText('あたま')"><div class="jp">あたま</div><div class="pron">atama</div><div class="cn">头</div></div>
+      <div class="card" onclick="speakText('かお')"><div class="jp">かお</div><div class="pron">kao</div><div class="cn">脸</div></div>
       <div class="card" onclick="speakText('め')"><div class="jp">め</div><div class="pron">me</div><div class="cn">眼睛</div></div>
       <div class="card" onclick="speakText('みみ')"><div class="jp">みみ</div><div class="pron">mimi</div><div class="cn">耳朵</div></div>
       <div class="card" onclick="speakText('はな')"><div class="jp">はな</div><div class="pron">hana</div><div class="cn">鼻子</div></div>
       <div class="card" onclick="speakText('くち')"><div class="jp">くち</div><div class="pron">kuchi</div><div class="cn">嘴巴</div></div>
+      <div class="card" onclick="speakText('は')"><div class="jp">は</div><div class="pron">ha</div><div class="cn">牙齿</div></div>
       <div class="card" onclick="speakText('て')"><div class="jp">て</div><div class="pron">te</div><div class="cn">手</div></div>
-      <div class="card" onclick="speakText('あし')"><div class="jp">あし</div><div class="pron">ashi</div><div class="cn">脚</div></div>
+      <div class="card" onclick="speakText('あし')"><div class="jp">あし</div><div class="pron">ashi</div><div class="cn">脚 / 腿</div></div>
+      <div class="card" onclick="speakText('おなか')"><div class="jp">おなか</div><div class="pron">onaka</div><div class="cn">肚子</div></div>
     </div>
   </div>
-  <div id="subtab-vocab6" class="sub-tab-content">
+  
+  <div id="voc-color" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🎨 颜色</div>
     <div class="card-grid">
-      <div class="card" onclick="speakText('あか')"><div class="jp">あか</div><div class="pron">aka</div><div class="cn">红</div></div>
-      <div class="card" onclick="speakText('あお')"><div class="jp">あお</div><div class="pron">ao</div><div class="cn">蓝</div></div>
-      <div class="card" onclick="speakText('きいろ')"><div class="jp">きいろ</div><div class="pron">kiiro</div><div class="cn">黄</div></div>
-      <div class="card" onclick="speakText('しろ')"><div class="jp">しろ</div><div class="pron">shiro</div><div class="cn">白</div></div>
-      <div class="card" onclick="speakText('くろ')"><div class="jp">くろ</div><div class="pron">kuro</div><div class="cn">黑</div></div>
-      <div class="card" onclick="speakText('みどり')"><div class="jp">みどり</div><div class="pron">midori</div><div class="cn">绿</div></div>
+      <div class="card" onclick="speakText('あか')"><div class="jp">あか</div><div class="pron">aka</div><div class="cn">红色</div></div>
+      <div class="card" onclick="speakText('あお')"><div class="jp">あお</div><div class="pron">ao</div><div class="cn">蓝色</div></div>
+      <div class="card" onclick="speakText('きいろ')"><div class="jp">きいろ</div><div class="pron">kiiro</div><div class="cn">黄色</div></div>
+      <div class="card" onclick="speakText('みどり')"><div class="jp">みどり</div><div class="pron">midori</div><div class="cn">绿色</div></div>
+      <div class="card" onclick="speakText('しろ')"><div class="jp">しろ</div><div class="pron">shiro</div><div class="cn">白色</div></div>
+      <div class="card" onclick="speakText('くろ')"><div class="jp">くろ</div><div class="pron">kuro</div><div class="cn">黑色</div></div>
+      <div class="card" onclick="speakText('ちゃいろ')"><div class="jp">ちゃいろ</div><div class="pron">chairo</div><div class="cn">棕色</div></div>
+      <div class="card" onclick="speakText('むらさき')"><div class="jp">むらさき</div><div class="pron">murasaki</div><div class="cn">紫色</div></div>
+      <div class="card" onclick="speakText('オレンジ')"><div class="jp">オレンジ</div><div class="pron">orenji</div><div class="cn">橙色</div></div>
+      <div class="card" onclick="speakText('ピンク')"><div class="jp">ピンク</div><div class="pron">pinku</div><div class="cn">粉色</div></div>
     </div>
   </div>
-  <div id="subtab-vocab7" class="sub-tab-content">
+  
+  <div id="voc-weather" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🌤️ 天气</div>
     <div class="card-grid">
-      <div class="card" onclick="speakText('てんき')"><div class="jp">てんき</div><div class="pron">tenki</div><div class="cn">天气</div></div>
-      <div class="card" onclick="speakText('はれ')"><div class="jp">はれ</div><div class="pron">hare</div><div class="cn">晴</div></div>
-      <div class="card" onclick="speakText('あめ')"><div class="jp">あめ</div><div class="pron">ame</div><div class="cn">雨</div></div>
+      <div class="card" onclick="speakText('はれ')"><div class="jp">はれ</div><div class="pron">hare</div><div class="cn">晴天</div></div>
       <div class="card" onclick="speakText('くもり')"><div class="jp">くもり</div><div class="pron">kumori</div><div class="cn">阴天</div></div>
+      <div class="card" onclick="speakText('あめ')"><div class="jp">あめ</div><div class="pron">ame</div><div class="cn">雨</div></div>
       <div class="card" onclick="speakText('ゆき')"><div class="jp">ゆき</div><div class="pron">yuki</div><div class="cn">雪</div></div>
       <div class="card" onclick="speakText('かぜ')"><div class="jp">かぜ</div><div class="pron">kaze</div><div class="cn">风</div></div>
+      <div class="card" onclick="speakText('あつい')"><div class="jp">あつい</div><div class="pron">atsui</div><div class="cn">热</div></div>
+      <div class="card" onclick="speakText('さむい')"><div class="jp">さむい</div><div class="pron">samui</div><div class="cn">冷</div></div>
+      <div class="card" onclick="speakText('すずしい')"><div class="jp">すずしい</div><div class="pron">suzushii</div><div class="cn">凉爽</div></div>
     </div>
   </div>
-  <div id="subtab-vocab8" class="sub-tab-content">
+  
+  <div id="voc-animal" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">🐶 动物</div>
     <div class="card-grid">
       <div class="card" onclick="speakText('いぬ')"><div class="jp">いぬ</div><div class="pron">inu</div><div class="cn">狗</div></div>
       <div class="card" onclick="speakText('ねこ')"><div class="jp">ねこ</div><div class="pron">neko</div><div class="cn">猫</div></div>
       <div class="card" onclick="speakText('とり')"><div class="jp">とり</div><div class="pron">tori</div><div class="cn">鸟</div></div>
       <div class="card" onclick="speakText('さかな')"><div class="jp">さかな</div><div class="pron">sakana</div><div class="cn">鱼</div></div>
       <div class="card" onclick="speakText('うし')"><div class="jp">うし</div><div class="pron">ushi</div><div class="cn">牛</div></div>
+      <div class="card" onclick="speakText('うま')"><div class="jp">うま</div><div class="pron">uma</div><div class="cn">马</div></div>
+      <div class="card" onclick="speakText('ぱんだ')"><div class="jp">ぱんだ</div><div class="pron">panda</div><div class="cn">熊猫</div></div>
+      <div class="card" onclick="speakText('らいおん')"><div class="jp">らいおん</div><div class="pron">raion</div><div class="cn">狮子</div></div>
     </div>
   </div>
-  <div id="subtab-vocab9" class="sub-tab-content">
+  
+  <div id="voc-job" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">💼 职业</div>
     <div class="card-grid">
+      <div class="card" onclick="speakText('しゃいん')"><div class="jp">しゃいん</div><div class="pron">shain</div><div class="cn">公司职员</div></div>
+      <div class="card" onclick="speakText('せんせい')"><div class="jp">せんせい</div><div class="pron">sensei</div><div class="cn">老师 / 医生</div></div>
+      <div class="card" onclick="speakText('がくせい')"><div class="jp">がくせい</div><div class="pron">gakusei</div><div class="cn">学生</div></div>
       <div class="card" onclick="speakText('いしゃ')"><div class="jp">いしゃ</div><div class="pron">isha</div><div class="cn">医生</div></div>
-      <div class="card" onclick="speakText('べんごし')"><div class="jp">べんごし</div><div class="pron">bengoshi</div><div class="cn">律师</div></div>
-      <div class="card" onclick="speakText('かいしゃいん')"><div class="jp">かいしゃいん</div><div class="pron">kaishain</div><div class="cn">公司职员</div></div>
-      <div class="card" onclick="speakText('てんいん')"><div class="jp">てんいん</div><div class="pron">tennin</div><div class="cn">店员</div></div>
+      <div class="card" onclick="speakText('かんごし')"><div class="jp">かんごし</div><div class="pron">kangoshi</div><div class="cn">护士</div></div>
+      <div class="card" onclick="speakText('りょうりにん')"><div class="jp">りょうりにん</div><div class="pron">ryourinin</div><div class="cn">厨师</div></div>
+      <div class="card" onclick="speakText('うんてんしゅ')"><div class="jp">うんてんしゅ</div><div class="pron">untenshu</div><div class="cn">司机</div></div>
+      <div class="card" onclick="speakText('けいさつかん')"><div class="jp">けいさつかん</div><div class="pron">keisatsukan</div><div class="cn">警察</div></div>
     </div>
   </div>
-  <div id="subtab-vocab10" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ちち')"><div class="jp">ちち</div><div class="pron">chichi</div><div class="cn">父亲</div></div>
-      <div class="card" onclick="speakText('はは')"><div class="jp">はは</div><div class="pron">haha</div><div class="cn">母亲</div></div>
-      <div class="card" onclick="speakText('あに')"><div class="jp">あに</div><div class="pron">ani</div><div class="cn">哥哥</div></div>
-      <div class="card" onclick="speakText('あね')"><div class="jp">あね</div><div class="pron">ane</div><div class="cn">姐姐</div></div>
-      <div class="card" onclick="speakText('おとうと')"><div class="jp">おとうと</div><div class="pron">otouto</div><div class="cn">弟弟</div></div>
-      <div class="card" onclick="speakText('いもうと')"><div class="jp">いもうと</div><div class="pron">imouto</div><div class="cn">妹妹</div></div>
-      <div class="card" onclick="speakText('こども')"><div class="jp">こども</div><div class="pron">kodomo</div><div class="cn">孩子</div></div>
-    </div>
+  
+  <div id="voc-family" class="sub-tab-content">
+    <div class="section-title" style="font-size:1.1em">👨👩👧👦 家庭成员（注意敬语和常体的区别！）</div>
+    <table>
+      <tr><th>日语（敬语）</th><th>日语（常体）</th><th>发音</th><th>中文</th></tr>
+      <tr onclick="speakText('おとうさん')"><td class="jp-text">おとうさん</td><td class="jp-text">ちち</td><td class="pron-text">otousan / chichi</td><td class="cn-text">父亲</td></tr>
+      <tr onclick="speakText('おかあさん')"><td class="jp-text">おかあさん</td><td class="jp-text">はは</td><td class="pron-text">okaasan / haha</td><td class="cn-text">母亲</td></tr>
+      <tr onclick="speakText('おにいさん')"><td class="jp-text">おにいさん</td><td class="jp-text">あに</td><td class="pron-text">oniisan / ani</td><td class="cn-text">哥哥</td></tr>
+      <tr onclick="speakText('おねえさん')"><td class="jp-text">おねえさん</td><td class="jp-text">あね</td><td class="pron-text">oneesan / ane</td><td class="cn-text">姐姐</td></tr>
+      <tr onclick="speakText('おとうと')"><td class="jp-text">おとうと</td><td class="jp-text">おとうと</td><td class="pron-text">otouto</td><td class="cn-text">弟弟</td></tr>
+      <tr onclick="speakText('いもうと')"><td class="jp-text">いもうと</td><td class="jp-text">いもうと</td><td class="pron-text">imouto</td><td class="cn-text">妹妹</td></tr>
+      <tr onclick="speakText('おじいさん')"><td class="jp-text">おじいさん</td><td class="jp-text">そふ</td><td class="pron-text">ojiisan / sofu</td><td class="cn-text">祖父</td></tr>
+      <tr onclick="speakText('おばあさん')"><td class="jp-text">おばあさん</td><td class="jp-text">そぼ</td><td class="pron-text">obaasan / sobo</td><td class="cn-text">祖母</td></tr>
+    </table>
   </div>
 </div>
 
 <div id="tab-grammar" class="tab-content">
-  <div class="section-title">📖 基础语法</div>
-  <div class="info-box">
-    💡 日语的基本句型是：<b>主语 + は + 对象 + を/に + 动词</b><br>
-    与中文的"主谓宾"不同，日语是"主宾谓"结构。
+  <div class="section-title">📖 基础语法（完整版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 日语语法的特点：</b><br>
+    ✅ 日语是<b>主宾谓</b>结构（SOV）：わたしは（主语）コーヒーを（宾语）のみます（谓语）<br>
+    ✅ 汉语是<b>主谓宾</b>结构（SVO）：我（主语）喝（谓语）咖啡（宾语）<br>
+    ✅ 日语有<b>敬语</b>（です/ます形）和<b>常体</b>（だ形）之分<br>
+    ✅ <b>助词</b>非常重要：は（主题）、を（宾语）、に（时间/地点）、で（工具/地点）
   </div>
+  
+  <div class="section-title" style="font-size:1.1em">基本句型</div>
   <table>
-    <tr>
-      <th>句型</th>
-      <th>日语</th>
-      <th>发音</th>
-      <th>中文</th>
-    </tr>
-    <tr onclick="speakText('わたしはがくせいです')">
-      <td>判断句（是）</td>
-      <td class="jp-text">わたしは がくせい です</td>
-      <td class="pron-text">watashi wa gakusei desu</td>
-      <td class="cn-text">我是学生</td>
-    </tr>
-    <tr onclick="speakText('これはほんです')">
-      <td>存在句（这是）</td>
-      <td class="jp-text">これは ほん です</td>
-      <td class="pron-text">kore wa hon desu</td>
-      <td class="cn-text">这是书</td>
-    </tr>
-    <tr onclick="speakText('わたしはりんごをたべます')">
-      <td>主宾谓句</td>
-      <td class="jp-text">わたしは りんごを たべます</td>
-      <td class="pron-text">watashi wa ringo o tabemasu</td>
-      <td class="cn-text">我吃苹果</td>
-    </tr>
-    <tr onclick="speakText('わたしはがっこうにいきます')">
-      <td>移动句</td>
-      <td class="jp-text">わたしは がっこうに いきます</td>
-      <td class="pron-text">watashi wa gakkou ni ikimasu</td>
-      <td class="cn-text">我去学校</td>
-    </tr>
-    <tr onclick="speakText('このほんはおもしろいです')">
-      <td>形容词句</td>
-      <td class="jp-text">このほんは おもしろい です</td>
-      <td class="pron-text">kono hon wa omoshiroi desu</td>
-      <td class="cn-text">这本书有趣</td>
-    </tr>
+    <tr><th>句型</th><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('〜は〜です')"><td class="jp-text">〜は〜です</td><td class="pron-text">~wa ~desu</td><td class="cn-text">〜是〜（判断句）</td></tr>
+    <tr onclick="speakText('わたしはがくせいです')"><td class="jp-text">わたしはがくせいです</td><td class="pron-text">watashi wa gakusei desu</td><td class="cn-text">我是学生</td></tr>
+    <tr onclick="speakText('〜は〜ではありません')"><td class="jp-text">〜は〜ではありません</td><td class="pron-text">~wa ~dewa arimasen</td><td class="cn-text">〜不是〜（否定）</td></tr>
+    <tr onclick="speakText('わたしはがくせいではありません')"><td class="jp-text">わたしはがくせいではありません</td><td class="pron-text">watashi wa gakusei dewa arimasen</td><td class="cn-text">我不是学生</td></tr>
+    <tr onclick="speakText('〜は〜ですか')"><td class="jp-text">〜は〜ですか</td><td class="pron-text">~wa ~desu ka</td><td class="cn-text">〜是〜吗？（疑问）</td></tr>
+    <tr onclick="speakText('あなたはがくせいですか')"><td class="jp-text">あなたはがくせいですか</td><td class="pron-text">anata wa gakusei desu ka</td><td class="cn-text">你是学生吗？</td></tr>
   </table>
   
-  <div class="section-title" style="font-size:1.1em; margin-top:20px">📖 助词用法</div>
-  <div class="info-box">
-    💡 <b>助词</b>是日语的核心！它们决定句子的结构。
+  <div class="section-title" style="font-size:1.1em">重要助词用法</div>
+  <div class="info-box" style="background:#eff6ff; border-color:#1e3a8a">
+    <b>1️⃣ は（主题助词）</b><br>
+    • 表示句子的<b>主题</b><br>
+    • 例：わたし<b>は</b>がくせいです。（我是学生。）<br><br>
+    
+    <b>2️⃣ を（宾语助词）</b><br>
+    • 表示动作的<b>对象</b><br>
+    • 例：コーヒー<b>を</b>のみます。（喝咖啡。）<br><br>
+    
+    <b>3️⃣ に（时间/地点助词）</b><br>
+    • 表示<b>时间</b>：３じ<b>に</b>（在3点）<br>
+    • 表示<b>地点</b>：がっこう<b>に</b>いきます（去学校）<br><br>
+    
+    <b>4️⃣ で（工具/地点助词）</b><br>
+    • 表示<b>工具</b>：でんしゃ<b>で</b>（乘电车）<br>
+    • 表示<b>地点</b>：がっこう<b>で</b>（在学校）<br><br>
+    
+    <b>5️⃣ と（和）</b><br>
+    • 表示<b>和</b>：わたし<b>と</b>あなた（我和你）<br><br>
+    
+    <b>6️⃣ も（也）</b><br>
+    • 表示<b>也</b>：わたし<b>も</b>がくせいです（我也是学生）
   </div>
+  
+  <div class="section-title" style="font-size:1.1em">动词分类与变形（重要！）</div>
+  <div class="info-box" style="background:#fef3c7; border-color:#d97706">
+    <b>🇯🇵 日语动词分为三类：</b><br><br>
+    
+    <b>1️⃣ 一类动词（五段动词）</b><br>
+    • 词尾是<b>う段假名</b>：たべ<b>る</b>（吃）→ 实际上是一类动词的特殊情况<br>
+    • 真正的一类动词：か<b>く</b>（写）、の<b>む</b>（喝）、い<b>く</b>（去）<br>
+    • <b>变形规则</b>：词尾う段→あ段+ない（否定）<br>
+    • 例：かく → かかない（不写）<br><br>
+    
+    <b>2️⃣ 二类动词（一段动词）</b><br>
+    • 词尾是<b>る</b>，且る前的假名是<b>い段或え段</b><br>
+    • 例：たべ<b>る</b>（吃）、み<b>る</b>（看）<br>
+    • <b>变形规则</b>：去掉る+ない（否定）<br>
+    • 例：たべる → たべない（不吃）<br><br>
+    
+    <b>3️⃣ 三类动词（不规则动词）</b><br>
+    • <b>する</b>（做）：しない（不做）<br>
+    • <b>くる</b>（来）：こない（不来）<br><br>
+    
+    <b>💡 记忆口诀：</b><br>
+    🔹 一类动词：<b>变う段</b>（かく → かかない）<br>
+    🔹 二类动词：<b>去る</b>（たべる → たべない）<br>
+    🔹 三类动词：<b>特殊记忆</b>（する → しない、くる → こない）
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">常体（だ形）— 对朋友、家人使用</div>
   <table>
-    <tr>
-      <th>助词</th>
-      <th>用法</th>
-      <th>示例</th>
-      <th>中文</th>
-    </tr>
-    <tr onclick="speakText('わたしは')">
-      <td><b>は</b></td>
-      <td>主题标记</td>
-      <td class="jp-text">わたし<b>は</b></td>
-      <td class="cn-text">我（主题）</td>
-    </tr>
-    <tr onclick="speakText('りんごを')">
-      <td><b>を</b></td>
-      <td>对象标记</td>
-      <td class="jp-text">りんご<b>を</b></td>
-      <td class="cn-text">苹果（对象）</td>
-    </tr>
-    <tr onclick="speakText('がっこうに')">
-      <td><b>に</b></td>
-      <td>时间/地点/对象</td>
-      <td class="jp-text">がっこう<b>に</b></td>
-      <td class="cn-text">去学校</td>
-    </tr>
-    <tr onclick="speakText('でんしゃで')">
-      <td><b>で</b></td>
-      <td>方式/场所</td>
-      <td class="jp-text">でんしゃ<b>で</b></td>
-      <td class="cn-text">坐电车</td>
-    </tr>
-    <tr onclick="speakText('が')">
-      <td><b>が</b></td>
-      <td>主语标记（强调）</td>
-      <td class="jp-text">だれ<b>が</b></td>
-      <td class="cn-text">谁（主语）</td>
-    </tr>
+    <tr><th>句型</th><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('〜は〜だ')"><td class="jp-text">〜は〜だ</td><td class="pron-text">~wa ~da</td><td class="cn-text">〜是〜（常体）</td></tr>
+    <tr onclick="speakText('わたしはがくせいだ')"><td class="jp-text">わたしはがくせいだ</td><td class="pron-text">watashi wa gakusei da</td><td class="cn-text">我是学生（常体）</td></tr>
+    <tr onclick="speakText('〜は〜じゃない')"><td class="jp-text">〜は〜じゃない</td><td class="pron-text">~wa ~ja nai</td><td class="cn-text">〜不是〜（常体否定）</td></tr>
+    <tr onclick="speakText('わたしはがくせいじゃない')"><td class="jp-text">わたしはがくせいじゃない</td><td class="pron-text">watashi wa gakusei ja nai</td><td class="cn-text">我不是学生（常体）</td></tr>
   </table>
+  
+  <div class="section-title" style="font-size:1.1em">敬语（尊他语、自谦语）— 商务必备！</div>
+  <div class="info-box" style="background:#fef3c7; border-color:#d97706">
+    <b>⚠️ 敬语是日语的精髓，也是最难的部分！</b><br><br>
+    
+    <b>1️⃣ 尊他语（そんたご）— 抬高对方</b><br>
+    • 用于<b>长辈、上司、客户</b><br>
+    • 例：<b>お</b>みし<b>になります</b>（看）→ みます（看）的尊他语<br>
+    • 例：<b>お</b>っしゃいます（说）→ いいます（说）的尊他语<br><br>
+    
+    <b>2️⃣ 自谦语（けんじょうご）— 降低自己</b><br>
+    • 用于<b>描述自己的行为</b>（对长辈、上司、客户）<br>
+    • 例：<b>お</b>わたしします（给）→ あげます（给）的自谦语<br>
+    • 例：<b>お</b>もうしあげます（说）→ いいます（说）的自谦语<br><br>
+    
+    <b>3️⃣ 礼貌语（ていねいご）— です/ます形</b><br>
+    • 最基本的敬语，用于<b>陌生人、正式场合</b><br>
+    • 例：たべます（吃）→ たべる（吃）的礼貌语<br><br>
+    
+    <b>💡 常用敬语表达：</b><br>
+    • ありがとうございます（谢谢）→ 更正式：ありがとうございます<br>
+    • すみません（对不起）→ 更正式：申し訳ありません<br>
+    • わかりました（明白了）→ 更正式：かしこまりました
+  </div>
 </div>
 
 <div id="tab-dialogues" class="tab-content">
-  <div class="section-title">💬 日常对话</div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('dlg1', this)">初次见面</button>
-    <button class="sub-tab" onclick="switchSubTab('dlg2', this)">餐厅</button>
-    <button class="sub-tab" onclick="switchSubTab('dlg3', this)">购物</button>
-    <button class="sub-tab" onclick="switchSubTab('dlg4', this)">问路</button>
-    <button class="sub-tab" onclick="switchSubTab('dlg5', this)">打电话</button>
+  <div class="section-title">💬 实用对话（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 对话学习技巧：</b><br>
+    ✅ <b>角色扮演</b>：和朋友一起练习对话<br>
+    ✅ <b>录音练习</b>：录下自己的发音，对比纠正<br>
+    ✅ <b>背诵经典句型</b>：掌握常用表达<br>
+    ✅ <b>注意敬语</b>：对陌生人要用敬语
   </div>
-  <div id="subtab-dlg1" class="sub-tab-content active">
-    <div class="dialogue-box">
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('はじめまして')">はじめまして</span>
-        <span class="pron-text">（hajimemashite）</span>
-        <span class="cn-text">初次见面</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('こちらこそ')">こちらこそ</span>
-        <span class="pron-text">（kochirakoso）</span>
-        <span class="cn-text">彼此彼此</span>
-      </div>
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('わたしはたなかです')">わたしは たなかです</span>
-        <span class="pron-text">（watashi wa tanaka desu）</span>
-        <span class="cn-text">我是田中</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('よろしくおねがいします')">よろしく おねがいします</span>
-        <span class="pron-text">（yoroshiku onegaishimasu）</span>
-        <span class="cn-text">请多关照</span>
-      </div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">场景1：初次见面</div>
+  <div class="dialogue-box">
+    <div class="dialogue-line dialogue-a"><span class="speaker">A（田中）：</span>はじめまして。たなかです。どうぞよろしく。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">B（李）：</span>はじめまして。りです。よろしくおねがいします。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">A：</span>おげんきですか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">B：</span>はい、げんきです。あなたは？</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">A：</span>わたしもげんきです。</div>
   </div>
-  <div id="subtab-dlg2" class="sub-tab-content">
-    <div class="dialogue-box">
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('メニューをください')">メニューを ください</span>
-        <span class="pron-text">（menyuu o kudasai）</span>
-        <span class="cn-text">请给我菜单</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('はい、どうぞ')">はい、どうぞ</span>
-        <span class="pron-text">（hai, douzo）</span>
-        <span class="cn-text">好的，请</span>
-      </div>
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('コーヒーをください')">コーヒーを ください</span>
-        <span class="pron-text">（koohii o kudasai）</span>
-        <span class="cn-text">请给我咖啡</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('かしこまりました')">かしこまりました</span>
-        <span class="pron-text">（kashikomarimashita）</span>
-        <span class="cn-text">明白了</span>
-      </div>
-    </div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 中文翻译：</b><br>
+    A：初次见面。我是田中。请多关照。<br>
+    B：初次见面。我是李。请多关照。<br>
+    A：你好吗？<br>
+    B：是的，我很好。你呢？<br>
+    A：我也很好。
   </div>
-  <div id="subtab-dlg3" class="sub-tab-content">
-    <div class="dialogue-box">
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('いくらですか')">いくらですか</span>
-        <span class="pron-text">（ikura desu ka）</span>
-        <span class="cn-text">多少钱？</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('せんえんです')">せんえんです</span>
-        <span class="pron-text">（sen en desu）</span>
-        <span class="cn-text">1000日元</span>
-      </div>
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('これをください')">これを ください</span>
-        <span class="pron-text">（kore o kudasai）</span>
-        <span class="cn-text">请给我这个</span>
-      </div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">场景2：餐厅点餐</div>
+  <div class="dialogue-box">
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>いらっしゃいませ。なんめいさまですか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>ふたりです。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>こちらへどうぞ。メニューです。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>ラーメンとぎゅうどんをください。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>のみものは？</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>おちゃをください。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>かしこまりました。</div>
   </div>
-  <div id="subtab-dlg4" class="sub-tab-content">
-    <div class="dialogue-box">
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('すみません、えきはどこですか')">すみません、えきは どこですか</span>
-        <span class="pron-text">（sumimasen, eki wa doko desu ka）</span>
-        <span class="cn-text">不好意思，车站在哪里？</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('あちらです')">あちらです</span>
-        <span class="pron-text">（achira desu）</span>
-        <span class="cn-text">在那边</span>
-      </div>
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('ありがとうございます')">ありがとう ございます</span>
-        <span class="pron-text">（arigatou gozaimasu）</span>
-        <span class="cn-text">谢谢</span>
-      </div>
-    </div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 中文翻译：</b><br>
+    店员：欢迎光临。几位？<br>
+    顾客：两个人。<br>
+    店员：这边请。这是菜单。<br>
+    顾客：请给我拉面和牛肉饭。<br>
+    店员：饮料呢？<br>
+    顾客：请给我茶。<br>
+    店员：明白了。
   </div>
-  <div id="subtab-dlg5" class="sub-tab-content">
-    <div class="dialogue-box">
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('もしもし')">もしもし</span>
-        <span class="pron-text">（moshi moshi）</span>
-        <span class="cn-text">喂喂</span>
-      </div>
-      <div class="dialogue-line dialogue-b">
-        <span class="speaker b">B：</span>
-        <span class="jp-text" onclick="speakText('はい、どちらさまですか')">はい、どちらさま ですか</span>
-        <span class="pron-text">（hai, dochira-sama desu ka）</span>
-        <span class="cn-text">您好，请问哪位？</span>
-      </div>
-      <div class="dialogue-line dialogue-a">
-        <span class="speaker">A：</span>
-        <span class="jp-text" onclick="speakText('たなかです')">たなかです</span>
-        <span class="pron-text">（tanaka desu）</span>
-        <span class="cn-text">我是田中</span>
-      </div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">场景3：购物</div>
+  <div class="dialogue-box">
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>いらっしゃいませ。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>このシャツはいくらですか。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>それは５０００えんです。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>ちょっとたかいですね。もっとやすいのはありますか。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>こちらは３０００えんです。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">顾客：</span>じゃあ、これをください。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">店员：</span>ありがとうございます。</div>
+  </div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 中文翻译：</b><br>
+    店员：欢迎光临。<br>
+    顾客：这件衬衫多少钱？<br>
+    店员：那是5000日元。<br>
+    顾客：有点贵呢。有更便宜的吗？<br>
+    店员：这件是3000日元。<br>
+    顾客：那给我这件。<br>
+    店员：谢谢。
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">场景4：问路</div>
+  <div class="dialogue-box">
+    <div class="dialogue-line dialogue-a"><span class="speaker">路人：</span>すみません、えきはどこですか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">当地人：</span>えきですか。あのこうさてんをまっすぐいって、みぎにまがってください。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">路人：</span>あのこうさてんですか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">当地人：</span>はい。そうすると、ひだりがわにえきがあります。</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">路人：</span>わかりました。ありがとうございます。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">当地人：</span>どういたしまして。</div>
+  </div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 中文翻译：</b><br>
+    路人：不好意思，车站在哪里？<br>
+    当地人：车站吗？那个十字路口直走，然后右转。<br>
+    路人：那个十字路口吗？<br>
+    当地人：是的。然后，左边就有车站。<br>
+    路人：明白了。谢谢。<br>
+    当地人：不客气。
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em">场景5：打电话</div>
+  <div class="dialogue-box">
+    <div class="dialogue-line dialogue-a"><span class="speaker">A：</span>もしもし、たなかです。りさんはいますか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">B：</span>りです。たなかさん？</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">A：</span>あしたのパーティー、いきますか。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">B：</span>うん、いきます。あなたは？</div>
+    <div class="dialogue-line dialogue-a"><span class="speaker">A：</span>わたしもいきます。では、またあした。</div>
+    <div class="dialogue-line dialogue-b"><span class="speaker b">B：</span>おやすみなさい。</div>
+  </div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 中文翻译：</b><br>
+    A：喂，我是田中。李先生在吗？<br>
+    B：我是李。田中先生？<br>
+    A：明天的派对，你去吗？<br>
+    B：嗯，我去。你呢？<br>
+    A：我也去。那明天见。<br>
+    B：晚安。
   </div>
 </div>
 
 <div id="tab-daily" class="tab-content">
-  <div class="section-title">📋 常用表达</div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('daily1', this)">饮食</button>
-    <button class="sub-tab" onclick="switchSubTab('daily2', this)">礼貌</button>
-    <button class="sub-tab" onclick="switchSubTab('daily3', this)">日常</button>
+  <div class="section-title">📋 日常用语大全（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 这些句子非常实用，建议全部记住！</b><br>
+    ✅ 点击句子可听到发音<br>
+    ✅ 建议<b>每天练习5-10句</b><br>
+    ✅ 结合<b>场景</b>记忆，效果更好
   </div>
-  <div id="subtab-daily1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('いただきます')"><div class="jp">いただきます</div><div class="pron">itadakimasu</div><div class="cn">我开动了</div></div>
-      <div class="card" onclick="speakText('ごちそうさまでした')"><div class="jp">ごちそうさまでした</div><div class="pron">gochisousama deshita</div><div class="cn">多谢款待</div></div>
-      <div class="card" onclick="speakText('おいしい')"><div class="jp">おいしい</div><div class="pron">oishii</div><div class="cn">好吃</div></div>
-      <div class="card" onclick="speakText('のどがかわいた')"><div class="jp">のどがかわいた</div><div class="pron">nodo ga kawaita</div><div class="cn">口渴了</div></div>
-    </div>
-  </div>
-  <div id="subtab-daily2" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('おねがいします')"><div class="jp">おねがいします</div><div class="pron">onegaishimasu</div><div class="cn">拜托了</div></div>
-      <div class="card" onclick="speakText('しつれいします')"><div class="jp">しつれいします</div><div class="pron">shitsurei shimasu</div><div class="cn">失礼了</div></div>
-      <div class="card" onclick="speakText('おじゃまします')"><div class="jp">おじゃまします</div><div class="pron">o jama shimasu</div><div class="cn">打扰了</div></div>
-    </div>
-  </div>
-  <div id="subtab-daily3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('おはよう')"><div class="jp">おはよう</div><div class="pron">ohayou</div><div class="cn">早上好（随意）</div></div>
-      <div class="card" onclick="speakText('おやすみ')"><div class="jp">おやすみ</div><div class="pron">oyasumi</div><div class="cn">晚安（随意）</div></div>
-      <div class="card" onclick="speakText('がんばって')"><div class="jp">がんばって</div><div class="pron">ganbatte</div><div class="cn">加油</div></div>
-    </div>
-  </div>
+  
+  <div class="section-title" style="font-size:1.1em">🍽️ 饮食相关</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('いただきます')"><td class="jp-text">いただきます</td><td class="pron-text">itadakimasu</td><td class="cn-text">我开动了（饭前说）</td></tr>
+    <tr onclick="speakText('ごちそうさまでした')"><td class="jp-text">ごちそうさまでした</td><td class="pron-text">gochisousama deshita</td><td class="cn-text">我吃好了（饭后说）</td></tr>
+    <tr onclick="speakText('おいしい')"><td class="jp-text">おいしい</td><td class="pron-text">oishii</td><td class="cn-text">好吃</td></tr>
+    <tr onclick="speakText('まずい')"><td class="jp-text">まずい</td><td class="pron-text">mazui</td><td class="cn-text">难吃</td></tr>
+    <tr onclick="speakText('おなかがすきました')"><td class="jp-text">おなかがすきました</td><td class="pron-text">onaka ga sukimashita</td><td class="cn-text">肚子饿了</td></tr>
+    <tr onclick="speakText('のみものをください')"><td class="jp-text">のみものをください</td><td class="pron-text">nomimono o kudasai</td><td class="cn-text">请给我饮料</td></tr>
+    <tr onclick="speakText('おかわりをください')"><td class="jp-text">おかわりをください</td><td class="pron-text">okawari o kudasai</td><td class="cn-text">请给我续杯/添饭</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🏠 居家生活</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('おはよう')"><td class="jp-text">おはよう</td><td class="pron-text">ohayou</td><td class="cn-text">早上好（常体）</td></tr>
+    <tr onclick="speakText('ごはんですよ')"><td class="jp-text">ごはんですよ</td><td class="pron-text">gohan desu yo</td><td class="cn-text">吃饭了</td></tr>
+    <tr onclick="speakText('おふろにします')"><td class="jp-text">おふろにします</td><td class="pron-text">ofuro ni shimasu</td><td class="cn-text">我要洗澡</td></tr>
+    <tr onclick="speakText('ねるまえに')"><td class="jp-text">ねるまえに</td><td class="pron-text">neru mae ni</td><td class="cn-text">睡觉前</td></tr>
+    <tr onclick="speakText('ふくをきます')"><td class="jp-text">ふくをきます</td><td class="pron-text">fuku o kimasu</td><td class="cn-text">穿衣服</td></tr>
+    <tr onclick="speakText('はをみがきます')"><td class="jp-text">はをみがきます</td><td class="pron-text">ha o migakimasu</td><td class="cn-text">刷牙</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🚗 出行交通</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('えきはどこですか')"><td class="jp-text">えきはどこですか</td><td class="pron-text">eki wa doko desu ka</td><td class="cn-text">车站在哪里？</td></tr>
+    <tr onclick="speakText('ちかてつのえきはどこですか')"><td class="jp-text">ちかてつのえきはどこですか</td><td class="pron-text">chikatetsu no eki wa doko desu ka</td><td class="cn-text">地铁站在哪里？</td></tr>
+    <tr onclick="speakText('きっぷをかいます')"><td class="jp-text">きっぷをかいます</td><td class="pron-text">kippu o kaimasu</td><td class="cn-text">买票</td></tr>
+    <tr onclick="speakText('のりばはどこですか')"><td class="jp-text">のりばはどこですか</td><td class="pron-text">noriba wa doko desu ka</td><td class="cn-text">站台在哪里？</td></tr>
+    <tr onclick="speakText('タクシーをよんでください')"><td class="jp-text">タクシーをよんでください</td><td class="pron-text">takushii o yonde kudasai</td><td class="cn-text">请叫一辆出租车</td></tr>
+    <tr onclick="speakText('もどります')"><td class="jp-text">もどります</td><td class="pron-text">modorimasu</td><td class="cn-text">我回来了</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🛒 购物消费</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('いくらですか')"><td class="jp-text">いくらですか</td><td class="pron-text">ikura desu ka</td><td class="cn-text">多少钱？</td></tr>
+    <tr onclick="speakText('たかいです')"><td class="jp-text">たかいです</td><td class="pron-text">takai desu</td><td class="cn-text">很贵</td></tr>
+    <tr onclick="speakText('やすいです')"><td class="jp-text">やすいです</td><td class="pron-text">yasui desu</td><td class="cn-text">很便宜</td></tr>
+    <tr onclick="speakText('これをください')"><td class="jp-text">これをください</td><td class="pron-text">kore o kudasai</td><td class="cn-text">请给我这个</td></tr>
+    <tr onclick="speakText('クレジットカードはつかえますか')"><td class="jp-text">クレジットカードはつかえますか</td><td class="pron-text">kurejitto kaado wa tsukaemasu ka</td><td class="cn-text">可以用信用卡吗？</td></tr>
+    <tr onclick="speakText('てすうりょうはいりますか')"><td class="jp-text">てすうりょうはいりますか</td><td class="pron-text">tesuuryou wa irimasu ka</td><td class="cn-text">需要手续费吗？</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">💬 常用表达（扩大版）</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('わかりません')"><td class="jp-text">わかりません</td><td class="pron-text">wakarimasen</td><td class="cn-text">不明白</td></tr>
+    <tr onclick="speakText('おねがいします')"><td class="jp-text">おねがいします</td><td class="pron-text">onegaishimasu</td><td class="cn-text">拜托了</td></tr>
+    <tr onclick="speakText('だいじょうぶです')"><td class="jp-text">だいじょうぶです</td><td class="pron-text">daijoubu desu</td><td class="cn-text">没关系</td></tr>
+    <tr onclick="speakText('ちょっとまって')"><td class="jp-text">ちょっとまって</td><td class="pron-text">chotto matte</td><td class="cn-text">等一下</td></tr>
+    <tr onclick="speakText('そうですね')"><td class="jp-text">そうですね</td><td class="pron-text">sou desu ne</td><td class="cn-text">是啊</td></tr>
+    <tr onclick="speakText('わかりました')"><td class="jp-text">わかりました</td><td class="pron-text">wakarimashita</td><td class="cn-text">明白了</td></tr>
+    <tr onclick="speakText('むりです')"><td class="jp-text">むりです</td><td class="pron-text">muri desu</td><td class="cn-text">不行 / 不可能</td></tr>
+    <tr onclick="speakText('だめです')"><td class="jp-text">だめです</td><td class="pron-text">dame desu</td><td class="cn-text">不行 / 不许</td></tr>
+    <tr onclick="speakText('かまいません')"><td class="jp-text">かまいません</td><td class="pron-text">kamaimasen</td><td class="cn-text">没关系 / 不介意</td></tr>
+    <tr onclick="speakText('しりません')"><td class="jp-text">しりません</td><td class="pron-text">shirimasen</td><td class="cn-text">不知道</td></tr>
+    <tr onclick="speakText('いいですよ')"><td class="jp-text">いいですよ</td><td class="pron-text">ii desu yo</td><td class="cn-text">可以啊</td></tr>
+    <tr onclick="speakText('そうですか')"><td class="jp-text">そうですか</td><td class="pron-text">sou desu ka</td><td class="cn-text">是吗？</td></tr>
+  </table>
 </div>
 
 <div id="tab-travel" class="tab-content">
-  <div class="section-title">✈️ 旅游用语</div>
-  <div class="info-box">
-    💡 去日本旅游时常用的句子。
+  <div class="section-title">✈️ 旅游日语（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 旅游必备表达：</b><br>
+    ✅ 这些句子在<b>日本旅游</b>时非常实用<br>
+    ✅ 建议<b>打印出来</b>或<b>存在手机里</b><br>
+    ✅ <b>大胆说</b>：日本人对外国人很宽容，不要怕错
   </div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('travel1', this)">入境</button>
-    <button class="sub-tab" onclick="switchSubTab('travel2', this)">交通</button>
-    <button class="sub-tab" onclick="switchSubTab('travel3', this)">餐厅</button>
-    <button class="sub-tab" onclick="switchSubTab('travel4', this)">住宿</button>
-    <button class="sub-tab" onclick="switchSubTab('travel5', this)">紧急</button>
-  </div>
-  <div id="subtab-travel1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('りょこうのむてきです')"><div class="jp">りょこうの むてきです</div><div class="pron">ryokou no mteki desu</div><div class="cn">我来旅游</div></div>
-      <div class="card" onclick="speakText('パスポートをみせてください')"><div class="jp">パスポートを みせてください</div><div class="pron">pasupooto o misete kudasai</div><div class="cn">请出示护照</div></div>
-      <div class="card" onclick="speakText('たべものがあリます')"><div class="jp">たべものが あります</div><div class="pron">tabemono ga arimasu</div><div class="cn">我带食物了</div></div>
-    </div>
-  </div>
-  <div id="subtab-travel2" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ちかてつはどこですか')"><div class="jp">ちかてつは どこですか</div><div class="pron">chikatetsu wa doko desu ka</div><div class="cn">地铁站在哪里？</div></div>
-      <div class="card" onclick="speakText('きっぷをかいたい')"><div class="jp">きっぷを かいたいです</div><div class="pron">kippu o kaitai desu</div><div class="cn">我想买票</div></div>
-      <div class="card" onclick="speakText('タクシーをよんでください')"><div class="jp">タクシーを よんでください</div><div class="pron">takushii o yonde kudasai</div><div class="cn">请叫出租车</div></div>
-    </div>
-  </div>
-  <div id="subtab-travel3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('メニューをください')"><div class="jp">メニューを ください</div><div class="pron">menyuu o kudasai</div><div class="cn">请给我菜单</div></div>
-      <div class="card" onclick="speakText('おみずをください')"><div class="jp">おみずを ください</div><div class="pron">omizu o kudasai</div><div class="cn">请给我水</div></div>
-      <div class="card" onclick="speakText('おかいけいをおねがいします')"><div class="jp">おかいけいを おねがいします</div><div class="pron">okaikei o onegaishimasu</div><div class="cn">请结账</div></div>
-    </div>
-  </div>
-  <div id="subtab-travel4" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('ホテルをよやくしたい')"><div class="jp">ホテルを よやくしたい</div><div class="pron">hoteru o yoyaku shitai</div><div class="cn">我想预订酒店</div></div>
-      <div class="card" onclick="speakText('チェックインをおねがいします')"><div class="jp">チェックインを おねがいします</div><div class="pron">chekku in o onegaishimasu</div><div class="cn">请办理入住</div></div>
-    </div>
-  </div>
-  <div id="subtab-travel5" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('たすけて')"><div class="jp">たすけて</div><div class="pron">tasukete</div><div class="cn">救命！</div></div>
-      <div class="card" onclick="speakText('けいさつをよんで')"><div class="jp">けいさつを よんで</div><div class="pron">keisatsu o yonde</div><div class="cn">请叫警察</div></div>
-      <div class="card" onclick="speakText('びょういんはどこですか')"><div class="jp">びょういんは どこですか</div><div class="pron">byouin wa doko desu ka</div><div class="cn">医院在哪里？</div></div>
-    </div>
-  </div>
+  
+  <div class="section-title" style="font-size:1.1em">🛂 入境检查</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('パスポートをみせてください')"><td class="jp-text">パスポートをみせてください</td><td class="pron-text">pasupooto o misete kudasai</td><td class="cn-text">请出示护照</td></tr>
+    <tr onclick="speakText('ビザはありますか')"><td class="jp-text">ビザはありますか</td><td class="pron-text">biza wa arimasu ka</td><td class="cn-text">有签证吗？</td></tr>
+    <tr onclick="speakText('たびのむてきですか')"><td class="jp-text">たびのむてきですか</td><td class="pron-text">tabi no mokuteki desu ka</td><td class="cn-text">旅行目的是什么？</td></tr>
+    <tr onclick="speakText('かんこうです')"><td class="jp-text">かんこうです</td><td class="pron-text">kankou desu</td><td class="cn-text">是观光</td></tr>
+    <tr onclick="speakText('なんにちたいざいしますか')"><td class="jp-text">なんにちたいざいしますか</td><td class="pron-text">nan nichi taizai shimasu ka</td><td class="cn-text">停留几天？</td></tr>
+    <tr onclick="speakText('７にちたいざいします')"><td class="jp-text">７にちたいざいします</td><td class="pron-text">nana nichi taizai shimasu</td><td class="cn-text">停留7天</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🚇 交通出行</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('えきはどこですか')"><td class="jp-text">えきはどこですか</td><td class="pron-text">eki wa doko desu ka</td><td class="cn-text">车站在哪里？</td></tr>
+    <tr onclick="speakText('ちかてつにのりたい')"><td class="jp-text">ちかてつにのりたい</td><td class="pron-text">chikatetsu ni noritai</td><td class="cn-text">我想乘地铁</td></tr>
+    <tr onclick="speakText('きっぷをかいたい')"><td class="jp-text">きっぷをかいたい</td><td class="pron-text">kippu o kaitai</td><td class="cn-text">我想买票</td></tr>
+    <tr onclick="speakText('このでんしゃはとうきょうえきにいきますか')"><td class="jp-text">このでんしゃはとうきょうえきにいきますか</td><td class="pron-text">kono densha wa toukyou eki ni ikimasu ka</td><td class="cn-text">这电车去东京站吗？</td></tr>
+    <tr onclick="speakText('つぎのえきでおります')"><td class="jp-text">つぎのえきでおります</td><td class="pron-text">tsugi no eki de orimasu</td><td class="cn-text">我在下一站下车</td></tr>
+    <tr onclick="speakText('タクシーをよんでください')"><td class="jp-text">タクシーをよんでください</td><td class="pron-text">takushii o yonde kudasai</td><td class="cn-text">请叫一辆出租车</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🏨 酒店住宿</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('やどをよやくしたい')"><td class="jp-text">やどをよやくしたい</td><td class="pron-text">yado o yoyaku shitai</td><td class="cn-text">我想预订酒店</td></tr>
+    <tr onclick="speakText('シングルルームをおねがいします')"><td class="jp-text">シングルルームをおねがいします</td><td class="pron-text">shinguru ruumu o onegaishimasu</td><td class="cn-text">请给我单人间</td></tr>
+    <tr onclick="speakText('ダブルルームをおねがいします')"><td class="jp-text">ダブルルームをおねがいします</td><td class="pron-text">daburu ruumu o onegaishimasu</td><td class="cn-text">请给我双人间</td></tr>
+    <tr onclick="speakText('さんがつ５にちにはいり')"><td class="jp-text">さんがつ５にちにはいり</td><td class="pron-text">sangatsu itsuka ni hairi</td><td class="cn-text">3月5日入住</td></tr>
+    <tr onclick="speakText('さんがつ１０にちにたち')"><td class="jp-text">さんがつ１０にちにたち</td><td class="pron-text">sangatsu touka ni tachi</td><td class="cn-text">3月10日退房</td></tr>
+    <tr onclick="speakText('パスポートをみせてください')"><td class="jp-text">パスポートをみせてください</td><td class="pron-text">pasupooto o misete kudasai</td><td class="cn-text">请出示护照</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">🍜 餐厅用餐</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('メニューをみせてください')"><td class="jp-text">メニューをみせてください</td><td class="pron-text">menyuu o misete kudasai</td><td class="cn-text">请给我菜单</td></tr>
+    <tr onclick="speakText('オススメはなんですか')"><td class="jp-text">オススメはなんですか</td><td class="pron-text">osusume wa nan desu ka</td><td class="cn-text">推荐什么？</td></tr>
+    <tr onclick="speakText('これをください')"><td class="jp-text">これをください</td><td class="pron-text">kore o kudasai</td><td class="cn-text">请给我这个</td></tr>
+    <tr onclick="speakText('おみずをください')"><td class="jp-text">おみずをください</td><td class="pron-text">omizu o kudasai</td><td class="cn-text">请给我水</td></tr>
+    <tr onclick="speakText('おかんじょうをおねがいします')"><td class="jp-text">おかんじょうをおねがいします</td><td class="pron-text">okan jou o onegaishimasu</td><td class="cn-text">请结账</td></tr>
+    <tr onclick="speakText('きっぷはどこではらいますか')"><td class="jp-text">きっぷはどこではらいますか</td><td class="pron-text">kippu wa doko de haraimasu ka</td><td class="cn-text">在哪里付钱？</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">❓ 紧急情况</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('たすけて')"><td class="jp-text">たすけて</td><td class="pron-text">tasukete</td><td class="cn-text">救命！</td></tr>
+    <tr onclick="speakText('けいさつをよんで')"><td class="jp-text">けいさつをよんで</td><td class="pron-text">keisatsu o yonde</td><td class="cn-text">叫警察！</td></tr>
+    <tr onclick="speakText('きゅうきゅうしゃをよんで')"><td class="jp-text">きゅうきゅうしゃをよんで</td><td class="pron-text">kyuukyuusha o yonde</td><td class="cn-text">叫救护车！</td></tr>
+    <tr onclick="speakText('おおきなけがをしました')"><td class="jp-text">おおきなけがをしました</td><td class="pron-text">ookina kega o shimashita</td><td class="cn-text">我受了重伤</td></tr>
+    <tr onclick="speakText('なにかをたべてアレルギーがでました')"><td class="jp-text">なにかをたべてアレルギーがでました</td><td class="pron-text">nanika o tabete arerugii ga demashita</td><td class="cn-text">我吃了什么东西过敏了</td></tr>
+  </table>
 </div>
 
 <div id="tab-business" class="tab-content">
-  <div class="section-title">💼 商务日语</div>
-  <div class="info-box">
-    💡 商务日语需要使用<b>敬语（けいご）</b>，比日常用语更礼貌。
+  <div class="section-title">💼 商务日语（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 商务日语的特点：</b><br>
+    ✅ <b>敬语非常重要</b>：对上司、客户必须用敬语<br>
+    ✅ <b>礼貌表达</b>：多用"お〜します""〜いたします"<br>
+    ✅ <b>电话礼仪</b>：接电话要先说"もしもし"<br>
+    ✅ <b>邮件格式</b>：有固定的开头和结尾
   </div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('biz1', this)">上班问候</button>
-    <button class="sub-tab" onclick="switchSubTab('biz2', this)">工作用语</button>
-    <button class="sub-tab" onclick="switchSubTab('biz3', this)">会议邮件</button>
-  </div>
-  <div id="subtab-biz1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('おはようございます')"><div class="jp">おはようございます</div><div class="pron">ohayou gozaimasu</div><div class="cn">早上好（敬语）</div></div>
-      <div class="card" onclick="speakText('おつかれさまでした')"><div class="jp">おつかれさまでした</div><div class="pron">otsukaresama deshita</div><div class="cn">辛苦了</div></div>
-      <div class="card" onclick="speakText('いってきます')"><div class="jp">いってきます</div><div class="pron">itte kimasu</div><div class="cn">我出门了</div></div>
-      <div class="card" onclick="speakText('いってらっしゃい')"><div class="jp">いってらっしゃい</div><div class="pron">itterasshai</div><div class="cn">路上小心</div></div>
-      <div class="card" onclick="speakText('ただいま')"><div class="jp">ただいま</div><div class="pron">tadaima</div><div class="cn">我回来了</div></div>
-      <div class="card" onclick="speakText('おかえりなさい')"><div class="jp">おかえりなさい</div><div class="pron">okaerinasai</div><div class="cn">欢迎回来</div></div>
-    </div>
-  </div>
-  <div id="subtab-biz2" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('かいぎ')"><div class="jp">かいぎ</div><div class="pron">kaigi</div><div class="cn">会议</div></div>
-      <div class="card" onclick="speakText('しりょう')"><div class="jp">しりょう</div><div class="pron">shiryou</div><div class="cn">资料</div></div>
-      <div class="card" onclick="speakText('てんぼう')"><div class="jp">てんぼう</div><div class="pron">tenbou</div><div class="cn">展望</div></div>
-      <div class="card" onclick="speakText('ごうりてき')"><div class="jp">ごうりてき</div><div class="pron">gouriteki</div><div class="cn">合理的</div></div>
-    </div>
-  </div>
-  <div id="subtab-biz3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('メールをおくってください')"><div class="jp">メールを おくってください</div><div class="pron">meeru o okutte kudasai</div><div class="cn">请发邮件</div></div>
-      <div class="card" onclick="speakText('でんわをください')"><div class="jp">でんわを ください</div><div class="pron">denwa o kudasai</div><div class="cn">请打电话</div></div>
-    </div>
+  
+  <div class="section-title" style="font-size:1.1em">👔 上班问候</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('おはようございます')"><td class="jp-text">おはようございます</td><td class="pron-text">ohayou gozaimasu</td><td class="cn-text">早上好（敬语）</td></tr>
+    <tr onclick="speakText('おつかれさまでした')"><td class="jp-text">おつかれさまでした</td><td class="pron-text">otsukaresama deshita</td><td class="cn-text">辛苦了</td></tr>
+    <tr onclick="speakText('いってきます')"><td class="jp-text">いってきます</td><td class="pron-text">itte kimasu</td><td class="cn-text">我出门了（离开公司时）</td></tr>
+    <tr onclick="speakText('いってらっしゃい')"><td class="jp-text">いってらっしゃい</td><td class="pron-text">itte rashai</td><td class="cn-text">路上小心（送别同事时）</td></tr>
+    <tr onclick="speakText('ただいまもどりました')"><td class="jp-text">ただいまもどりました</td><td class="pron-text">tadaima modorimashita</td><td class="cn-text">我回来了（回到公司时）</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">💻 工作用语</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('しりょうをつくります')"><td class="jp-text">しりょうをつくります</td><td class="pron-text">shiryou o tsukurimasu</td><td class="cn-text">做资料</td></tr>
+    <tr onclick="speakText('かいぎがあります')"><td class="jp-text">かいぎがあります</td><td class="pron-text">kaigi ga arimasu</td><td class="cn-text">有会议</td></tr>
+    <tr onclick="speakText('メールをおくります')"><td class="jp-text">メールをおくります</td><td class="pron-text">meeru o okurimasu</td><td class="cn-text">发邮件</td></tr>
+    <tr onclick="speakText('でんわをします')"><td class="jp-text">でんわをします</td><td class="pron-text">denwa o shimasu</td><td class="cn-text">打电话</td></tr>
+    <tr onclick="speakText('しごとがおわりました')"><td class="jp-text">しごとがおわりました</td><td class="pron-text">shigoto ga owarimashita</td><td class="cn-text">工作结束了</td></tr>
+    <tr onclick="speakText('やすみをとりたい')"><td class="jp-text">やすみをとりたい</td><td class="pron-text">yasumi o toritai</td><td class="cn-text">我想请假</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">📞 电话用语</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('もしもし')"><td class="jp-text">もしもし</td><td class="pron-text">moshi moshi</td><td class="cn-text">喂（打电话时）</td></tr>
+    <tr onclick="speakText('〇〇のかいしゃの△△です')"><td class="jp-text">〇〇のかいしゃの△△です</td><td class="pron-text">~~ no kaisha no △△ desu</td><td class="cn-text">我是XX公司的XX</td></tr>
+    <tr onclick="speakText('〇〇さんをおねがいします')"><td class="jp-text">〇〇さんをおねがいします</td><td class="pron-text">~~ san o onegaishimasu</td><td class="cn-text">请找XX先生/女士</td></tr>
+    <tr onclick="speakText('わたしがかわります')"><td class="jp-text">わたしがかわります</td><td class="pron-text">watashi ga kawarimasu</td><td class="cn-text">我来接（电话）</td></tr>
+    <tr onclick="speakText('メッセージをのこしてください')"><td class="jp-text">メッセージをのこしてください</td><td class="pron-text">messeji o nokoshite kudasai</td><td class="cn-text">请留言</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">📧 邮件格式</div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 商务邮件的固定格式：</b><br><br>
+    
+    <b>开头：</b><br>
+    △△株式会社<br>
+    ○○ 様<br><br>
+    
+    <b>正文开头：</b><br>
+    お世話になっております。<br>
+    ○○株式会社の△△でございます。<br><br>
+    
+    <b>正文：</b><br>
+    （邮件内容）<br><br>
+    
+    <b>结尾：</b><br>
+    何卒よろしくお願い申し上げます。<br><br>
+    
+    <b>署名：</b><br>
+    ○○株式会社<br>
+    △△（部门）<br>
+    △△（姓名）<br>
+    TEL: 00-0000-0000<br>
+    Email: xxx@ooo.com
   </div>
 </div>
 
 <div id="tab-romance" class="tab-content">
-  <div class="section-title">💕 情感表达</div>
-  <div class="info-box">
-    💡 日语的情感表达比较含蓄，常用<b>ん（暗示）</b>的方式。<br>
-    注意：日语的"好き（suki）"比中文的"喜欢"更重，接近"爱"。
+  <div class="section-title">💕 情感表达（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 情感表达注意事项：</b><br>
+    ✅ 日语表达情感比较<b>含蓄</b>，不像中文那么直接<br>
+    ✅ <b>委婉表达</b>：好きです（喜欢）比愛してる（爱你）更常用<br>
+    ✅ <b>结合场景</b>：约会、表白、赞美等场景用语不同
   </div>
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="switchSubTab('rom1', this)">表白</button>
-    <button class="sub-tab" onclick="switchSubTab('rom2', this)">约会</button>
-    <button class="sub-tab" onclick="switchSubTab('rom3', this)">赞美</button>
-    <button class="sub-tab" onclick="switchSubTab('rom4', this)">日常</button>
-  </div>
-  <div id="subtab-rom1" class="sub-tab-content active">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('あいしてる')"><div class="jp">あいしてる</div><div class="pron">aishiteru</div><div class="cn">我爱你（很重）</div></div>
-      <div class="card" onclick="speakText('すきです')"><div class="jp">すきです</div><div class="pron">suki desu</div><div class="cn">我喜欢你</div></div>
-      <div class="card" onclick="speakText('すきだよ')"><div class="jp">すきだよ</div><div class="pron">suki da yo</div><div class="cn">我喜欢你（随意）</div></div>
-      <div class="card" onclick="speakText('こいしてる')"><div class="jp">こいしてる</div><div class="pron">koi shiteru</div><div class="cn">我在恋爱中</div></div>
-      <div class="card" onclick="speakText('けっこんして')"><div class="jp">けっこんして</div><div class="pron">kekkon shite</div><div class="cn">结婚吧</div></div>
-    </div>
-  </div>
-  <div id="subtab-rom2" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('デートしよう')"><div class="jp">デートしよう</div><div class="pron">deeto shiyou</div><div class="cn">约会吧</div></div>
-      <div class="card" onclick="speakText('どこにいく')"><div class="jp">どこにいく</div><div class="pron">doko ni iku</div><div class="cn">去哪里？</div></div>
-      <div class="card" onclick="speakText('えいがをみよう')"><div class="jp">えいがをみよう</div><div class="pron">eiga o miyou</div><div class="cn">看电影吧</div></div>
-      <div class="card" onclick="speakText('おいしい')"><div class="jp">おいしい</div><div class="pron">oishii</div><div class="cn">好吃（夸餐厅）</div></div>
-    </div>
-  </div>
-  <div id="subtab-rom3" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('うつくしい')"><div class="jp">うつくしい</div><div class="pron">utsukushii</div><div class="cn">你很美</div></div>
-      <div class="card" onclick="speakText('かっこいい')"><div class="jp">かっこいい</div><div class="pron">kakkoii</div><div class="cn">你很帅</div></div>
-      <div class="card" onclick="speakText('りこう')"><div class="jp">りこう</div><div class="pron">rikou</div><div class="cn">你很聪明</div></div>
-      <div class="card" onclick="speakText('すごい')"><div class="jp">すごい</div><div class="pron">sugoi</div><div class="cn">你很厉害</div></div>
-      <div class="card" onclick="speakText('やさしい')"><div class="jp">やさしい</div><div class="pron">yasashii</div><div class="cn">你很温柔</div></div>
-    </div>
-  </div>
-  <div id="subtab-rom4" class="sub-tab-content">
-    <div class="card-grid">
-      <div class="card" onclick="speakText('いたの')"><div class="jp">いたの</div><div class="pron">itano</div><div class="cn">我想你</div></div>
-      <div class="card" onclick="speakText('あいたい')"><div class="jp">あいたい</div><div class="pron">aitai</div><div class="cn">我想见你</div></div>
-      <div class="card" onclick="speakText('だいすき')"><div class="jp">だいすき</div><div class="pron">daisuki</div><div class="cn">我非常喜欢你</div></div>
-    </div>
-  </div>
+  
+  <div class="section-title" style="font-size:1.1em">💘 表白</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('すきです')"><td class="jp-text">すきです</td><td class="pron-text">suki desu</td><td class="cn-text">喜欢你</td></tr>
+    <tr onclick="speakText('だいすき')"><td class="jp-text">だいすき</td><td class="pron-text">daisuki</td><td class="cn-text">非常喜欢你</td></tr>
+    <tr onclick="speakText('あいしてる')"><td class="jp-text">あいしてる</td><td class="pron-text">aishiteru</td><td class="cn-text">我爱你</td></tr>
+    <tr onclick="speakText('つきあってください')"><td class="jp-text">つきあってください</td><td class="pron-text">tsukiatte kudasai</td><td class="cn-text">请和我交往</td></tr>
+    <tr onclick="speakText('こいしてます')"><td class="jp-text">こいしてます</td><td class="pron-text">koishitemasu</td><td class="cn-text">我爱上你了</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">💑 约会</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('デートしよう')"><td class="jp-text">デートしよう</td><td class="pron-text">deeto shiyou</td><td class="cn-text">约会吧</td></tr>
+    <tr onclick="speakText('どこにいく')"><td class="jp-text">どこにいく</td><td class="pron-text">doko ni iku</td><td class="cn-text">去哪里？</td></tr>
+    <tr onclick="speakText('えいがをみにいこう')"><td class="jp-text">えいがをみにいこう</td><td class="pron-text">eiga o mi ni ikou</td><td class="cn-text">去看电影吧</td></tr>
+    <tr onclick="speakText('たべにいこう')"><td class="jp-text">たべにいこう</td><td class="pron-text">tabeni ikou</td><td class="cn-text">去吃饭吧</td></tr>
+    <tr onclick="speakText('おちゃをのみましょう')"><td class="jp-text">おちゃをのみましょう</td><td class="pron-text">ochanominimashou</td><td class="cn-text">去喝茶吧</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">👍 赞美</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('きれい')"><td class="jp-text">きれい</td><td class="pron-text">kirei</td><td class="cn-text">漂亮</td></tr>
+    <tr onclick="speakText('かっこいい')"><td class="jp-text">かっこいい</td><td class="pron-text">kakkoii</td><td class="cn-text">帅</td></tr>
+    <tr onclick="speakText('かわいい')"><td class="jp-text">かわいい</td><td class="pron-text">kawaii</td><td class="cn-text">可爱</td></tr>
+    <tr onclick="speakText('すてき')"><td class="jp-text">すてき</td><td class="pron-text">suteki</td><td class="cn-text">很棒</td></tr>
+    <tr onclick="speakText('やさしい')"><td class="jp-text">やさしい</td><td class="pron-text">yasashii</td><td class="cn-text">温柔</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">💔 分手</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('わかれよう')"><td class="jp-text">わかれよう</td><td class="pron-text">wakareyou</td><td class="cn-text">分手吧</td></tr>
+    <tr onclick="speakText('ごめんなさい')"><td class="jp-text">ごめんなさい</td><td class="pron-text">gomen nasai</td><td class="cn-text">对不起</td></tr>
+    <tr onclick="speakText('あなたがすきだけど')"><td class="jp-text">あなたがすきだけど</td><td class="pron-text">anata ga suki dakedo</td><td class="cn-text">我喜欢你但是...</td></tr>
+  </table>
 </div>
 
 <div id="tab-sentences" class="tab-content">
-  <div class="section-title">✏️ 造句练习</div>
-  <div class="info-box">
-    💡 日语基本句型：<b>主语 + は + 对象 + を/に + 动词</b><br>
-    与中文的"主谓宾"不同，日语是"主宾谓"结构。
+  <div class="section-title">✏️ 造句练习（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 造句练习方法：</b><br>
+    ✅ <b>替换练习</b>：用不同的词替换例句中的词<br>
+    ✅ <b>句型练习</b>：掌握基本句型，然后变换词汇<br>
+    ✅ <b>朗读练习</b>：大声朗读句子，培养语感
   </div>
+  
+  <div class="section-title" style="font-size:1.1em">句型1：〜は〜です（判断句）</div>
   <table>
-    <tr>
-      <th>句型</th>
-      <th>日语</th>
-      <th>发音</th>
-      <th>中文</th>
-    </tr>
-    <tr onclick="speakText('わたしはりんごをたべます')">
-      <td>主谓宾句</td>
-      <td class="jp-text">わたしは りんごを たべます</td>
-      <td class="pron-text">watashi wa ringo o tabemasu</td>
-      <td class="cn-text">我吃苹果</td>
-    </tr>
-    <tr onclick="speakText('わたしはほんをよみます')">
-      <td>主谓宾句</td>
-      <td class="jp-text">わたしは ほんを よみます</td>
-      <td class="pron-text">watashi wa hon o yomimasu</td>
-      <td class="cn-text">我看书</td>
-    </tr>
-    <tr onclick="speakText('わたしはがっこうにいきます')">
-      <td>移动句</td>
-      <td class="jp-text">わたしは がっこうに いきます</td>
-      <td class="pron-text">watashi wa gakkou ni ikimasu</td>
-      <td class="cn-text">我去学校</td>
-    </tr>
-    <tr onclick="speakText('これはほんです')">
-      <td>判断句</td>
-      <td class="jp-text">これは ほん です</td>
-      <td class="pron-text">kore wa hon desu</td>
-      <td class="cn-text">这是书</td>
-    </tr>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('わたしはがくせいです')"><td class="jp-text">わたしはがくせいです</td><td class="pron-text">watashi wa gakusei desu</td><td class="cn-text">我是学生</td></tr>
+    <tr onclick="speakText('これはほんです')"><td class="jp-text">これはほんです</td><td class="pron-text">kore wa hon desu</td><td class="cn-text">这是书</td></tr>
+    <tr onclick="speakText('あれはテレビです')"><td class="jp-text">あれはテレビです</td><td class="pron-text">are wa terebi desu</td><td class="cn-text">那是电视</td></tr>
+    <tr onclick="speakText('たなかさんはにほんじんです')"><td class="jp-text">たなかさんはにほんじんです</td><td class="pron-text">tanaka san wa nihonjin desu</td><td class="cn-text">田中先生是日本人</td></tr>
   </table>
-  <div class="section-title" style="font-size:1.1em; margin-top:20px">📝 替换练习</div>
-  <div class="info-box">
-    💡 尝试替换例句中的词汇，造出自己的句子！
-  </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('わたしはみずをのみます')"><div class="jp">わたしは みずを のみます</div><div class="pron">watashi wa mizu o nomimasu</div><div class="cn">我喝水</div></div>
-    <div class="card" onclick="speakText('わたしはコーヒーをのみます')"><div class="jp">わたしは コーヒーを のみます</div><div class="pron">watashi wa koohii o nomimasu</div><div class="cn">我喝咖啡</div></div>
+  
+  <div class="section-title" style="font-size:1.1em">句型2：〜を〜ます（动作句）</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('コーヒーをのみます')"><td class="jp-text">コーヒーをのみます</td><td class="pron-text">koohii o nomimasu</td><td class="cn-text">喝咖啡</td></tr>
+    <tr onclick="speakText('ほんをよみます')"><td class="jp-text">ほんをよみます</td><td class="pron-text">hon o yomimasu</td><td class="cn-text">看书</td></tr>
+    <tr onclick="speakText('テレビをみます')"><td class="jp-text">テレビをみます</td><td class="pron-text">terebi o mimasu</td><td class="cn-text">看电视</td></tr>
+    <tr onclick="speakText('みちをききます')"><td class="jp-text">みちをききます</td><td class="pron-text">michi o kikimasu</td><td class="cn-text">问路</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">句型3：〜に〜ます（时间/地点）</div>
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th></tr>
+    <tr onclick="speakText('７じにおきます')"><td class="jp-text">７じにおきます</td><td class="pron-text">shichi ji ni okimasu</td><td class="cn-text">7点起床</td></tr>
+    <tr onclick="speakText('がっこうにいきます')"><td class="jp-text">がっこうにいきます</td><td class="pron-text">gakkou ni ikimasu</td><td class="cn-text">去学校</td></tr>
+    <tr onclick="speakText('にほんにいきたい')"><td class="jp-text">にほんにいきたい</td><td class="pron-text">nihon ni ikitai</td><td class="cn-text">我想去日本</td></tr>
+    <tr onclick="speakText('えきででんしゃをまちます')"><td class="jp-text">えきででんしゃをまちます</td><td class="pron-text">eki de densha o machimasu</td><td class="cn-text">在车站等电车</td></tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">替换练习（扩大版）</div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>📝 练习方法：</b><br>
+    1️⃣ 先朗读例句<br>
+    2️⃣ 替换划线部分，造新句子<br>
+    3️⃣ 大声朗读新句子<br>
+    4️⃣ 录音对比，纠正发音<br><br>
+    
+    <b>🔹 例句1：わたしは<b>がくせい</b>です。</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：がくせい → せんせい（老师）→ わたしは<b>せんせい</b>です。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：がくせい → いしゃ（医生）→ わたしは<b>いしゃ</b>です。<br><br>
+    
+    <b>🔹 例句2：<b>コーヒー</b>をのみます。</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：コーヒー → おちゃ（茶）→ <b>おちゃ</b>をのみます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：コーヒー → ビール（啤酒）→ <b>ビール</b>をのみます。<br><br>
+    
+    <b>🔹 例句3：<b>がっこう</b>にいきます。</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：がっこう → えき（车站）→ <b>えき</b>にいきます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;替换：がっこう → デパート（百货商店）→ <b>デパート</b>にいきます。
   </div>
 </div>
 
 <div id="tab-quiz" class="tab-content">
-  <div class="section-title">📝 小测验</div>
-  <div class="info-box">
-    💡 测试你的日语学习效果！点击正确答案。
+  <div class="section-title">📝 日语测验（扩大版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 测验说明：</b><br>
+    ✅ 点击选项查看答案<br>
+    ✅ 建议<b>反复练习</b>，直到全部答对<br>
+    ✅ 测验涵盖<b>平仮名、片仮名、词汇、语法</b>等
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 1：</b>"こんにちは" 是什么意思？</p>
+  <div class="quiz-question" data-correct="0">
+    <div><b>问题 1：【平仮名】あ的发音是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">再见</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">你好</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">谢谢</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">早上好</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">a（啊）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">i（一）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">u（乌）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">e（诶）</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 2：</b>"ありがとう" 是什么意思？</p>
+  <div class="quiz-question" data-correct="1">
+    <div><b>问题 2：【平仮名】か的发音是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">对不起</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">再见</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">谢谢</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">早上好</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">a（啊）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">ka（卡）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">ki（奇）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">ku（库）</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 3：</b>"さようなら" 是什么意思？</p>
+  <div class="quiz-question" data-correct="2">
+    <div><b>问题 3：【片仮名】コーヒー的中文是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">再见</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">你好</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">谢谢</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">晚安</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">茶</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">牛奶</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">咖啡</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">啤酒</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 4：</b>"おはようございます" 是什么意思？</p>
+  <div class="quiz-question" data-correct="3">
+    <div><b>问题 4：【问候】早上好的日语是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">晚安</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">早上好</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">谢谢</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">再见</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">こんにちは</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">こんばんは</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">さようなら</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">おはようございます</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 5：</b>"いただきます" 是什么意思？</p>
+  <div class="quiz-question" data-correct="0">
+    <div><b>问题 5：【数字】1的日语（汉语）是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">多谢款待</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">我开动了</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">我回来了</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">路上小心</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">いち</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">に</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">さん</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">よん</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 6：</b>平假名"あ" 的发音是？</p>
+  <div class="quiz-question" data-correct="1">
+    <div><b>问题 6：【词汇】ありがとう的中文是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">a</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">i</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">u</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">e</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">对不起</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">谢谢</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">再见</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">早上好</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 7：</b>片假名"コーヒー" 是什么意思？</p>
+  <div class="quiz-question" data-correct="2">
+    <div><b>问题 7：【语法】わたしはがくせいです的中文是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">咖啡</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">茶</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">牛奶</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">水</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">你是学生</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">他是学生</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">我是学生</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">她是学生</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 8：</b>"わたし" 是什么意思？</p>
+  <div class="quiz-question" data-correct="3">
+    <div><b>问题 8：【对话】别人说"ありがとうございます"，你应该回答？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">我</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">你</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">他</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">她</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">おはようございます</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">すみません</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">ごめんなさい</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">どういたしまして</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 9：</b>"すみません" 是什么意思？</p>
+  <div class="quiz-question" data-correct="0">
+    <div><b>问题 9：【旅游】车站的日语是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">不好意思/对不起</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">谢谢</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">你好</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">再见</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">えき</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">でんしゃ</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">ばす</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">ひこうき</div>
     </div>
   </div>
   
-  <div class="quiz-question">
-    <p><b>问题 10：</b>"おやすみなさい" 是什么意思？</p>
+  <div class="quiz-question" data-correct="1">
+    <div><b>问题 10：【商务】辛苦了的日语是？</b></div>
     <div class="quiz-options">
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">早上好</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">我出门了</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, true)">晚安</div>
-      <div class="quiz-opt" onclick="checkAnswer(this, false)">我回来了</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">おはようございます</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">おつかれさまでした</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">いってきます</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">ただいま</div>
+    </div>
+  </div>
+  
+  <div class="quiz-question" data-correct="2">
+    <div><b>问题 11：【平仮名】ひらがな的用途是？</b></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">只用于外来语</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">只用于强调</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">用于语法词和本土词汇</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">只用于拟声词</div>
+    </div>
+  </div>
+  
+  <div class="quiz-question" data-correct="3">
+    <div><b>问题 12：【片仮名】カタカナ的用途是？</b></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">只用于语法词</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">只用于本土词汇</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">只用于动词词尾</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">主要用于外来语</div>
+    </div>
+  </div>
+  
+  <div class="quiz-question" data-correct="0">
+    <div><b>问题 13：【发音】ふ（fu）的发音要领是？</b></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">上牙轻碰下唇，呼气摩擦</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">嘴唇圆起，像说"夫"</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">舌尖弹上牙</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">嘴角向后，像说"一"</div>
+    </div>
+  </div>
+  
+  <div class="quiz-question" data-correct="1">
+    <div><b>问题 14：【敬语】对上司应该用？</b></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">常体（だ形）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">敬语（です/ます形）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">很随意的说法</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">不需要敬语</div>
+    </div>
+  </div>
+  
+  <div class="quiz-question" data-correct="2">
+    <div><b>问题 15：【词汇】いただきます的中文是？</b></div>
+    <div class="quiz-options">
+      <div class="quiz-opt" onclick="checkQuiz(this, 0)">我吃好了</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 1)">好吃</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 2)">我开动了（饭前说）</div>
+      <div class="quiz-opt" onclick="checkQuiz(this, 3)">请给我水</div>
     </div>
   </div>
 </div>
 
 <div id="tab-freestyle" class="tab-content">
-  <div class="section-title">🎤 自由朗读</div>
-  <div class="info-box">
-    💡 在下方输入框中输入任何日语句子，点击"朗读"按钮即可听到发音。<br>
-    💡 <b>提示：</b>可以输入平假名、片假名或混合的句子。
-  </div>
-  <div style="text-align:center; margin:20px 0">
-    <input type="text" id="freestyle-input" style="width:80%; padding:10px; font-size:1.1em; border:2px solid #c0392b; border-radius:8px" placeholder="输入日语句子...">
-    <br><br>
-    <button class="reload-btn" style="font-size:1.1em; padding:10px 30px" onclick="speakText(document.getElementById('freestyle-input').value)">🔊 朗读</button>
+  <div class="section-title">🎤 自由朗读练习（升级版）</div>
+  <div class="info-box" style="background:#dbeafe; border-color:#1e3a8a">
+    <b>💡 朗读练习技巧：</b><br>
+    ✅ <b>大声朗读</b>：不要怕错，大胆说出来<br>
+    ✅ <b>录音对比</b>：录下自己的发音，对比标准发音<br>
+    ✅ <b>反复练习</b>：每天练习20-30分钟<br>
+    ✅ <b>结合场景</b>：想象自己在实际场景中说话
   </div>
   
-  <div class="section-title" style="font-size:1.1em; margin-top:24px">📚 常用句朗读练习</div>
-  <div class="info-box">
-    💡 点击句子可以听到发音，跟着读吧！
+  <div style="margin:18px 0">
+    <label>朗读速度：</label>
+    <input type="range" id="rate-slider" min="0.5" max="1.5" step="0.1" value="0.9" style="width:180px;vertical-align:middle">
+    <span id="rate-label">0.9x</span>
   </div>
-  <div class="card-grid">
-    <div class="card" onclick="speakText('こんにちは')"><div class="jp">こんにちは</div><div class="cn">你好</div></div>
-    <div class="card" onclick="speakText('ありがとうございます')"><div class="jp">ありがとうございます</div><div class="cn">谢谢</div></div>
-    <div class="card" onclick="speakText('わたしはがくせいです')"><div class="jp">わたしはがくせいです</div><div class="cn">我是学生</div></div>
-    <div class="card" onclick="speakText('これはほんです')"><div class="jp">これはほんです</div><div class="cn">这是书</div></div>
-    <div class="card" onclick="speakText('いただきます')"><div class="jp">いただきます</div><div class="cn">我开动了</div></div>
-    <div class="card" onclick="speakText('おはようございます')"><div class="jp">おはようございます</div><div class="cn">早上好</div></div>
+  
+  <div class="section-title" style="font-size:1.1em">📝 常用句朗读练习</div>
+  <div class="info-box" style="background:#f0fdf4; border-color:#059669">
+    <b>💡 使用方法：</b><br>
+    1️⃣ 点击<b>"朗读"</b>按钮，听标准发音<br>
+    2️⃣ <b>大声跟读</b>，模仿发音和语调<br>
+    3️⃣ <b>录音对比</b>，纠正自己的发音<br>
+    4️⃣ <b>反复练习</b>，直到熟练
+  </div>
+  
+  <table>
+    <tr><th>日语</th><th>发音</th><th>中文</th><th>操作</th></tr>
+    <tr>
+      <td class="jp-text">おはようございます</td>
+      <td class="pron-text">ohayou gozaimasu</td>
+      <td class="cn-text">早上好</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('おはようございます')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">こんにちは</td>
+      <td class="pron-text">konnichiwa</td>
+      <td class="cn-text">你好</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('こんにちは')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">ありがとうございます</td>
+      <td class="pron-text">arigatou gozaimasu</td>
+      <td class="cn-text">谢谢</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('ありがとうございます')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">すみません</td>
+      <td class="pron-text">sumimasen</td>
+      <td class="cn-text">对不起 / 不好意思</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('すみません')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">いただきます</td>
+      <td class="pron-text">itadakimasu</td>
+      <td class="cn-text">我开动了</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('いただきます')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">ごちそうさまでした</td>
+      <td class="pron-text">gochisousama deshita</td>
+      <td class="cn-text">我吃好了</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('ごちそうさまでした')">🔊 朗读</button></td>
+    </tr>
+    <tr>
+      <td class="jp-text">おつかれさまでした</td>
+      <td class="pron-text">otsukaresama deshita</td>
+      <td class="cn-text">辛苦了</td>
+      <td><button class="reload-btn" style="background:#1e3a8a" onclick="speakText('おつかれさまでした')">🔊 朗读</button></td>
+    </tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em">✍️ 自由输入朗读</div>
+  <div style="margin:12px 0">
+    <textarea id="freestyle-input" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1em" placeholder="在这里输入你想朗读的日语句子..."></textarea>
+  </div>
+  <div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap">
+    <button class="reload-btn" style="background:#1e3a8a;padding:10px 20px;font-size:1em" onclick="speakFreestyle()">🔊 朗读输入内容</button>
+    <button class="reload-btn" style="background:#059669;padding:10px 20px;font-size:1em" onclick="clearFreestyle()">🗑️ 清空</button>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em;color:#059669">💡 朗读练习计划</div>
+  <div class="info-box" style="background:#d1fae5; border-color:#059669">
+    <b>📅 每日练习计划：</b><br><br>
+    
+    <b>第1周：基础问候</b><br>
+    • 每天练习5-10句问候语<br>
+    • 重点：发音准确、语调自然<br><br>
+    
+    <b>第2周：数字与词汇</b><br>
+    • 每天练习数字1-100<br>
+    • 每天学习10个新词汇<br><br>
+    
+    <b>第3周：句型练习</b><br>
+    • 每天练习3-5个句型<br>
+    • 重点：替换练习、造句<br><br>
+    
+    <b>第4周：对话练习</b><br>
+    • 每天练习1-2个对话场景<br>
+    • 重点：角色扮演、流利度
   </div>
 </div>
 
-  </div>
-</div>
+  </div><!-- end main-content -->
+</div><!-- end container -->
 
 <script>
-let currentVoice = null;
-let voiceLoadAttempts = 0;
-const MAX_VOICE_LOAD_ATTEMPTS = 5;
+// ========== 全局变量 ==========
+let voices = [];
+let voiceSelect = document.getElementById('voice-select');
+let statusBar = document.getElementById('status-bar');
+let voiceWarning = document.getElementById('voice-warning');
+let rateSlider = document.getElementById('rate-slider');
+let rateLabel = document.getElementById('rate-label');
 
+// ========== 语音初始化 ==========
+function loadVoices() {
+  voices = speechSynthesis.getVoices();
+  voiceSelect.innerHTML = '';
+  let jaVoices = [];
+  voices.forEach((v, i) => {
+    if (v.lang.startsWith('ja')) jaVoices.push({index: i, voice: v});
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${v.name} (${v.lang})`;
+    voiceSelect.appendChild(opt);
+  });
+  if (jaVoices.length > 0) {
+    statusBar.textContent = `✅ 已加载 ${voices.length} 个语音，检测到 ${jaVoices.length} 个日语语音`;
+    voiceWarning.style.display = 'none';
+    voiceSelect.value = jaVoices[0].index;
+  } else {
+    statusBar.textContent = `⚠️ 已加载 ${voices.length} 个语音，但未检测到日语语音`;
+    voiceWarning.style.display = 'block';
+  }
+}
+
+function reloadVoices() {
+  speechSynthesis.cancel();
+  statusBar.textContent = '正在重新加载语音...';
+  setTimeout(loadVoices, 300);
+}
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
+setTimeout(loadVoices, 500);
+
+function getSelectedVoice() {
+  const idx = parseInt(voiceSelect.value);
+  if (!isNaN(idx) && voices[idx]) return voices[idx];
+  return null;
+}
+
+// ========== 发音 ==========
+function speakText(text) {
+  if (!text) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'ja-JP';
+  utter.rate = parseFloat(rateSlider.value);
+  const selectedVoice = getSelectedVoice();
+  if (selectedVoice) utter.voice = selectedVoice;
+  speechSynthesis.speak(utter);
+}
+
+function speakFreestyle() {
+  const input = document.getElementById('freestyle-input').value.trim();
+  if (!input) {
+    alert('请输入要朗读的日语句子！');
+    return;
+  }
+  speakText(input);
+}
+
+function clearFreestyle() {
+  document.getElementById('freestyle-input').value = '';
+}
+
+// ========== 标签页切换 ==========
 function switchTab(tabId, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -1282,103 +1887,36 @@ function switchTab(tabId, btn) {
 }
 
 function switchSubTab(subId, btn) {
-  const parent = btn.closest('.tab-content');
-  parent.querySelectorAll('.sub-tab-content').forEach(el => el.classList.remove('active'));
-  parent.querySelectorAll('.sub-tab').forEach(el => el.classList.remove('active'));
-  const sub = document.getElementById('subtab-' + subId);
+  document.querySelectorAll('.sub-tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.sub-tab').forEach(el => el.classList.remove('active'));
+  const sub = document.getElementById(subId);
   if (sub) sub.classList.add('active');
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
-function speakText(text) {
-  speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'ja-JP';
-  utter.rate = parseFloat(document.getElementById('rate-slider') ? document.getElementById('rate-slider').value : 0.9);
-  const selectedVoice = getSelectedVoice();
-  if (selectedVoice) utter.voice = selectedVoice;
-  speechSynthesis.speak(utter);
-}
-
-function getSelectedVoice() {
-  const sel = document.getElementById('voice-select');
-  if (!sel) return null;
-  const idx = parseInt(sel.value);
-  if (isNaN(idx)) return null;
-  const voices = speechSynthesis.getVoices();
-  return voices[idx] || null;
-}
-
-function reloadVoices() {
-  speechSynthesis.cancel();
-  voiceLoadAttempts = 0;
-  const voices = speechSynthesis.getVoices();
-  populateVoiceList(voices);
-  if (voices.length === 0) {
-    setTimeout(() => {
-      const v2 = speechSynthesis.getVoices();
-      populateVoiceList(v2);
-    }, 500);
-  }
-}
-
-function populateVoiceList(voices) {
-  const sel = document.getElementById('voice-select');
-  if (!sel) return;
-  sel.innerHTML = '';
-  let jpIdx = -1;
-  voices.forEach((v, i) => {
-    if (v.lang.startsWith('ja')) {
-      const opt = document.createElement('option');
-      opt.value = i;
-      opt.textContent = v.name + ' (' + v.lang + ')';
-      sel.appendChild(opt);
-      if (jpIdx === -1) jpIdx = i;
-    }
+// ========== 测验 ==========
+function checkQuiz(el, choice) {
+  const q = el.closest('.quiz-question');
+  const correct = parseInt(q.getAttribute('data-correct'));
+  q.querySelectorAll('.quiz-opt').forEach((opt, i) => {
+    opt.classList.remove('correct', 'wrong');
+    if (i === correct) opt.classList.add('correct');
+    if (i === choice && choice !== correct) opt.classList.add('wrong');
   });
-  if (jpIdx >= 0) sel.value = jpIdx;
-  const status = document.getElementById('status-bar');
-  if (status) {
-    if (jpIdx >= 0) {
-      status.textContent = '✅ 已检测到日语语音包，可以点击卡片发音';
-      status.style.color = '#27ae60';
-    } else {
-      status.textContent = '⚠️ 未检测到日语语音包，发音可能不准确';
-      status.style.color = '#e67e22';
-    }
-  }
-  const warn = document.getElementById('voice-warning');
-  if (warn) warn.style.display = (jpIdx >= 0) ? 'none' : 'block';
 }
 
-function checkVoices() {
-  const voices = speechSynthesis.getVoices();
-  if (voices.length > 0) {
-    populateVoiceList(voices);
-  } else if (voiceLoadAttempts < MAX_VOICE_LOAD_ATTEMPTS) {
-    voiceLoadAttempts++;
-    setTimeout(checkVoices, 300);
-  }
+// ========== 语速滑块 ==========
+if (rateSlider) {
+  rateSlider.addEventListener('input', () => {
+    rateLabel.textContent = rateSlider.value + 'x';
+  });
 }
 
-function checkAnswer(btn, isCorrect) {
-  if (isCorrect) {
-    btn.classList.add('correct');
-    setTimeout(() => alert('✅ 正确！'), 100);
-  } else {
-    btn.classList.add('wrong');
-    setTimeout(() => alert('❌ 错了，再试试？'), 100);
-  }
-}
-
-speechSynthesis.onvoiceschanged = () => {
-  const voices = speechSynthesis.getVoices();
-  populateVoiceList(voices);
-};
-
-window.addEventListener('load', () => {
-  checkVoices();
-  setTimeout(checkVoices, 800);
+// ========== 初始化 ==========
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('日语学习工具（升级版）已加载');
 });
 </script>
-</body></html>
+
+</body>
+</html>
