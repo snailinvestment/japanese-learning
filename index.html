@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -134,6 +135,7 @@
     <button class="tab-btn" onclick="switchTab('travel', this)">✈️ 旅游</button>
     <button class="tab-btn" onclick="switchTab('business', this)">💼 商务</button>
     <button class="tab-btn" onclick="switchTab('romance', this)">💕 情感</button>
+    <button class="tab-btn" onclick="switchTab('hobbies', this)">🎨 兴趣爱好</button>
     <button class="tab-btn" onclick="switchTab('sentences', this)">✏️ 造句</button>
     <button class="tab-btn" onclick="switchTab('quiz', this)">📝 测验</button>
     <button class="tab-btn" onclick="switchTab('freestyle', this)">🎤 朗读</button>
@@ -1537,6 +1539,316 @@
     &nbsp;&nbsp;&nbsp;&nbsp;替换：がっこう → えき（车站）→ <b>えき</b>にいきます。<br>
     &nbsp;&nbsp;&nbsp;&nbsp;替换：がっこう → デパート（百货商店）→ <b>デパート</b>にいきます。
   </div>
+
+<div id="tab-hobbies" class="tab-content">
+  <div class="section-title">🎨 兴趣爱好与日常喜好</div>
+  <div class="info-box" style="background:#f0f9ff; border-color:#3b82f6">
+    <b>📚 学习要点</b><br>
+    ✅ 询问对方的兴趣爱好<br>
+    ✅ 表达自己的喜好<br>
+    ✅ 邀请对方一起做某事<br>
+    ✅ 礼貌地接受或拒绝邀请
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">❓ 询问喜好的常用句型</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="jp">趣味は何ですか？</div>
+      <div class="zh">你的兴趣是什么？</div>
+      <div class="pron">[shumi wa nan desu ka]</div>
+      <button class="speak-btn" onclick="speakText('趣味は何ですか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">好きなことは何ですか？</div>
+      <div class="zh">你喜欢做什么？</div>
+      <div class="pron">[suki na koto wa nan desu ka]</div>
+      <button class="speak-btn" onclick="speakText('好きなことは何ですか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">暇なとき、何をしますか？</div>
+      <div class="zh">有空的时候，你做什么？</div>
+      <div class="pron">[hima na toki, nani o shimasu ka]</div>
+      <button class="speak-btn" onclick="speakText('暇なとき、何をしますか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">最近、はまっていることはありますか？</div>
+      <div class="zh">最近有什么沉迷的事情吗？</div>
+      <div class="pron">[saikin, hamatteiru koto wa arimasu ka]</div>
+      <button class="speak-btn" onclick="speakText('最近、はまっていることはありますか')">🔊</button>
+    </div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">💬 表达喜好的常用句型</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="jp">～が好きです</div>
+      <div class="zh">我喜欢～</div>
+      <div class="pron">[~ga suki desu]</div>
+      <div class="example" style="font-size:0.85em; color:#555; margin-top:6px">
+        例：コーヒーが好きです<br>（我喜欢咖啡）
+      </div>
+      <button class="speak-btn" onclick="speakText('コーヒーが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">～が嫌いです</div>
+      <div class="zh">我讨厌～</div>
+      <div class="pron">[~ga kirai desu]</div>
+      <div class="example" style="font-size:0.85em; color:#555; margin-top:6px">
+        例：納豆が嫌いです<br>（我讨厌纳豆）
+      </div>
+      <button class="speak-btn" onclick="speakText('納豆が嫌いです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">～が上手です</div>
+      <div class="zh">我擅长～</div>
+      <div class="pron">[~ga jouzu desu]</div>
+      <div class="example" style="font-size:0.85em; color:#555; margin-top:6px">
+        例：日本語が上手です<br>（我日语很好）
+      </div>
+      <button class="speak-btn" onclick="speakText('日本語が上手です')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">～に興味があります</div>
+      <div class="zh">我对～感兴趣</div>
+      <div class="pron">[~ni kyoumi ga arimasu]</div>
+      <div class="example" style="font-size:0.85em; color:#555; margin-top:6px">
+        例：日本の文化に興味があります<br>（我对日本文化感兴趣）
+      </div>
+      <button class="speak-btn" onclick="speakText('日本の文化に興味があります')">🔊</button>
+    </div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">🎯 兴趣爱好词汇</div>
+  <table class="vocab-table">
+    <tr>
+      <th>日语</th>
+      <th>发音</th>
+      <th>中文</th>
+      <th>🔊</th>
+    </tr>
+    <tr>
+      <td>趣味（しゅみ）</td>
+      <td>shumi</td>
+      <td>兴趣</td>
+      <td><button class="speak-btn" onclick="speakText('趣味')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>スポーツ</td>
+      <td>supootsu</td>
+      <td>运动</td>
+      <td><button class="speak-btn" onclick="speakText('スポーツ')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>映画（えいが）</td>
+      <td>eiga</td>
+      <td>电影</td>
+      <td><button class="speak-btn" onclick="speakText('映画')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>音楽（おんがく）</td>
+      <td>ongaku</td>
+      <td>音乐</td>
+      <td><button class="speak-btn" onclick="speakText('音楽')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>読書（どくしょ）</td>
+      <td>dokusho</td>
+      <td>读书</td>
+      <td><button class="speak-btn" onclick="speakText('読書')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>旅行（りょこう）</td>
+      <td>ryokou</td>
+      <td>旅行</td>
+      <td><button class="speak-btn" onclick="speakText('旅行')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>料理（りょうり）</td>
+      <td>ryouri</td>
+      <td>烹饪</td>
+      <td><button class="speak-btn" onclick="speakText('料理')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>歌（うた）</td>
+      <td>uta</td>
+      <td>唱歌</td>
+      <td><button class="speak-btn" onclick="speakText('歌')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>踊り（おどり）</td>
+      <td>odori</td>
+      <td>跳舞</td>
+      <td><button class="speak-btn" onclick="speakText('踊り')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>絵（え）</td>
+      <td>e</td>
+      <td>画画</td>
+      <td><button class="speak-btn" onclick="speakText('絵')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>ゲーム</td>
+      <td>geemu</td>
+      <td>游戏</td>
+      <td><button class="speak-btn" onclick="speakText('ゲーム')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>写真（しゃしん）</td>
+      <td>shashin</td>
+      <td>摄影</td>
+      <td><button class="speak-btn" onclick="speakText('写真')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>園芸（えんげい）</td>
+      <td>engei</td>
+      <td>园艺</td>
+      <td><button class="speak-btn" onclick="speakText('園芸')">🔊</button></td>
+    </tr>
+    <tr>
+      <td>釣り（つり）</td>
+      <td>tsuri</td>
+      <td>钓鱼</td>
+      <td><button class="speak-btn" onclick="speakText('釣り')">🔊</button></td>
+    </tr>
+  </table>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">📝 实用句子 - 表达喜好</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="jp">映画を見るのが好きです</div>
+      <div class="zh">我喜欢看电影</div>
+      <div class="pron">[eiga o miru no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('映画を見るのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">音楽を聞くのが好きです</div>
+      <div class="zh">我喜欢听音乐</div>
+      <div class="pron">[ongaku o kiku no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('音楽を聞くのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">スポーツをするのが好きです</div>
+      <div class="zh">我喜欢做运动</div>
+      <div class="pron">[supootsu o suru no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('スポーツをするのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">料理を作るのが好きです</div>
+      <div class="zh">我喜欢做饭</div>
+      <div class="pron">[ryouri o tsukuru no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('料理を作るのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">本を読むのが好きです</div>
+      <div class="zh">我喜欢读书</div>
+      <div class="pron">[hon o yomu no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('本を読むのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">旅行に行くのが好きです</div>
+      <div class="zh">我喜欢去旅行</div>
+      <div class="pron">[ryokou ni iku no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('旅行に行くのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">ゲームをするのが好きです</div>
+      <div class="zh">我喜欢玩游戏</div>
+      <div class="pron">[geemu o suru no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('ゲームをするのが好きです')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">歌を歌うのが好きです</div>
+      <div class="zh">我喜欢唱歌</div>
+      <div class="pron">[uta o utau no ga suki desu]</div>
+      <button class="speak-btn" onclick="speakText('歌を歌うのが好きです')">🔊</button>
+    </div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">💑 邀请对方一起做某事</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="jp">一緒に映画を見に行きませんか？</div>
+      <div class="zh">要不要一起去看电影？</div>
+      <div class="pron">[issho ni eiga o mi ni ikimasen ka]</div>
+      <button class="speak-btn" onclick="speakText('一緒に映画を見に行きませんか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">今度、食事でもどうですか？</div>
+      <div class="zh">下次一起吃个饭怎么样？</div>
+      <div class="pron">[kondo, shokuji demo dou desu ka]</div>
+      <button class="speak-btn" onclick="speakText('今度、食事でもどうですか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">週末、何か予定がありますか？</div>
+      <div class="zh">周末有什么安排吗？</div>
+      <div class="pron">[shuumatsu, nani ka yotei ga arimasu ka]</div>
+      <button class="speak-btn" onclick="speakText('週末、何か予定がありますか')">🔊</button>
+    </div>
+    <div class="card">
+      <div class="jp">よかったら、一緒にどうですか？</div>
+      <div class="zh">如果可以的话，要一起吗？</div>
+      <div class="pron">[yokattara, issho ni dou desu ka]</div>
+      <button class="speak-btn" onclick="speakText('よかったら、一緒にどうですか')">🔊</button>
+    </div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">✅ 接受或拒绝邀请</div>
+  <div class="card-grid">
+    <div class="card" style="border-color:#10b981">
+      <div class="jp">はい、ぜひ！</div>
+      <div class="zh">好啊，一定！</div>
+      <div class="pron">[hai, zehi]</div>
+      <button class="speak-btn" onclick="speakText('はい、ぜひ')">🔊</button>
+    </div>
+    <div class="card" style="border-color:#10b981">
+      <div class="jp">いいですね！行きましょう！</div>
+      <div class="zh">好啊！走吧！</div>
+      <div class="pron">[ii desu ne! Ikimashou]</div>
+      <button class="speak-btn" onclick="speakText('いいですね！行きましょう')">🔊</button>
+    </div>
+    <div class="card" style="border-color:#ef4444">
+      <div class="jp">すみません、予定があります</div>
+      <div class="zh">不好意思，我有安排</div>
+      <div class="pron">[sumimasen, yotei ga arimasu]</div>
+      <button class="speak-btn" onclick="speakText('すみません、予定があります')">🔊</button>
+    </div>
+    <div class="card" style="border-color:#ef4444">
+      <div class="jp">今回はちょっと…</div>
+      <div class="zh">这次有点…（委婉拒绝）</div>
+      <div class="pron">[konkai wa chotto]</div>
+      <button class="speak-btn" onclick="speakText('今回はちょっと')">🔊</button>
+    </div>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">🎭 完整对话示例</div>
+  <div class="dialogue-box" style="background:#f0f9ff; border:2px solid #3b82f6; border-radius:12px; padding:16px; margin:12px 0">
+    <div style="font-weight:bold; color:#1e3a8a; margin-bottom:10px">对话1：询问兴趣</div>
+    <div style="margin:8px 0"><b>A（田中）：</b>趣味は何ですか？<br><span style="color:#666">（你的兴趣是什么？）</span></div>
+    <div style="margin:8px 0"><b>B（李明）：</b>映画を見るのが好きです。特にアクション映画が好きです。<br><span style="color:#666">（我喜欢看电影。特别喜欢动作片。）</span></div>
+    <div style="margin:8px 0"><b>A（田中）：</b>いいですね！一緒に映画を見に行きませんか？<br><span style="color:#666">（真好啊！要不要一起去看电影？）</span></div>
+    <div style="margin:8px 0"><b>B（李明）：</b>はい、ぜひ！いつがいいですか？<br><span style="color:#666">（好啊，一定！什么时候去？）</span></div>
+    <button class="speak-btn" onclick="speakText('趣味は何ですか？映画を見るのが好きです。特にアクション映画が好きです。いいですね！一緒に映画を見に行きませんか？はい、ぜひ！いつがいいですか？')">🔊 朗读全部</button>
+  </div>
+  
+  <div class="dialogue-box" style="background:#f0f9ff; border:2px solid #3b82f6; border-radius:12px; padding:16px; margin:12px 0">
+    <div style="font-weight:bold; color:#1e3a8a; margin-bottom:10px">对话2：周末安排</div>
+    <div style="margin:8px 0"><b>A（佐藤）：</b>週末、何か予定がありますか？<br><span style="color:#666">（周末有什么安排吗？）</span></div>
+    <div style="margin:8px 0"><b>B（王芳）：</b>特に予定はありません。何かいい案がありますか？<br><span style="color:#666">（没什么特别安排。你有什么好建议吗？）</span></div>
+    <div style="margin:8px 0"><b>A（佐藤）：</b>よかったら、一緒に美術館に行きませんか？<br><span style="color:#666">（可以的话，要不要一起去美术馆？）</span></div>
+    <div style="margin:8px 0"><b>B（王芳）：</b>いいですね！行きましょう！<br><span style="color:#666">（好啊！走吧！）</span></div>
+    <button class="speak-btn" onclick="speakText('週末、何か予定がありますか？特に予定はありません。何かいい案がありますか？よかったら、一緒に美術館に行きませんか？いいですね！行きましょう！')">🔊 朗读全部</button>
+  </div>
+  
+  <div class="section-title" style="font-size:1.1em; color:#1e3a8a; margin-top:20px">📋 文化小贴士</div>
+  <div class="info-box" style="background:#fffbeb; border-color:#f59e0b">
+    <b>🇯🇵 日本文化中的兴趣爱好</b><br><br>
+    ✅ 日本人非常重视"地味"（低调）的兴趣爱好<br>
+    ✅ 常见的兴趣：読書、旅行、料理、園芸<br>
+    ✅ 近年来：ジム（健身房）、ヨガ（瑜伽）也很流行<br>
+    ✅ 邀请别人时，用"～ませんか？"（要不要～？）比直接说更礼貌<br>
+    ✅ 拒绝时，用"今回はちょっと…"（这次有点…）可以委婉拒绝
+  </div>
+</div>
 </div>
 
 <div id="tab-quiz" class="tab-content">
@@ -1819,18 +2131,35 @@ function loadVoices() {
   voiceSelect.innerHTML = '';
   let jaVoices = [];
   voices.forEach((v, i) => {
-    if (v.lang.startsWith('ja')) jaVoices.push({index: i, voice: v});
+    if (v.lang.startsWith('ja')) {
+      jaVoices.push({index: i, voice: v});
+    }
+  });
+  // 只显示日语语音
+  jaVoices.forEach(({index, voice}) => {
     const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = `${v.name} (${v.lang})`;
+    opt.value = index;
+    opt.textContent = `${voice.name} (${voice.lang})`;
     voiceSelect.appendChild(opt);
   });
   if (jaVoices.length > 0) {
-    statusBar.textContent = `✅ 已加载 ${voices.length} 个语音，检测到 ${jaVoices.length} 个日语语音`;
+    statusBar.textContent = `✅ 已加载 ${jaVoices.length} 个日语语音`;
     voiceWarning.style.display = 'none';
-    voiceSelect.value = jaVoices[0].index;
+    // 优先选择女声（名字通常包含 Female/Woman/Google 日本語等）
+    let femaleIdx = jaVoices.find(v => 
+      v.voice.name.toLowerCase().includes('female') || 
+      v.voice.name.toLowerCase().includes('woman') ||
+      v.voice.name.toLowerCase().includes('google') ||
+      v.voice.name.includes('美') ||
+      v.voice.name.includes('子')
+    );
+    if (femaleIdx) {
+      voiceSelect.value = femaleIdx.index;
+    } else {
+      voiceSelect.value = jaVoices[0].index;
+    }
   } else {
-    statusBar.textContent = `⚠️ 已加载 ${voices.length} 个语音，但未检测到日语语音`;
+    statusBar.textContent = `⚠️ 未检测到日语语音，请点击"重新加载语音"`;
     voiceWarning.style.display = 'block';
   }
 }
@@ -1859,6 +2188,8 @@ function speakText(text) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'ja-JP';
   utter.rate = parseFloat(rateSlider.value);
+  utter.volume = 1.0;  // 最大音量
+  utter.pitch = 1.0;    // 正常音高
   const selectedVoice = getSelectedVoice();
   if (selectedVoice) utter.voice = selectedVoice;
   speechSynthesis.speak(utter);
